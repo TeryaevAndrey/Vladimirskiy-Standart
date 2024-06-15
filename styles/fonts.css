@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Craftwork Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/CraftworkGrotesk/CraftworkGrotesk-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Craftwork Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/CraftworkGrotesk/CraftworkGrotesk-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Craftwork Grotesk';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/CraftworkGrotesk/CraftworkGrotesk-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Craftwork Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/CraftworkGrotesk/CraftworkGrotesk-Bold.ttf');
+}
