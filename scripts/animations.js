@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       {
         innerText: targetCount,
-        duration: 2,
+        duration: 3,
         ease: "power1.in",
         scrollTrigger: {
           trigger: counter,
@@ -82,5 +82,18 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       }
     );
+  });
+
+  const lines = document.querySelectorAll(".running-line");
+
+  function setSpeed() {
+    lines.forEach((line) => {
+      console.log(line);
+      line.setAttribute("scrollamount", "1");
+    });
+  }
+
+  window.addEventListener("scroll", function () {
+    setSpeed();
   });
 });

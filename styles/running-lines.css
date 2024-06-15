@@ -1,0 +1,50 @@
+.running-lines {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Добавьте это, чтобы скрыть переполнение */
+}
+
+.running-line {
+    font-size: 42px;
+    font-weight: 500;
+    min-height: 57px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* Добавьте это, чтобы скрыть переполнение */
+    position: relative;
+    /* Необходимо для абсолютного позиционирования внутреннего содержимого */
+}
+
+.running-line__content {
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.running-line:first-child {
+    background-color: #E00428;
+    color: #D7A461;
+}
+
+.running-line:nth-child(2) {
+    background-color: #D7A461;
+    color: #012531;
+    transform: rotate(-2deg);
+    margin-top: 25px;
+    z-index: 2;
+}
+
+.running-line:last-child {
+    background-color: #012531;
+    color: #D7A461;
+    transform: rotate(2deg);
+    margin-top: 0;
+    z-index: 1;
+}
+
+@media(min-width: 1024px) {
+    .running-line {
+        min-height: 97px;
+    }
+}
