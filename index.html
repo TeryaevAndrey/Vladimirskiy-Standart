@@ -13,10 +13,29 @@
     <link rel="stylesheet" href="./styles/about.css" />
     <link rel="stylesheet" href="./styles/geography.css" />
     <link rel="stylesheet" href="./styles/running-lines.css" />
-    <link rel="stylesheet" href="./styles/sausages.css">
+    <link rel="stylesheet" href="./styles/sausages.css" />
+    <link rel="stylesheet" href="./styles/dumplings.css" />
+    <link rel="stylesheet" href="./styles/mob-menu.css" />
+    <link rel="stylesheet" href="./styles/ogogon.css">
   </head>
 
   <body>
+    <div class="mob-menu">
+      <div class="mob-menu__inner">
+        <img class="mob-menu__close" src="./images/close.svg" alt="Close" onclick="closeMenu()" />
+
+        <div class="mob-menu__list">
+          <a class="mob-menu__item bold" href="#">Стандарт качества</a>
+          <a class="mob-menu__item bold" href="#">Владимирский стандарт</a>
+          <a class="mob-menu__item bold" href="#">География продаж</a>
+          <a class="mob-menu__item" href="#">Владимирский стандарт</a>
+          <a class="mob-menu__item" href="#">Vladbeef</a>
+          <a class="mob-menu__item" href="#">Огогонь</a>
+          <a class="mob-menu__item bold" href="#">Контакты</a>
+        </div>
+      </div>
+    </div>
+
     <div class="banner">
       <video class="banner__video" src="" poster="./images/banner.jpg"></video>
 
@@ -37,7 +56,7 @@
               </ul>
             </nav>
 
-            <div class="burger-menu">
+            <button class="burger-menu" onclick="openMenu()">
               <p class="burger-menu__text mob-none">Mеню</p>
 
               <div class="burger">
@@ -45,7 +64,7 @@
                 <span></span>
                 <span></span>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </header>
@@ -239,22 +258,97 @@
           </div>
 
           <img
-              class="sausages-best-img"
-              src="./images/slogan.png"
-              alt="Всё лучшее в стандарте"
-            />
+            class="sausages-best-img"
+            src="./images/slogan.png"
+            alt="Всё лучшее в стандарте"
+          />
 
-            <div class="sausages__images">
-                <div class="relative">
-                    <img class="greens-1" src="./images/greens-1.png" alt="greens-1">
-                    <img class="greens-2" src="./images/greens-2.png" alt="greens-2">
-                    <img class="greens-3" src="./images/greens-3.png" alt="greens-3">
-                    <img class="pepper-1" src="./images/pepper-1.png" alt="pepper-1">
-                    <img class="pepper-2" src="./images/pepper-2.png" alt="pepper-2">
-                    <img class="sausage desktop" src="./images/sausage.png" alt="Sausage">
-                    <img class="sausage mob" src="./images/sausage-mob.png" alt="Sausage mob">
-                </div>
+          <div class="sausages__images">
+            <div class="relative">
+              <img
+                class="greens-1"
+                src="./images/greens-1.png"
+                alt="greens-1"
+              />
+              <img
+                class="greens-2"
+                src="./images/greens-2.png"
+                alt="greens-2"
+              />
+              <img
+                class="greens-3"
+                src="./images/greens-3.png"
+                alt="greens-3"
+              />
+              <img
+                class="pepper-1"
+                src="./images/pepper-1.png"
+                alt="pepper-1"
+              />
+              <img
+                class="pepper-2"
+                src="./images/pepper-2.png"
+                alt="pepper-2"
+              />
+              <img
+                class="sausage desktop"
+                src="./images/sausage.png"
+                alt="Sausage"
+              />
+              <img
+                class="sausage mob"
+                src="./images/sausage-mob.png"
+                alt="Sausage mob"
+              />
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dumplings">
+      <div class="container">
+        <div class="dumplings__inner">
+          <div class="dumplings__info">
+            <p class="dumplings__info-text">
+              «VLADBEEF» – это премиальный бренд высококачественной мраморной
+              говядины. Для производства используются исключительно молодые
+              бычки лучшей мясной породы «Black Angus». VLADBEEF – это авторская
+              рецептура технологов Владимирского стандарта, премиальное качество
+              и запоминающийся вкус.
+            </p>
+
+            <button class="link">Подробнее</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ogogon">
+      <img class="ogogon-logo desktop-none" src="./images/ogogon/ogogon-logo.png" alt="Ogogon">
+      <img class="ogogon-logo mob-none" src="./images/ogogon/ogogon-logo-desktop.png" alt="Ogogon desktop">
+
+      <div class="container">
+        <div class="ogogon__inner">
+          <div class="ogogon__info">
+            <p class="ogogon__info-text">
+              Огогонь – это сытный перекус для тех, кто не хочет терять момент. <br /> <br />
+              Мини-пиццы по традиционным итальянским рецептам, супер мясные
+              чебуреки и сочные сосиски в тесте! И все это Огогонь. <br/> <br/> Лови яркие
+              моменты вместе с Огогонь! Вкус огонь!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ogogon__images-wrapper">
+        <div class="ogogon__images">
+          <img class="ogogon__image one" src="./images/ogogon/ogogon-1.png" alt="Ogogon-1">
+          <img class="ogogon__image two" src="./images/ogogon/ogogon-2.png" alt="Ogogon-2">
+          <img class="ogogon__image three" src="./images/ogogon/ogogon-3.png" alt="Ogogon-3">
+          <img class="ogogon__image four" src="./images/ogogon/ogogon-4.png" alt="Ogogon-4">
+          <img class="ogogon__image five" src="./images/ogogon/ogogon-5.png" alt="Ogogon-5">
+          <img class="ogogon__image six" src="./images/ogogon/ogogon-6.png" alt="Ogogon-6">
         </div>
       </div>
     </section>
@@ -306,5 +400,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script src="./scripts/animations.js"></script>
+    <script src="./scripts/menu.js"></script>
   </body>
 </html>

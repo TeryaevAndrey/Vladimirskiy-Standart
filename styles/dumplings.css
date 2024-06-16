@@ -1,0 +1,59 @@
+.dumplings {
+  background-image: url("../images/dumplings-mob-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-position: center;
+  transition: background-image 1s ease-in-out, background-size 0.5s, filter 0.5s;
+  position: relative;
+  padding: 64px 0;
+}
+
+.dumplings.change-bg {
+  background-image: url("../images/dumplings-mob-2.jpg");
+}
+
+@media (min-width: 1024px) {
+  .dumplings {
+    background-image: url("../images/dumplings-1.jpg");
+  }
+
+  .dumplings.change-bg {
+    background-image: url("../images/dumplings-2.jpg");
+  }
+}
+
+.dumplings__inner {
+}
+.dumplings__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 222px;
+}
+.dumplings__info-text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 157%;
+  color: #fff;
+}
+
+@media(min-width: 600px) {
+    .dumplings__info-text {
+        font-size: 16px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .dumplings__info-text {
+        font-size: 22px;
+    }
+
+    .dumplings__info {
+        position: absolute;
+        top: 64px;
+        left: 40%;
+        max-width: 536px;
+    }
+}

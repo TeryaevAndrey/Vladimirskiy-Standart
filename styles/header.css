@@ -45,6 +45,7 @@
     cursor: pointer;
     font-family: var(--secondary-family);
     margin-left: auto;
+    background-color: transparent
 }
 
 .burger {

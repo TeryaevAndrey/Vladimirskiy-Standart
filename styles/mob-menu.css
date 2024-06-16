@@ -1,0 +1,67 @@
+.mob-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 93vw;
+  height: 96vh;
+  background-image: url("../images/mob-menu-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 30;
+  background-color: rgba(228, 4, 40, 0.57);
+  border: 1px solid rgba(226, 90, 90, 0.88);
+  padding-left: 24px;
+  padding-right: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.mob-menu.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mob-menu__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.mob-menu__close {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    cursor: pointer;
+}
+
+.mob-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding-top: 90px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.mob-menu__item {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.mob-menu__item.bold {
+    font-weight: 700;
+}
+
+@media(min-width: 1024px) {
+    .mob-menu__item {
+        font-size: 40px;
+    }
+}

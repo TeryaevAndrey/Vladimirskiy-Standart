@@ -245,4 +245,53 @@ document.addEventListener("DOMContentLoaded", function () {
     x: -200, // начальная позиция блока по оси X (слева от экрана)
     opacity: 0, // начальная прозрачность
   });
+
+  ScrollTrigger.create({
+    trigger: ".dumplings",
+    start: "top 80%",
+    end: "bottom top",
+    scrub: true,
+    onEnter: () =>
+      document.querySelector(".dumplings").classList.add("change-bg"),
+    onLeaveBack: () =>
+      document.querySelector(".dumplings").classList.remove("change-bg"),
+    onEnterBack: () =>
+      document.querySelector(".dumplings").classList.add("change-bg"),
+    onLeave: () =>
+      document.querySelector(".dumplings").classList.remove("change-bg"),
+  });
+
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1024px)", () => {
+    // Анимация для экранов шире 1024px (выдвижение сверху)
+    gsap.from(".dumplings__info", {
+      scrollTrigger: {
+        trigger: ".dumplings__info",
+        start: "top 90%",
+        end: "bottom 10%",
+        toggleActions: "play none none none",
+        markers: false,
+      },
+      duration: 1,
+      y: -200, // начальная позиция блока по оси Y (выдвижение сверху)
+      opacity: 0,
+    });
+  });
+
+  mm.add("(max-width: 1023px)", () => {
+    // Анимация для экранов уже 1024px (выдвижение слева)
+    gsap.from(".dumplings__info", {
+      scrollTrigger: {
+        trigger: ".dumplings__info",
+        start: "top 90%",
+        end: "bottom 10%",
+        toggleActions: "play none none none",
+        markers: false,
+      },
+      duration: 1,
+      x: -200, // начальная позиция блока по оси X (выдвижение слева)
+      opacity: 0,
+    });
+  });
 });

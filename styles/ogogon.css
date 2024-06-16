@@ -1,0 +1,169 @@
+.ogogon {
+    background-image: url("../images/ogogon/ogogon-logo-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #FFDE15;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.ogogon-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+.ogogon__info {
+    margin-top: 40%;
+    max-width: 40%;
+    width: 100%;
+}
+.ogogon__info-text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 157%;
+    color: #000;
+}
+
+@media(min-width: 600px) {
+    .ogogon__info-text {
+        font-size: 16px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .ogogon__info {
+        position: absolute;
+        top: 80px;
+        left: 27%;
+        margin-top: 0;
+        max-width: 450px;
+    }
+
+    .ogogon__info-text {
+        font-size: 22px;
+    }
+}
+
+.ogogon__images-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+.ogogon__images {
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+.ogogon__image {
+    position: absolute;
+    width: 50%;
+    right: 0;
+}
+@media(min-width: 550px) {
+    .ogogon__image {
+        width: 30%;
+    }
+}
+
+.ogogon__image.one {
+    top: 5%;
+    min-width: 212px;
+}
+.ogogon__image.two {
+    top: 28%;
+    min-width: 160px;
+}
+.ogogon__image.three {  
+    bottom: 15%;
+    left: 0;
+    z-index: 1;
+}
+.ogogon__image.four {
+    bottom: -7%;
+    right: -5%;
+    min-width: 157px;
+}
+.ogogon__image.five {
+    bottom: -10%;
+    left: -20%;
+    min-width: 300px;
+}
+.ogogon__image.six {
+    top: 47%;
+    min-width: 240px;
+}
+
+@media(min-width: 1024px) {
+    .ogogon__images-wrapper {
+        right: -15%;
+    }
+
+    .ogogon-logo {
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: unset;
+        width: auto;
+        height: 100vh;
+    }
+
+    .ogogon__image {
+        width: 25%;
+    }
+
+    .ogogon__image.one {
+        top: -10%;
+        height: auto;
+    }
+    .ogogon__image.two {
+        top: unset;
+        bottom: -15%;
+        right: unset;
+        left: 60%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 30%;
+    }
+    .ogogon__image.three {  
+bottom: unset;
+        left: unset;
+        right: 40%;
+        top: -15%;
+        z-index: 1;
+        transform: translateX(50%) rotate(-50deg);
+    }
+    .ogogon__image.four {
+        top: 28%;
+        right: -5%;
+        left: unset;
+        bottom: unset;
+        width: 30%;
+    }
+    .ogogon__image.five {
+        bottom: 0;
+        left: 15%;
+        width: 40%;
+        transform: rotate(-20deg);
+    }
+    .ogogon__image.six {
+        top: 45%;
+        right: 34%;
+        transform: translateX(50%) translateY(-50%);
+        width: 40%;
+    }
+}
+
+@media(min-width: 1280px) {
+    .ogogon__info {
+        left: 22%;
+    }
+
+    .ogogon__images-wrapper {
+        right: 0;
+    }
+}
