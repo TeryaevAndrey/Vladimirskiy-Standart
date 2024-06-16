@@ -232,4 +232,17 @@ document.addEventListener("DOMContentLoaded", function () {
     .from(".pepper-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".sausage.desktop", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".sausage.mob", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5");
+
+  gsap.from(".sausages__info", {
+    scrollTrigger: {
+      trigger: ".sausages__info",
+      start: "top 90%", // когда верхняя часть блока .sausages__info достигает 90% высоты окна просмотра
+      end: "bottom 10%", // когда нижняя часть блока .sausages__info достигает 10% высоты окна просмотра
+      toggleActions: "play none none none", // запуск анимации, никаких действий при прокрутке назад
+      markers: false, // установить в true для отладки
+    },
+    duration: 1, // длительность анимации
+    x: -200, // начальная позиция блока по оси X (слева от экрана)
+    opacity: 0, // начальная прозрачность
+  });
 });
