@@ -1,0 +1,131 @@
+.contacts {
+    padding: 34px 0;
+    background-color: #fff;
+    background-image: url("../images/contacts/contacts-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.contacts__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contacts__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contacts__item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 6.5px 15px;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+}
+
+.contacts__item::before {
+    content: "";
+    position: absolute;
+    background-image: url('../images/contacts/right.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}
+
+.contacts__item-img {
+    max-width: 70px;
+    height: auto;
+}
+
+.contacts__item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #003362;
+}
+
+.contacts__item-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #d7a461;
+}
+
+.contacts__item-link {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.contacts__item-link.bold {
+    font-weight: 700;
+}
+
+.contacts__item-text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.contacts-slider-wrapper {
+    display: none;
+}
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {}
+
+@media(min-width: 1024px) {
+    .contacts__inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contacts-slider-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 650px;
+        background-image: url("../images/contacts/phone.png");
+        background-repeat: no-repeat
+    }
+
+    .contacts__list {
+        width: 580px;
+    }
+
+    .contacts__item {
+        padding: 40px 60px;
+
+    }
+
+    .contacts__item-title {
+        font-size: 30px;
+    }
+
+    .contacts__item-link {
+        font-size: 20px;
+    }
+
+    .contacs__item-text {
+        font-size: 15px;
+    }
+
+    .contacts-slider .swiper-wrapper {
+        left: 15px;
+        top: -17px;
+    }
+}

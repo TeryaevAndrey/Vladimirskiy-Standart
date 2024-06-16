@@ -294,4 +294,45 @@ document.addEventListener("DOMContentLoaded", function () {
       opacity: 0,
     });
   });
+
+  const images = document.querySelectorAll(".ogogon__image");
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate each image from a different direction
+  images.forEach((image, index) => {
+    let direction;
+    switch (index) {
+      case 0:
+        direction = { x: 100, opacity: 0 };
+        break;
+      case 1:
+        direction = { y: 100, opacity: 0 };
+        break;
+      case 2:
+        direction = { x: 100, opacity: 0 };
+        break;
+      case 3:
+        direction = { y: -100, opacity: 0 };
+        break;
+      case 4:
+        direction = { x: -200, opacity: 0 };
+        break;
+      case 5:
+        direction = { opacity: 0 };
+        break;
+      default:
+        direction = { opacity: 0 };
+    }
+
+    gsap.from(image, {
+      ...direction,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: image,
+        start: "top 80%", // Start the animation when the image is 80% from the top of the viewport
+        toggleActions: "play none none none",
+      },
+    });
+  });
 });
