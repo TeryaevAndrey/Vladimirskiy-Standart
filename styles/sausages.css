@@ -1,0 +1,193 @@
+.sausages {
+  background-image: url("../images/sausage-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 30px 0;
+  position: relative;
+  margin-top: -20px;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .sausages {
+    padding-top: 134px;
+  }
+}
+
+.sausages__inner {
+  display: flex;
+  flex-direction: column;
+}
+.sausages__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 2;
+}
+.sausages__info-img {
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .sausages__info {
+    gap: 54px;
+  }
+
+  .sausages__info-img {
+    max-width: 492px;
+  }
+}
+
+.sausages__info-text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 157%;
+  color: #fff;
+  max-width: 300px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .sausages__info-text {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 157%;
+    max-width: 470px;
+  }
+}
+
+@media (max-width: 475px) {
+  .sausages__info-text {
+    max-width: 140px;
+    width: 100%;
+  }
+}
+
+.sausages-best-img {
+  display: none;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .sausages-best-img {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    max-width: 610px;
+    width: 100%;
+    display: block;
+  }
+}
+.sausages__images {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+.sausages__images .relative {
+  width: 100%;
+  height: 100%;
+}
+
+.greens-1 {
+  position: absolute;
+  right: 0;
+  bottom: 20%;
+  transform: rotate(23deg);
+  width: 100%;
+  z-index: 1;
+}
+.greens-2 {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  bottom: 10%;
+  transform: rotate(-13deg);
+}
+.greens-3 {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  right: -17%;
+  top: 40%;
+  transform: translateY(-50%) rotate(51deg);
+}
+.pepper-1 {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  transform: rotate(32deg);
+  right: -60%;
+}
+.pepper-2 {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  transform: rotate(5deg);
+  bottom: 20%;
+  right: 0;
+}
+.sausage {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+
+  object-fit: contain;
+}
+
+.sausage.desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sausage.desktop {
+    display: block;
+  }
+
+  .sausage.mob {
+    display: none;
+  }
+
+  .sausage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sausage {
+    left: 50%;
+    right: unset;
+    transform: translateX(-50%);
+  }
+
+  .greens-1 {
+    max-width: 1000px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(-20deg);
+  }
+
+  .greens-2 {
+    max-width: 1500px;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(-10deg);
+  }
+
+  .greens-3 {
+    max-width: 856px;
+    top: 0;
+    left: 70%;
+    transform: translateX(-50%) rotate(-10deg);
+  }
+}
