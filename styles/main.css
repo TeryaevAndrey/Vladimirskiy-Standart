@@ -50,7 +50,7 @@ button {
 .link {
   font-size: 12px;
   font-weight: 600;
-  color: #fff;
+  color: inherit;
   text-decoration: underline;
   width: max-content;
   background-color: transparent;

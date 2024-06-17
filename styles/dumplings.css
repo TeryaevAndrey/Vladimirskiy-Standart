@@ -7,6 +7,7 @@
   transition: background-image 1s ease-in-out, background-size 0.5s, filter 0.5s;
   position: relative;
   padding: 64px 0;
+  overflow: hidden;
 }
 
 .dumplings.change-bg {

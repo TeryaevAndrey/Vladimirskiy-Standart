@@ -9,10 +9,15 @@
     z-index: 10;
     padding: 0 20px;
     overflow-y: auto;
-    right: -100%;
+    right: -100vw;
     transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .card.active {
     right: 0;
@@ -22,8 +27,15 @@
     max-width: 155px;
     width: 100%;
     height: auto;
-    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
     display: block;
+    top: 30px;
+    position: absolute;
+}
+
+.card-sausages .card__logo {
+    top: 0;
 }
 
 .card__product {
@@ -42,7 +54,6 @@
     flex-direction: column;
     gap: 16px;
     padding-top: 23px;
-    margin-top: auto;
 }
 
 .card__weight {
@@ -101,7 +112,17 @@
     font-weight: 500;
 }
 
+.card__close {
+    color: #000;
+    bottom: 40px;
+    position: absolute;
+}
+
 @media(min-width: 1024px) {
+    .card__close {
+        display: none;
+    }
+
     .card {
         position: absolute;
         max-width: 573px;
@@ -117,8 +138,8 @@
     }
 
     .card__product {
-        margin-top: 70px;
-        max-height: 530px;
+        margin-top: 30px;
+        max-height: 330px;
     }
 
     .card__weight {
@@ -156,6 +177,16 @@
         font-size: 22px;
         line-height: 157%;
     }
+
+    .card__logo {
+      top: 43px;
+    }
+}
+
+@media(min-width: 1500px) {
+    .card__product {
+        max-height: 530px;
+    }
 }
 
 @media(max-width: 1024px) {
@@ -170,8 +201,4 @@
         margin-top: 0;
     }
 
-    .card__logo {
-        position: absolute;
-        top: 0;
-    }
 }

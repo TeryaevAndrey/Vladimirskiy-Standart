@@ -21,6 +21,10 @@
     margin-top: 40%;
     max-width: 40%;
     width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .ogogon__info-text {
@@ -40,7 +44,7 @@
     .ogogon__info {
         position: absolute;
         top: 80px;
-        left: 27%;
+        left: 33%;
         margin-top: 0;
         max-width: 450px;
     }
@@ -173,9 +177,13 @@
     }
 }
 
+.ogogon .link {
+    color: #000;
+}
+
 @media(min-width: 1280px) {
     .ogogon__info {
-        left: 22%;
+        left: 25%;
     }
 
     .ogogon__images-wrapper {

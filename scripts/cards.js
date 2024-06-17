@@ -24,10 +24,6 @@ const openCardMore = (cardName) => {
   const card = document.querySelector(`.card-more[data-card="${cardName}"]`);
   card.classList.toggle("active");
 
-  if (window.innerWidth > 1024) {
-    return;
-  }
-
   if (card.classList.contains("active")) {
     document.body.style.overflowY = "hidden";
   } else {
