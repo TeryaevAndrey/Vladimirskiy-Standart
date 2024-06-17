@@ -65,6 +65,14 @@
     background-color: #C9000B;
 }
 
+.card-more__right.black {
+    background-color: #231F20;
+}
+
+.card-more__right.yellow {
+    background-color: #FFDE15;
+}
+
 .card-more__title {
     font-size: 20px;
     line-height: 121%;

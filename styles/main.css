@@ -38,6 +38,15 @@ button {
   overflow-x: hidden;
 }
 
+.scrollbar-none::-webkit-scrollbar {
+  width: 0;
+}
+
+/*Убрать полосу прокрутки для всей страницы*/
+.scrollbar-none::-webkit-scrollbar {
+  width: 0;
+}
+
 .link {
   font-size: 12px;
   font-weight: 600;
@@ -60,9 +69,9 @@ button {
 }
 
 @media(min-width: 768px) {
-    .link {
-        font-size: 16px;
-    }
+  .link {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 1024px) {

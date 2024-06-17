@@ -29,6 +29,8 @@
 .card__product {
     margin-top: 18px;
     width: 100%;
+    object-fit: contain;
+    max-height: 326px;
 }
 
 .card .swiper {
@@ -153,5 +155,23 @@
     .card__info-text {
         font-size: 22px;
         line-height: 157%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card__info {
+        margin-top: 0;
+    }
+
+    .card__logo {
+        position: absolute;
+        top: 0;
     }
 }

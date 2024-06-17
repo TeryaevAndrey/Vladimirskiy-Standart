@@ -30,18 +30,18 @@
             <img class="mob-menu__close" src="./images/close.svg" alt="Close" onclick="closeMenu()" />
 
             <div class="mob-menu__list">
-                <a class="mob-menu__item bold" href="#">Стандарт качества</a>
-                <a class="mob-menu__item bold" href="#">Владимирский стандарт</a>
-                <a class="mob-menu__item bold" href="#">География продаж</a>
-                <a class="mob-menu__item" href="#">Владимирский стандарт</a>
-                <a class="mob-menu__item" href="#">Vladbeef</a>
-                <a class="mob-menu__item" href="#">Огогонь</a>
-                <a class="mob-menu__item bold" href="#">Контакты</a>
+                <a class="mob-menu__item bold" href="#about">Стандарт качества</a>
+                <a class="mob-menu__item bold" href="#banner">Владимирский стандарт</a>
+                <a class="mob-menu__item bold" href="#geography">География продаж</a>
+                <a class="mob-menu__item" href="#sausages">Владимирский стандарт</a>
+                <a class="mob-menu__item" href="#dumplings">Vladbeef</a>
+                <a class="mob-menu__item" href="#ogogon">Огогонь</a>
+                <a class="mob-menu__item bold" href="#contacts">Контакты</a>
             </div>
         </div>
     </div>
 
-    <div class="banner">
+    <div class="banner" id="banner">
         <video class="banner__video" src="" poster="./images/banner.jpg"></video>
 
         <header class="header">
@@ -50,13 +50,13 @@
                     <nav class="menu">
                         <ul class="menu__list">
                             <li class="menu__item">
-                                <a class="menu__link" href="#">Стандарт качества</a>
+                                <a class="menu__link" href="#about">Стандарт качества</a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="#">Продуктовые линейки</a>
+                                <a class="menu__link" href="#sausages">Продуктовые линейки</a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="#">Контакты</a>
+                                <a class="menu__link" href="#contacts">Контакты</a>
                             </li>
                         </ul>
                     </nav>
@@ -91,7 +91,7 @@
         </div>
     </div>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <img class="about__img-logo" src="./images/logo.png" alt="About logo" />
 
@@ -117,7 +117,7 @@
         </div>
     </section>
 
-    <section class="geography">
+    <section class="geography" id="geography">
         <div class="container">
             <div class="geography__inner">
                 <h2 class="geography__title">ГЕОГРАФИЯ ПРОДАЖ</h2>
@@ -219,7 +219,7 @@
         </div>
     </div>
 
-    <section class="relative">
+    <section class="relative" id="sausages">
         <div class="sausages" onclick="openCard('sausages')">
             <div class="container">
                 <div class="sausages__inner">
@@ -251,26 +251,12 @@
                         </div>
                     </div>
                 </div>
-                < class="relative" /div>
             </div>
         </div>
-        <div class="card" data-card="sausages" onclick="openCardMore('sausages-more')">
+        <div class="card scrollbar-none" data-card="sausages" onclick="openCardMore('sausages-more')">
             <img class="card__logo" src="./images/logo.png" alt="Logo" />
 
             <img class="card__product" src="./images/product-1.png" alt="Product">
-            <div class="swiper product-1-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="./images/product-1.png" alt="Product">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/product-1.png" alt="Product">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/product-1.png" alt="Product">
-                    </div>
-                </div>
-            </div>
 
             <div class="card__info">
                 <div class="card__weight">
@@ -289,54 +275,106 @@
         </div>
     </section>
 
-    <section class="dumplings">
-        <div class="container">
-            <div class="dumplings__inner">
-                <div class="dumplings__info">
-                    <p class="dumplings__info-text">
-                        «VLADBEEF» – это премиальный бренд высококачественной мраморной
-                        говядины. Для производства используются исключительно молодые
-                        бычки лучшей мясной породы «Black Angus». VLADBEEF – это авторская
-                        рецептура технологов Владимирского стандарта, премиальное качество
-                        и запоминающийся вкус.
-                    </p>
+    <section class="relative" id="dumplings">
+        <div class="dumplings">
+            <div class="container">
+                <div class="dumplings__inner">
+                    <div class="dumplings__info">
+                        <p class="dumplings__info-text">
+                            «VLADBEEF» – это премиальный бренд высококачественной мраморной
+                            говядины. Для производства используются исключительно молодые
+                            бычки лучшей мясной породы «Black Angus». VLADBEEF – это авторская
+                            рецептура технологов Владимирского стандарта, премиальное качество
+                            и запоминающийся вкус.
+                        </p>
 
-                    <button class="link">Подробнее</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="ogogon">
-        <img class="ogogon-logo desktop-none" src="./images/ogogon/ogogon-logo.png" alt="Ogogon">
-        <img class="ogogon-logo mob-none" src="./images/ogogon/ogogon-logo-desktop.png" alt="Ogogon desktop">
-
-        <div class="container">
-            <div class="ogogon__inner">
-                <div class="ogogon__info">
-                    <p class="ogogon__info-text">
-                        Огогонь – это сытный перекус для тех, кто не хочет терять момент. <br /> <br />
-                        Мини-пиццы по традиционным итальянским рецептам, супер мясные
-                        чебуреки и сочные сосиски в тесте! И все это Огогонь. <br /> <br /> Лови яркие
-                        моменты вместе с Огогонь! Вкус огонь!
-                    </p>
+                        <button class="link" onclick="openCard('dumplings')">Подробнее</button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="ogogon__images-wrapper">
-            <div class="ogogon__images">
-                <img class="ogogon__image one" src="./images/ogogon/ogogon-1.png" alt="Ogogon-1">
-                <img class="ogogon__image two" src="./images/ogogon/ogogon-2.png" alt="Ogogon-2">
-                <img class="ogogon__image three" src="./images/ogogon/ogogon-3.png" alt="Ogogon-3">
-                <img class="ogogon__image four" src="./images/ogogon/ogogon-4.png" alt="Ogogon-4">
-                <img class="ogogon__image five" src="./images/ogogon/ogogon-5.png" alt="Ogogon-5">
-                <img class="ogogon__image six" src="./images/ogogon/ogogon-6.png" alt="Ogogon-6">
+        <div class="card scrollbar-none" data-card="dumplings" onclick="openCardMore('dumplings-more')">
+            <img class="card__logo" src="./images/vladbeef.png" alt="Vladbeef" />
+
+            <img class="card__product" src="./images/product-2.png" alt="Product">
+
+            <div class="card__info">
+                <div class="card__weight">
+                    <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
+                    <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+
+                    <div class="card__weight-texts">
+                        <p class="card__weight-text">430 г</p>
+                        <p class="card__weight-text">800 г</p>
+                    </div>
+                </div>
+
+                <p class="card__info-text"><span>Сосиски «Баварские» </span>
+                    лидер продаж, премия «Товар года»</p>
             </div>
         </div>
     </section>
 
-    <section class="contacts">
+    <section class="relative" id="ogogon">
+        <div class="ogogon">
+            <img class="ogogon-logo desktop-none" src="./images/ogogon/ogogon-logo.png" alt="Ogogon">
+            <img class="ogogon-logo mob-none" src="./images/ogogon/ogogon-logo-desktop.png" alt="Ogogon desktop">
+
+            <div class="container">
+                <div class="ogogon__inner">
+                    <div class="ogogon__info">
+                        <p class="ogogon__info-text">
+                            Огогонь – это сытный перекус для тех, кто не хочет терять момент. <br /> <br />
+                            Мини-пиццы по традиционным итальянским рецептам, супер мясные
+                            чебуреки и сочные сосиски в тесте! И все это Огогонь. <br /> <br /> Лови яркие
+                            моменты вместе с Огогонь! Вкус огонь!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ogogon__images-wrapper">
+                <div class="ogogon__images">
+                    <img class="ogogon__image one" src="./images/ogogon/ogogon-1.png" alt="Ogogon-1"
+                        onclick="openCard('ogogon')">
+                    <img class="ogogon__image two" src="./images/ogogon/ogogon-2.png" alt="Ogogon-2"
+                        onclick="openCard('ogogon')">
+                    <img class="ogogon__image three" src="./images/ogogon/ogogon-3.png" alt="Ogogon-3"
+                        onclick="openCard('ogogon')">
+                    <img class="ogogon__image four" src="./images/ogogon/ogogon-4.png" alt="Ogogon-4"
+                        onclick="openCard('ogogon')">
+                    <img class="ogogon__image five" src="./images/ogogon/ogogon-5.png" alt="Ogogon-5"
+                        onclick="openCard('ogogon')">
+                    <img class="ogogon__image six" src="./images/ogogon/ogogon-6.png" alt="Ogogon-6"
+                        onclick="openCard('ogogon')">
+                </div>
+            </div>
+        </div>
+
+        <div class="card scrollbar-none" data-card="ogogon" onclick="openCardMore('ogogon-more')">
+            <img class="card__logo" src="./images/ogogon/ogogon-logo.png" alt="Logo" />
+
+            <img class="card__product" src="./images/product-3.png" alt="Product">
+
+            <div class="card__info">
+                <div class="card__weight">
+                    <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
+                    <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+
+                    <div class="card__weight-texts">
+                        <p class="card__weight-text">430 г</p>
+                        <p class="card__weight-text">800 г</p>
+                    </div>
+                </div>
+
+                <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
+                    лидер продаж, премия «Товар года»</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts" id="contacts">
         <div class="container">
             <div class="contacts__inner">
                 <div class="contacts__list">
@@ -560,6 +598,180 @@
         </div>
     </div>
 
+    <div class="card-more" data-card="dumplings-more">
+        <div class="card-more__inner">
+            <div class="card-more__left">
+                <div class="card-more__left-top">
+                    <img src="./images/product-2.png" alt="Product">
+
+                    <p class="card-more__left-top-text">350 г</p>
+                </div>
+
+                <div class="swiper product-slider-2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./images/product-2.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-2.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-2.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-2.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-2.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-2.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-2.png" alt="Product">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-more__right black">
+                <div class="card-more__header">
+                    <img class="card-more__logo" src="./images/logo.png" alt="Logo">
+
+                    <img class="card-more__close" src="./images/close.svg" alt="Close"
+                        onclick="closeCardMore('dumplings-more')">
+                </div>
+
+                <div class="card-more__info">
+                    <h3 class="card-more__title">Сочно-Сливочные классические</h3>
+                    <p class="card-more__subtitle">Изделия колбасные вареные, продукт мясной категории В.</p>
+
+                    <div class="card-more__secondary">
+                        <div class="card-more__animals">
+                            <img class="card-more__animals-img chicken" src="./images/chicken.svg" alt="Chicken">
+                            <img class="card-more__animals-img pig" src="./images/pig.svg" alt="Pig">
+                            <img class="card-more__animals-img cow" src="./images/cow.svg" alt="Cow">
+                            <img class="card-more__animals-img turkey" src="./images/turkey.svg" alt="Turkey">
+                        </div>
+                        <div class="card-more__weight">
+                            <img class="card-more__weight-img" src="./images/weight-desktop.svg" alt="Weight" />
+                            <p class="card-more__weight-text">350 г</p>
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <p class="card-more__text"><span>Мясо:</span> свинина, говядина, курица</p>
+                        <p class="card-more__text"><span>Начинка -</span>свинина, говядина, вода, бульон куриный
+                            натуральный, мясо птицы механической обвалки, шпик, лук репчатый, масло сливочное, сливки
+                            сухие, соль, специи (лук, чеснок, лавровый лист), яичный порошок, экстракты специй (перец
+                            черный, имбирь).</p>
+                        <img class="card-more-small-img float-right" src="./images/card-more-1.png" alt="card-more">
+                        <p class="card-more__text"><span>Тесто -</span> мука пшеничная высшего сорта, вода, соль, масло
+                            растительное.</p>
+                        <p class="card-more__text"><span>Упаковка:</span> пакет</p>
+                        <p class="card-more__text"><span>Срок годности:</span> 30 суток <br /> Пищевая ценность 100г
+                            продукта: белки-10г, жиры-8г, углеводы-26г. Энергетическая ценность (калорийность) 100г
+                            продукта: 908 кДж/216ккал.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-more" data-card="ogogon-more">
+        <div class="card-more__inner">
+            <div class="card-more__left">
+                <div class="card-more__left-top">
+                    <img src="./images/product-3.png" alt="Product">
+
+                    <p class="card-more__left-top-text">350 г</p>
+                </div>
+
+                <div class="swiper product-slider-3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./images/product-3.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-3.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-3.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-3.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-3.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-3.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-3.png" alt="Product">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-more__right yellow">
+                <div class="card-more__header">
+                    <img class="card-more__logo" src="./images/logo.png" alt="Logo">
+
+                    <img class="card-more__close" src="./images/close.svg" alt="Close"
+                        onclick="closeCardMore('ogogon-more')">
+                </div>
+
+                <div class="card-more__info">
+                    <h3 class="card-more__title">Сочно-Сливочные классические</h3>
+                    <p class="card-more__subtitle">Изделия колбасные вареные, продукт мясной категории В.</p>
+
+                    <div class="card-more__secondary">
+                        <div class="card-more__animals">
+                            <img class="card-more__animals-img chicken" src="./images/chicken.svg" alt="Chicken">
+                            <img class="card-more__animals-img pig" src="./images/pig.svg" alt="Pig">
+                            <img class="card-more__animals-img cow" src="./images/cow.svg" alt="Cow">
+                            <img class="card-more__animals-img turkey" src="./images/turkey.svg" alt="Turkey">
+                        </div>
+                        <div class="card-more__weight">
+                            <img class="card-more__weight-img" src="./images/weight-desktop.svg" alt="Weight" />
+                            <p class="card-more__weight-text">350 г</p>
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <p class="card-more__text"><span>Мясо:</span> свинина, говядина, курица</p>
+                        <p class="card-more__text"><span>Начинка -</span>свинина, говядина, вода, бульон куриный
+                            натуральный, мясо птицы механической обвалки, шпик, лук репчатый, масло сливочное, сливки
+                            сухие, соль, специи (лук, чеснок, лавровый лист), яичный порошок, экстракты специй (перец
+                            черный, имбирь).</p>
+                        <img class="card-more-small-img float-right" src="./images/card-more-1.png" alt="card-more">
+                        <p class="card-more__text"><span>Тесто -</span> мука пшеничная высшего сорта, вода, соль, масло
+                            растительное.</p>
+                        <p class="card-more__text"><span>Упаковка:</span> пакет</p>
+                        <p class="card-more__text"><span>Срок годности:</span> 30 суток <br /> Пищевая ценность 100г
+                            продукта: белки-10г, жиры-8г, углеводы-26г. Энергетическая ценность (калорийность) 100г
+                            продукта: 908 кДж/216ккал.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
@@ -568,6 +780,7 @@
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/sliders.js"></script>
     <script src="./scripts/cards.js"></script>
+    <script src="./scripts/links.js"></script>
 </body>
 
 </html>

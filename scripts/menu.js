@@ -9,3 +9,13 @@ const closeMenu = () => {
 
   menu.classList.remove("active");
 };
+
+const menuLinksHandler = () => {
+  document.querySelectorAll(".mob-menu__item")?.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+};
+
+menuLinksHandler();
