@@ -18,31 +18,41 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    justify-content: start;
 }
 
 .contacts__item {
     display: flex;
     align-items: center;
     gap: 30px;
-    padding: 6.5px 15px;
+    padding: 6.5px 14px;
     position: relative;
     overflow: visible;
     width: 100%;
 }
 
-.contacts__item::before {
-    content: "";
+.contacts__item::after {
+    content: '';
     position: absolute;
+    display: block;
     background-image: url('../images/contacts/right.png');
     background-repeat: no-repeat;
+    background-size: contain;
     background-position: center;
-    left: 0;
-    right: 0;
     top: 0;
     bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.contacts__list:last-child .contacts__item::after {
+    background-image: url("../images/contacts/left.png");
+}
+
+.contacts__item:hover::after {
+    opacity: 1;
 }
 
 .contacts__item-img {
@@ -82,25 +92,21 @@
     display: none;
 }
 
-.swiper {}
-
-.swiper-wrapper {}
-
-.swiper-slide {}
+@media(max-width: 1024px) {
+    .contacts__item::after {
+        display: none;
+    }
+}
 
 @media(min-width: 1024px) {
-    .contacts__inner {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    .contacts {
+        padding: 130px 0;
     }
 
-    .contacts-slider-wrapper {
-        display: block;
-        width: 100%;
-        max-width: 650px;
-        background-image: url("../images/contacts/phone.png");
-        background-repeat: no-repeat
+    .contacts__inner {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     .contacts__list {
@@ -108,7 +114,7 @@
     }
 
     .contacts__item {
-        padding: 40px 60px;
+        padding: 44px;
 
     }
 
@@ -127,5 +133,23 @@
     .contacts-slider .swiper-wrapper {
         left: 15px;
         top: -17px;
+    }
+
+    .contacts__item-img {
+        max-width: 108px;
+    }
+}
+
+@media(min-width: 1700px) {
+    .contacts__inner {
+        justify-content: space-between;
+    }
+
+    .contacts-slider-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 650px;
+        background-image: url("../images/contacts/phone.png");
+        background-repeat: no-repeat;
     }
 }

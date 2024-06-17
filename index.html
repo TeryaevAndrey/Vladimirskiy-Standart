@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="./styles/mob-menu.css" />
     <link rel="stylesheet" href="./styles/ogogon.css">
     <link rel="stylesheet" href="./styles/contacts.css">
+    <link rel="stylesheet" href="./styles/card.css">
+    <link rel="stylesheet" href="./styles/card-more.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
@@ -217,36 +219,72 @@
         </div>
     </div>
 
-    <section class="sausages">
-        <div class="container">
-            <div class="sausages__inner">
-                <div class="sausages__info">
-                    <img class="sausages__info-img" src="./images/footer-logo.svg" alt="Владимирский стандарт" />
+    <section class="relative">
+        <div class="sausages" onclick="openCard('sausages')">
+            <div class="container">
+                <div class="sausages__inner">
+                    <div class="sausages__info">
+                        <img class="sausages__info-img" src="./images/footer-logo.svg" alt="Владимирский стандарт" />
 
-                    <p class="sausages__info-text">
-                        Бренд «Владимирский Стандарт» представлен на рынке с 2000 года!
-                        <br /><br />
-                        Отборное мясо, использование уникальных рецептур, четкое
-                        соблюдение технологий и строгий контроль качества позволяют
-                        создавать достойный и всеми любимый продукт. <br />
-                        <br />
-                        Все лучшее – в Стандарте!
-                    </p>
-                </div>
+                        <p class="sausages__info-text">
+                            Бренд «Владимирский Стандарт» представлен на рынке с 2000 года!
+                            <br /><br />
+                            Отборное мясо, использование уникальных рецептур, четкое
+                            соблюдение технологий и строгий контроль качества позволяют
+                            создавать достойный и всеми любимый продукт. <br />
+                            <br />
+                            Все лучшее – в Стандарте!
+                        </p>
+                    </div>
 
-                <img class="sausages-best-img" src="./images/slogan.png" alt="Всё лучшее в стандарте" />
+                    <img class="sausages-best-img" src="./images/slogan.png" alt="Всё лучшее в стандарте" />
 
-                <div class="sausages__images">
-                    <div class="relative">
-                        <img class="greens-1" src="./images/greens-1.png" alt="greens-1" />
-                        <img class="greens-2" src="./images/greens-2.png" alt="greens-2" />
-                        <img class="greens-3" src="./images/greens-3.png" alt="greens-3" />
-                        <img class="pepper-1" src="./images/pepper-1.png" alt="pepper-1" />
-                        <img class="pepper-2" src="./images/pepper-2.png" alt="pepper-2" />
-                        <img class="sausage desktop" src="./images/sausage.png" alt="Sausage" />
-                        <img class="sausage mob" src="./images/sausage-mob.png" alt="Sausage mob" />
+                    <div class="sausages__images">
+                        <div class="relative">
+                            <img class="greens-1" src="./images/greens-1.png" alt="greens-1" />
+                            <img class="greens-2" src="./images/greens-2.png" alt="greens-2" />
+                            <img class="greens-3" src="./images/greens-3.png" alt="greens-3" />
+                            <img class="pepper-1" src="./images/pepper-1.png" alt="pepper-1" />
+                            <img class="pepper-2" src="./images/pepper-2.png" alt="pepper-2" />
+                            <img class="sausage desktop" src="./images/sausage.png" alt="Sausage" />
+                            <img class="sausage mob" src="./images/sausage-mob.png" alt="Sausage mob" />
+                        </div>
                     </div>
                 </div>
+                < class="relative" /div>
+            </div>
+        </div>
+        <div class="card" data-card="sausages" onclick="openCardMore('sausages-more')">
+            <img class="card__logo" src="./images/logo.png" alt="Logo" />
+
+            <img class="card__product" src="./images/product-1.png" alt="Product">
+            <div class="swiper product-1-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/product-1.png" alt="Product">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/product-1.png" alt="Product">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/product-1.png" alt="Product">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card__info">
+                <div class="card__weight">
+                    <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
+                    <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+
+                    <div class="card__weight-texts">
+                        <p class="card__weight-text">430 г</p>
+                        <p class="card__weight-text">800 г</p>
+                    </div>
+                </div>
+
+                <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
+                    лидер продаж, премия «Товар года»</p>
             </div>
         </div>
     </section>
@@ -358,7 +396,7 @@
                             <div class="swiper-slide">
                                 <img src="./images/contacts/slider-3.png" alt="Slider 2">
                             </div>
-    
+
                         </div>
                     </div>
                 </div>
@@ -435,12 +473,101 @@
         </div>
     </footer>
 
+    <div class="card-more" data-card="sausages-more">
+        <div class="card-more__inner">
+            <div class="card-more__left">
+                <div class="card-more__left-top">
+                    <img src="./images/product-1.png" alt="Product">
+
+                    <p class="card-more__left-top-text">350 г</p>
+                </div>
+
+                <div class="swiper product-slider-1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./images/product-1.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-1.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-1.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-1.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-1.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-1.png" alt="Product">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/product-1.png" alt="Product">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-more__right red">
+                <div class="card-more__header">
+                    <img class="card-more__logo" src="./images/logo.png" alt="Logo">
+
+                    <img class="card-more__close" src="./images/close.svg" alt="Close"
+                        onclick="closeCardMore('sausages-more')">
+                </div>
+
+                <div class="card-more__info">
+                    <h3 class="card-more__title">Сочно-Сливочные классические</h3>
+                    <p class="card-more__subtitle">Изделия колбасные вареные, продукт мясной категории В.</p>
+
+                    <div class="card-more__secondary">
+                        <div class="card-more__animals">
+                            <img class="card-more__animals-img chicken" src="./images/chicken.svg" alt="Chicken">
+                            <img class="card-more__animals-img pig" src="./images/pig.svg" alt="Pig">
+                            <img class="card-more__animals-img cow" src="./images/cow.svg" alt="Cow">
+                            <img class="card-more__animals-img turkey" src="./images/turkey.svg" alt="Turkey">
+                        </div>
+                        <div class="card-more__weight">
+                            <img class="card-more__weight-img" src="./images/weight-desktop.svg" alt="Weight" />
+                            <p class="card-more__weight-text">350 г</p>
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <p class="card-more__text"><span>Мясо:</span> свинина, говядина, курица</p>
+                        <p class="card-more__text"><span>Начинка -</span>свинина, говядина, вода, бульон куриный
+                            натуральный, мясо птицы механической обвалки, шпик, лук репчатый, масло сливочное, сливки
+                            сухие, соль, специи (лук, чеснок, лавровый лист), яичный порошок, экстракты специй (перец
+                            черный, имбирь).</p>
+                        <img class="card-more-small-img float-right" src="./images/card-more-1.png" alt="card-more">
+                        <p class="card-more__text"><span>Тесто -</span> мука пшеничная высшего сорта, вода, соль, масло
+                            растительное.</p>
+                        <p class="card-more__text"><span>Упаковка:</span> пакет</p>
+                        <p class="card-more__text"><span>Срок годности:</span> 30 суток <br /> Пищевая ценность 100г
+                            продукта: белки-10г, жиры-8г, углеводы-26г. Энергетическая ценность (калорийность) 100г
+                            продукта: 908 кДж/216ккал.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./scripts/animations.js"></script>
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/sliders.js"></script>
+    <script src="./scripts/cards.js"></script>
 </body>
 
 </html>

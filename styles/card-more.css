@@ -1,0 +1,273 @@
+.card-more {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.card-more.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.card-more__inner {
+    display: flex;
+    height: 100%;
+}
+
+.card-more__left {
+    display: none;
+    height: 100%;
+    position: relative;
+}
+
+.card-more__right {
+    height: 100%;
+    width: 100%;
+    padding: 24px;
+    position: relative;
+    color: #fff;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-more__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-more__logo {
+    max-width: 136px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 68px;
+}
+
+.card-more__close {
+    margin-left: auto;
+    width: 23px;
+    min-width: 23px;
+    height: 23px;
+    cursor: pointer
+}
+
+.card-more__right.red {
+    background-color: #C9000B;
+}
+
+.card-more__title {
+    font-size: 20px;
+    line-height: 121%;
+    margin-top: 50px;
+}
+
+.card-more__subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.card-more__text {
+    font-size: 12px;
+    line-height: 121%;
+    margin-top: 6px;
+}
+
+.card-more__text span {
+    font-weight: 900;
+}
+
+.card-more__secondary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.card-more__animals {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 95px;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.card-more__animals-img {
+    width: 48px;
+}
+
+.card-more__animals-img.chicken {
+    width: 28px;
+}
+
+.card-more__weight {
+    position: relative;
+    max-width: 112px;
+    width: 100%;
+}
+
+.card-more__weight-img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    min-height: 52px;
+    filter: brightness(0) invert(1);
+}
+
+.card-more__weight-text {
+    font-size: 20px;
+    line-height: 157%;
+    margin-left: 50px;
+    font-weight: 500;
+    transform: translateY(15px);
+}
+
+.card-more-small-img.float-right {
+    float: right;
+    margin: 0 0 10px 10px;
+    width: 53px;
+    height: auto;
+    object-fit: contain;
+}
+
+.card-more__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width: 1024px) {
+
+
+    .card-more__left {
+        display: block;
+    }
+
+    .card-more__inner {
+        display: flex;
+        align-items: center;
+    }
+
+    .card-more__left {
+        width: 55%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 38px 50px;
+        overflow-y: auto;
+    }
+
+    .card-more__left .swiper {
+        width: 100%;
+        margin-top: 16px;
+        height: 100%;
+        min-height: 200px;
+    }
+
+    .card-more__left .swiper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-more__left-top {
+        margin: 0 auto;
+    }
+
+    .card-more__right {
+        width: 45%;
+        padding: 38px 50px;
+    }
+
+    .card-more__logo {
+        position: unset;
+        max-width: 250px;
+        width: 100%;
+        transform: none;
+    }
+
+    .card-more__left-top-text {
+        font-size: 32px;
+        line-height: 157%;
+        font-weight: 500;
+        color: #C49161;
+        text-align: center;
+        margin-top: 16px;
+    }
+
+    .card-more__close {
+        min-width: 36px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .card-more__title {
+        font-size: 40px;
+    }
+
+    .card-more__subtitle {
+        font-size: 32px;
+    }
+
+    .card-more__secondary {
+        margin: 54px 0;
+        align-items: center;
+    }
+
+    .card-more__animals {
+        max-width: 100%;
+        justify-content: start;
+        gap: 28px;
+    }
+
+    .card-more__animals-img {
+        width: 82px;
+        height: 100%;
+    }
+
+    .card-more__animals-img.chicken {
+        width: 46px;
+    }
+
+    .card-more__animals-img.turkey {
+        width: 56px;
+    }
+
+    .card-more__weight {
+        max-width: 216px;
+        min-height: 102px;
+    }
+
+    .card-more__weight-text {
+        font-size: 40px;
+        margin-left: 100px;
+        transform: translateY(45px);
+    }
+
+    .card-more__text {
+        font-size: 22px;
+        line-height: 121%;
+    }
+
+
+    .card-more-small-img.float-right {
+        width: 110px;
+        height: auto;
+        object-fit: contain;
+    }
+}

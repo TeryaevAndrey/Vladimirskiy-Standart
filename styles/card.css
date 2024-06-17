@@ -1,0 +1,157 @@
+.card {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: unset;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 10;
+    padding: 0 20px;
+    overflow-y: auto;
+    right: -100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card.active {
+    right: 0;
+}
+
+.card__logo {
+    max-width: 155px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.card__product {
+    margin-top: 18px;
+    width: 100%;
+}
+
+.card .swiper {
+    display: none;
+}
+
+.card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 23px;
+    margin-top: auto;
+}
+
+.card__weight {
+    max-width: 142px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.card__weight-img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    max-height: 33px;
+}
+
+.card__weight-texts {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 30px;
+    transform: translateY(5px);
+    position: relative;
+}
+
+.card__weight-texts::after {
+    content: "/";
+    position: absolute;
+    left: 42%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 15px;
+    font-weight: 400;
+    color: #C49161;
+}
+
+.card__weight-text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 157%;
+    color: #C49161;
+}
+
+.card__info-text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    color: #003362;
+}
+
+.card__info-text span {
+    font-weight: 500;
+}
+
+@media(min-width: 1024px) {
+    .card {
+        position: absolute;
+        max-width: 573px;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        left: unset;
+        padding: 50px 36px;
+    }
+
+    .card.active {
+        right: 0;
+    }
+
+    .card__product {
+        margin-top: 70px;
+        max-height: 530px;
+    }
+
+    .card__weight {
+        max-width: 120px;
+    }
+
+    .card__weight-img {
+        max-height: unset;
+    }
+
+    .card__weight-texts {
+        flex-direction: column;
+        gap: 0;
+        transform: translateY(-10px);
+        left: 11px;
+    }
+
+    .card__weight-texts::after {
+        content: "";
+        left: 50%;
+        right: 0;
+        transform: translateX(-50%) translateY(-50%);
+        width: 65px;
+        height: 1px;
+        background-color: #C49161;
+    }
+
+    .card__weight-text {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 157%;
+    }
+
+    .card__info-text {
+        font-size: 22px;
+        line-height: 157%;
+    }
+}
