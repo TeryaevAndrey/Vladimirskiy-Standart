@@ -39,31 +39,15 @@
     position: relative;
     overflow: visible;
     width: 100%;
-}
-
-.contacts__item::after {
-    content: '';
-    position: absolute;
-    display: block;
-    background-image: url('../images/contacts/right.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
+    border: 1px solid transparent;
+    border-radius: 20px;
     transition: all 0.2s ease;
 }
 
-.contacts__list:last-child .contacts__item::after {
-    background-image: url("../images/contacts/left.png");
+.contacts__item:hover {
+    border: 1px solid #d7a461;
 }
 
-.contacts__item:hover::after {
-    opacity: 1;
-}
 
 .contacts__item-img {
     max-width: 70px;
@@ -119,35 +103,9 @@
         align-items: center;
     }
 
-    /* .contacts__list {
-        width: 580px;
-    }
-
-    .contacts__item {
-        padding: 44px;
-
-    }
-
-    .contacts__item-title {
-        font-size: 30px;
-    }
-
-    .contacts__item-link {
-        font-size: 20px;
-    } */
-
     .contacs__item-text {
         font-size: 15px;
     }
-
-    /* .contacts-slider .swiper-wrapper {
-        left: 15px;
-        top: -17px;
-    } */
-
-    /* .contacts__item-img {
-        max-width: 108px;
-    } */
 }
 
 @media(min-width: 1024px) {
@@ -213,9 +171,22 @@
     .contacts-slider {
         width: 104% !important;
     }
+
+    .contacts__item {
+        padding: 34px;
+
+    }
+
+    .contacts__item-title {
+        font-size: 24px;
+    }
+
+    .contacts__item-link {
+        font-size: 16px;
+    }
 }
 
-@media(min-width: 1700px) {
+@media(min-width: 1680px) {
     .contacts-slider-wrapper {
         background-size: cover;
         max-height: 100%;
@@ -235,5 +206,23 @@
 
     .contacts-slider .swiper-slide {
         height: 100%;
+    }
+
+
+    .contacts__item {
+        padding: 44px;
+
+    }
+
+    .contacts__item-title {
+        font-size: 30px;
+    }
+
+    .contacts__item-link {
+        font-size: 20px;
+    }
+
+    .contacts__item-img {
+        max-width: 108px;
     }
 }
