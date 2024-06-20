@@ -1,8 +1,6 @@
 const swiper = new Swiper(".swiper.contacts-slider", {
   loop: true,
-  autoplay: {
-    delay: 1000,
-  },
+
   slidesPerView: 1,
 });
 
