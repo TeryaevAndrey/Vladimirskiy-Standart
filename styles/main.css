@@ -57,7 +57,7 @@ button {
 }
 
 .mob-none {
-  display: none;
+  display: none !important;
 }
 
 .desktop-none {

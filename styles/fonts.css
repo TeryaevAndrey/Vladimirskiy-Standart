@@ -25,3 +25,24 @@
     font-weight: 700;
     src: url('../fonts/CraftworkGrotesk/CraftworkGrotesk-Bold.ttf');
 }
+
+@font-face {
+    font-family: 'DINPro';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/DINPro/dinpro_bold.otf');
+}
+
+@font-face {
+    font-family: 'DINPro';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/DINPro/dinpro_medium.otf');
+}
+
+@font-face {
+    font-family: 'DINPro';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/DINPro/dinpro_light.otf');
+}

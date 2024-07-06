@@ -23,11 +23,16 @@
 }
 
 .menu__item {
+    font-family: "DINPro", sans-serif;
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
     color: #fff;
     transition: all 0.2s ease;
+}
+
+.menu__link {
+    font-family: inherit;
 }
 
 .menu__item:hover {

@@ -21,8 +21,8 @@
 }
 
 .mob-menu.active {
-    opacity: 1;
-    pointer-events: all;
+  opacity: 1;
+  pointer-events: all;
 }
 
 .mob-menu__inner {
@@ -34,13 +34,13 @@
 }
 
 .mob-menu__close {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    position: absolute;
-    top: 20px;
-    right: 0;
-    cursor: pointer;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  cursor: pointer;
 }
 
 .mob-menu__list {
@@ -53,16 +53,18 @@
 }
 
 .mob-menu__item {
-    font-size: 20px;
-    font-weight: 400;
+  font-family: "DINPro", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .mob-menu__item.bold {
-    font-weight: 700;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 @media(min-width: 1024px) {
-    .mob-menu__item {
-        font-size: 40px;
-    }
+  .mob-menu__item {
+    font-size: 40px !important;
+  }
 }

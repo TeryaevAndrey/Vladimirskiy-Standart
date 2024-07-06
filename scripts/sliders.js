@@ -12,7 +12,7 @@ new Swiper(".product-slider-1", {
   autoplay: {
     delay: 1000,
   },
-  spaceBetween: 16
+  spaceBetween: 16,
 });
 
 new Swiper(".product-slider-2", {
@@ -21,7 +21,7 @@ new Swiper(".product-slider-2", {
   autoplay: {
     delay: 1000,
   },
-  spaceBetween: 16
+  spaceBetween: 16,
 });
 
 new Swiper(".product-slider-3", {
@@ -30,5 +30,5 @@ new Swiper(".product-slider-3", {
   autoplay: {
     delay: 1000,
   },
-  spaceBetween: 16
+  spaceBetween: 16,
 });
