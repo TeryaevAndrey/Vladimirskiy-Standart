@@ -61,7 +61,7 @@ button {
 }
 
 .desktop-none {
-  display: block;
+  display: block !important;
 }
 
 .relative {
@@ -76,11 +76,11 @@ button {
 
 @media (min-width: 1024px) {
   .mob-none {
-    display: block;
+    display: block !important;
   }
 
   .desktop-none {
-    display: none;
+    display: none !important;
   }
 
   .link {
