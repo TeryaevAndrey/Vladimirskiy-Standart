@@ -2,10 +2,6 @@
     padding: 40px 0;
 }
 
-.container {}
-
-.geography__inner {}
-
 .geography__title {
     font-size: 23px;
     font-weight: 500;
@@ -38,16 +34,18 @@
     height: auto;
 }
 
+.geography__map-wrapper {
+    margin-top: 30px;
+}
+
 .geography__map {
     width: 100%;
-    margin-top: 30px;
     position: relative;
     overflow: hidden;
 }
 
 .geography__map-wrapper {
     position: relative;
-    overflow: hidden;
 }
 
 .geography__map-wrapper::after {
@@ -56,7 +54,7 @@
     top: 0;
     left: -100%;
     width: 200%;
-    height: 200%;
+    height: 100%;
     background: linear-gradient(90deg,
             rgba(255, 255, 255, 0.01) 0%,
             rgba(255, 255, 255, 0.05) 10%,
@@ -149,8 +147,11 @@
         width: 26px;
     }
 
-    .geography__map {
+    .geography__map-wrapper {
         margin-top: -100px;
+    }
+
+    .geography__map {
         max-width: 80%;
         margin-left: auto;
         margin-right: auto;

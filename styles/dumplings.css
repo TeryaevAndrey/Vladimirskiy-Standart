@@ -1,5 +1,14 @@
+.dumplings-wrapper {
+  height: 200vh;
+}
+
+.dumplings-sticky {
+  position: sticky;
+  top: 0;
+}
+
 .dumplings {
-  background-image: url("../images/dumplings-mob-1.jpg");
+  background-image: url("../images/dumplings-mob-2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -8,24 +17,24 @@
   position: relative;
   padding: 64px 0;
   overflow: hidden;
+  transition: all 1s ease;
 }
 
 .dumplings.change-bg {
-  background-image: url("../images/dumplings-mob-2.jpg");
+  background-image: url("../images/dumplings-mob-1.jpg");
 }
 
 @media (min-width: 1024px) {
   .dumplings {
-    background-image: url("../images/dumplings-1.jpg");
+    background-image: url("../images/dumplings-2.jpg");
   }
 
   .dumplings.change-bg {
-    background-image: url("../images/dumplings-2.jpg");
+    background-image: url("../images/dumplings-1.jpg");
   }
 }
 
-.dumplings__inner {
-}
+
 .dumplings__info {
   display: flex;
   flex-direction: column;
@@ -33,6 +42,7 @@
   width: 100%;
   max-width: 222px;
 }
+
 .dumplings__info-text {
   font-size: 12px;
   font-weight: 500;
@@ -41,20 +51,20 @@
 }
 
 @media(min-width: 600px) {
-    .dumplings__info-text {
-        font-size: 16px;
-    }
+  .dumplings__info-text {
+    font-size: 16px;
+  }
 }
 
 @media(min-width: 1024px) {
-    .dumplings__info-text {
-        font-size: 22px;
-    }
+  .dumplings__info-text {
+    font-size: 22px;
+  }
 
-    .dumplings__info {
-        position: absolute;
-        top: 64px;
-        left: 40%;
-        max-width: 536px;
-    }
+  .dumplings__info {
+    position: absolute;
+    top: 64px;
+    left: 40%;
+    max-width: 536px;
+  }
 }

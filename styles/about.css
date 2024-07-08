@@ -1,3 +1,12 @@
+.about-wrapper {
+    height: 200vh;
+}
+
+.about-sticky {
+    position: sticky;
+    top: 0;
+}
+
 .about {
     background-image: url("../images/about-bg-1.jpg");
     background-repeat: no-repeat;
@@ -21,7 +30,6 @@
 }
 
 .about__content {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,8 +63,10 @@
     }
 
     .about__content-img {
-        max-width: 510px;
+        width: auto;
+        max-height: 60vh;
         transform: none;
+        margin-top: -65px;
     }
 
     .about__text {
@@ -83,7 +93,8 @@
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translateX(-50%);display: block;
+        transform: translateX(-50%);
+        display: block;
     }
 }
 

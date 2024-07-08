@@ -1,36 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   gsap.from(".about__text.left", {
-    x: -100,
+    x: -300,
     opacity: 0,
-    duration: 1,
     stagger: 0.3,
-    scrollTrigger: {
-      trigger: ".about",
-      start: "top 80%",
-      toggleActions: "play none none reverse",
-    },
-  });
-
-  gsap.from(".about__text.right", {
-    x: 100,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.3,
-    scrollTrigger: {
-      trigger: ".about",
-      start: "top 80%",
-      toggleActions: "play none none reverse",
-    },
-  });
-
-  gsap.to(".about__content-img", {
-    scale: 0.8,
     scrollTrigger: {
       trigger: ".about",
       start: "top 80%",
       end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.from(".about__text.right", {
+    x: 300,
+    opacity: 0,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top 80%",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".about__content-img", {
+    scale: 0.7,
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top 0",
+      end: "bottom 10%",
       scrub: true,
     },
   });
@@ -219,45 +219,62 @@ document.addEventListener("DOMContentLoaded", function () {
     .timeline({
       scrollTrigger: {
         trigger: ".sausages__images",
-        start: "top 80%", // когда верхняя часть блока .sausages__images достигает 80% высоты окна просмотра
-        end: "bottom 20%", // когда нижняя часть блока .sausages__images достигает 20% высоты окна просмотра
-        toggleActions: "play none none none", // запуск анимации, никаких действий при прокрутке назад
+        start: "top 90%", // когда верхняя часть блока .sausages__images достигает 80% высоты окна просмотра
+        end: "bottom 10%", // когда нижняя часть блока .sausages__images достигает 20% высоты окна просмотра
         markers: false, // установить в true для отладки
       },
     })
+    .from(".sausage.desktop", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
+    .from(".sausage.mob", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".greens-1", { duration: 0.8, y: 200, opacity: 0 })
     .from(".greens-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".greens-3", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".pepper-1", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".pepper-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".sausage.desktop", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".sausage.mob", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5");
+    .from(".pepper-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5");
 
-  gsap.from(".sausages__info", {
+  const tl2 = gsap.timeline({
     scrollTrigger: {
       trigger: ".sausages__info",
-      start: "top 90%", // когда верхняя часть блока .sausages__info достигает 90% высоты окна просмотра
-      end: "bottom 10%", // когда нижняя часть блока .sausages__info достигает 10% высоты окна просмотра
-      toggleActions: "play none none none", // запуск анимации, никаких действий при прокрутке назад
-      markers: false, // установить в true для отладки
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play none none none",
+      markers: false,
     },
-    duration: 1, // длительность анимации
-    x: -200, // начальная позиция блока по оси X (слева от экрана)
-    opacity: 0, // начальная прозрачность
   });
+
+  tl2
+    .from(".sausages__info-img", {
+      duration: 1,
+      x: -200,
+      opacity: 0,
+    })
+    .from(
+      ".sausages-best-img",
+      {
+        duration: 1,
+        x: -200,
+        opacity: 0,
+      },
+      ">"
+    )
+    .from(
+      ".sausages__info-text",
+      {
+        duration: 1,
+        x: -200,
+        opacity: 0,
+      },
+      ">"
+    );
 
   ScrollTrigger.create({
     trigger: ".dumplings",
-    start: "top 80%",
-    end: "bottom top",
+    start: "top 0",
+    end: "bottom 10%",
     scrub: true,
     onEnter: () =>
       document.querySelector(".dumplings").classList.add("change-bg"),
     onLeaveBack: () =>
-      document.querySelector(".dumplings").classList.remove("change-bg"),
-    onEnterBack: () =>
-      document.querySelector(".dumplings").classList.add("change-bg"),
-    onLeave: () =>
       document.querySelector(".dumplings").classList.remove("change-bg"),
   });
 
@@ -270,8 +287,8 @@ document.addEventListener("DOMContentLoaded", function () {
         trigger: ".dumplings__info",
         start: "top 90%",
         end: "bottom 10%",
-        toggleActions: "play none none none",
         markers: false,
+        scrub: true,
       },
       duration: 1,
       y: -200, // начальная позиция блока по оси Y (выдвижение сверху)
@@ -284,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.from(".dumplings__info", {
       scrollTrigger: {
         trigger: ".dumplings__info",
-        start: "top 90%",
+        start: "top 0",
         end: "bottom 10%",
         toggleActions: "play none none none",
         markers: false,
@@ -335,4 +352,45 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   });
+
+  // const sects = document.querySelectorAll(".sect");
+  // let currentIndex = 0;
+
+  // function scrollToSection(index) {
+  //   gsap.to(window, {
+  //     scrollTo: sects[index],
+  //     duration: 1,
+  //     onComplete: () => (currentIndex = index),
+  //   });
+  // }
+
+  // document.addEventListener(
+  //   "wheel",
+  //   (event) => {
+  //     if (event.deltaY > 0 && currentIndex < sects.length - 1) {
+  //       scrollToSection(currentIndex + 1);
+  //     } else if (event.deltaY < 0 && currentIndex > 0) {
+  //       scrollToSection(currentIndex - 1);
+  //     }
+  //     event.preventDefault();
+  //   },
+  //   { passive: false }
+  // );
+
+  // document.addEventListener("keydown", (event) => {
+  //   if (event.key === "ArrowDown" && currentIndex < sects.length - 1) {
+  //     scrollToSection(currentIndex + 1);
+  //   } else if (event.key === "ArrowUp" && currentIndex > 0) {
+  //     scrollToSection(currentIndex - 1);
+  //   }
+  // });
+
+  // gsap.utils.toArray(".with-sticky").forEach((section) => {
+  //   ScrollTrigger.create({
+  //     trigger: section,
+  //     start: "top top",
+  //     end: "bottom top",
+  //     pinSpacing: false,
+  //   });
+  // });
 });
