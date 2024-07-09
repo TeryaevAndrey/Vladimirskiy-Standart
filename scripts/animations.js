@@ -85,12 +85,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   let lastScrollPosition = 0;
-
   gsap.registerPlugin(Observer);
 
-  const scrollingText = gsap.utils.toArray(".rail h4");
+  const scrollingText1 = gsap.utils.toArray(".running-line:first-child .rail h4");
+  const scrollingText2 = gsap.utils.toArray(".running-line:nth-child(2) .rail h4");
+  const scrollingText3 = gsap.utils.toArray(".running-line:last-child .rail h4");
 
-  const tl = horizontalLoop(scrollingText, {
+  const tl1 = horizontalLoop(scrollingText1, {
+    repeat: -1,
+  });
+
+  const tl2 = horizontalLoop(scrollingText3, {
+    repeat: -1,
+    reversed: true,
+  });
+
+  const tl3 = horizontalLoop(scrollingText2, {
     repeat: -1,
   });
 
@@ -106,8 +116,26 @@ document.addEventListener("DOMContentLoaded", function () {
             ease: "none",
           },
         })
-        .to(tl, { timeScale: factor * 2.5, duration: 0.2 })
-        .to(tl, { timeScale: factor / 2.5, duration: 1 }, "+=0.3");
+        .to(tl1, { timeScale: factor * 2.5, duration: 0.2 })
+        .to(tl1, { timeScale: factor / 2.5, duration: 1 }, "+=0.3");
+
+      gsap
+        .timeline({
+          defaults: {
+            ease: "none",
+          },
+        })
+        .to(tl2, { timeScale: factor * -2.5, duration: 0.2 })
+        .to(tl2, { timeScale: factor / -2.5, duration: 1 }, "+=0.3");
+
+      gsap
+        .timeline({
+          defaults: {
+            ease: "none",
+          },
+        })
+        .to(tl3, { timeScale: factor * 2.5, duration: 0.2 })
+        .to(tl3, { timeScale: factor / 2.5, duration: 1 }, "+=0.3");
     },
   });
 
@@ -232,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .from(".pepper-1", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".pepper-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5");
 
-  const tl2 = gsap.timeline({
+  const tl4 = gsap.timeline({
     scrollTrigger: {
       trigger: ".sausages__info",
       start: "top 90%",
@@ -242,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  tl2
+  tl4
     .from(".sausages__info-img", {
       duration: 1,
       x: -200,
@@ -291,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrub: true,
       },
       duration: 1,
-      y: -200, // начальная позиция блока по оси Y (выдвижение сверху)
+      y: -300, // начальная позиция блока по оси Y (выдвижение сверху)
       opacity: 0,
     });
   });
