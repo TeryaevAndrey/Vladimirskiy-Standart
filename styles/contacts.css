@@ -138,14 +138,14 @@
 
     .contacts-slider-wrapper {
         display: block;
-        width: 100%;
-        max-width: 530px;
+        width: 400px;
+        min-width: 400px;
         background-image: url("../images/contacts/phone.png");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
         position: relative;
-        min-height: 500px;
+        height: 500px
     }
 
     .contacts-slider {
@@ -159,42 +159,19 @@
     .contacts-slider .swiper-slide {
         width: 100%;
         height: 95%;
-        top: 0;
+        top: -33px;
+        left: -15px;
     }
 
     .contacts-slider img {
-        width: 100%;
-        height: 100%;
+        width: 113%;
+        height: 116%;
         object-fit: contain;
     }
 }
 
-@media(min-width: 1125px) {
-    .contacts-slider {
-        top: 1%;
-        height: 102% !important;
-    }
-}
-
-@media(min-width: 1140px) {
-    .contacts-slider {
-        top: -2.5%;
-        left: -2.5%;
-        height: 109% !important;
-        width: 103% !important;
-    }
-}
 
 @media(min-width: 1400px) {
-    .contacts-slider-wrapper {
-        max-width: 650px;
-        object-fit: cover;
-    }
-
-    .contacts-slider {
-        width: 104% !important;
-    }
-
     .contacts__item {
         padding: 34px;
     }
@@ -209,25 +186,43 @@
 }
 
 @media(min-width: 1680px) {
-    .contacts-slider-wrapper {
+    /* .contacts-slider-wrapper {
         background-size: cover;
         max-height: 100%;
         min-height: 783px;
-    }
+    } */
 
-    .contacts-slider {
+    /* .contacts-slider {
         width: 99% !important;
         height: 100% !important;
         top: 0;
         left: 0;
-    }
+    } */
 
-    .contacts-slider img {
+    /* .contacts-slider img {
         object-fit: cover;
     }
 
     .contacts-slider .swiper-slide {
         height: 100%;
+    } */
+
+    .contacts-slider-wrapper {
+        width: 612px;
+        min-width: 612px;
+        max-width: 612px;
+        height: 783px;
+        min-height: 783px;
+    }
+
+    .contacts-slider .swiper-slide {
+        top: -53px;
+        left: -16px;
+    }
+
+    .contacts-slider img {
+        width: 111%;
+        height: 117%;
     }
 
 
