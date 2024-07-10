@@ -35,7 +35,6 @@ button {
   padding: 0 14px;
   margin: 0 auto;
   width: 100%;
-  overflow-x: hidden;
 }
 
 .scrollbar-none::-webkit-scrollbar {
@@ -60,6 +59,10 @@ button {
   display: none !important;
 }
 
+.mob-inline-none {
+  display: none !important;
+}
+
 .desktop-none {
   display: block !important;
 }
@@ -77,6 +80,10 @@ button {
 @media (min-width: 1024px) {
   .mob-none {
     display: block !important;
+  }
+
+  .mob-inline-none {
+    display: inline-block !important;
   }
 
   .desktop-none {

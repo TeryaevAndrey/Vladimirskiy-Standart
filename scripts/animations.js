@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       trigger: ".about",
       start: "top 80%",
       end: "bottom top",
-      scrub: true,
+      scrub: window.innerWidth >= 1024,
     },
   });
 
@@ -21,19 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
       trigger: ".about",
       start: "top 80%",
       end: "bottom top",
-      scrub: true,
+      scrub: window.innerWidth >= 1024,
     },
   });
 
-  gsap.to(".about__content-img", {
-    scale: 0.7,
-    scrollTrigger: {
-      trigger: ".about",
-      start: "top 0",
-      end: "bottom 10%",
-      scrub: true,
-    },
-  });
+  if (window.innerWidth >= 1024) {
+    gsap.to(".about__content-img", {
+      scale: 0.7,
+      scrollTrigger: {
+        trigger: ".about",
+        start: "top 0",
+        end: "bottom 10%",
+        scrub: window.innerWidth >= 1024,
+      },
+    });
+  }
 
   ScrollTrigger.create({
     trigger: ".about",
@@ -87,9 +89,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let lastScrollPosition = 0;
   gsap.registerPlugin(Observer);
 
-  const scrollingText1 = gsap.utils.toArray(".running-line:first-child .rail h4");
-  const scrollingText2 = gsap.utils.toArray(".running-line:nth-child(2) .rail h4");
-  const scrollingText3 = gsap.utils.toArray(".running-line:last-child .rail h4");
+  const scrollingText1 = gsap.utils.toArray(
+    ".running-line:first-child .rail h4"
+  );
+  const scrollingText2 = gsap.utils.toArray(
+    ".running-line:nth-child(2) .rail h4"
+  );
+  const scrollingText3 = gsap.utils.toArray(
+    ".running-line:last-child .rail h4"
+  );
 
   const tl1 = horizontalLoop(scrollingText1, {
     repeat: -1,
@@ -299,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
     trigger: ".dumplings",
     start: "top 0",
     end: "bottom 10%",
-    scrub: true,
+    scrub: window.innerWidth >= 1024,
     onEnter: () =>
       document.querySelector(".dumplings").classList.add("change-bg"),
     onLeaveBack: () =>
@@ -312,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Анимация для экранов шире 1024px (выдвижение сверху)
     gsap.from(".dumplings__info", {
       scrollTrigger: {
-        trigger: ".dumplings__info",
+        trigger: ".dumplings",
         start: "top 90%",
         end: "bottom 10%",
         markers: false,
@@ -328,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Анимация для экранов уже 1024px (выдвижение слева)
     gsap.from(".dumplings__info", {
       scrollTrigger: {
-        trigger: ".dumplings__info",
+        trigger: ".dumplings",
         start: "top 0",
         end: "bottom 10%",
         toggleActions: "play none none none",

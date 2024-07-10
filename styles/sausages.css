@@ -101,45 +101,50 @@
 
 .greens-1 {
   position: absolute;
-  right: 0;
-  bottom: 20%;
-  transform: rotate(23deg);
-  width: 100%;
+  width: 335px;
   z-index: 1;
+  object-fit: scale-down;
+  top: 205px;
+  right: -125px;
+  transform: rotate(23deg);
 }
 
 .greens-2 {
   position: absolute;
-  width: 100%;
+  width: 508px;
   z-index: 1;
-  bottom: 10%;
-  transform: rotate(-13deg);
+  transform: rotate(10deg);
+  bottom: 60px;
+  left: 10px;
+  object-fit: scale-down;
 }
 
 .greens-3 {
   position: absolute;
   width: 100%;
   z-index: 1;
-  right: -17%;
-  top: 40%;
-  transform: translateY(-50%) rotate(51deg);
+  transform: rotate(51deg);
+  right: -60px;
+  top: 100px;
+  object-fit: scale-down;
 }
 
 .pepper-1 {
   position: absolute;
   width: 100%;
   z-index: 1;
-  transform: rotate(32deg);
-  right: -60%;
+  right: -305px;
+  top: 132px;
+  object-fit: scale-down;
 }
 
 .pepper-2 {
   position: absolute;
   width: 100%;
   z-index: 1;
-  transform: rotate(5deg);
-  bottom: 20%;
-  right: 0;
+  bottom: 48px;
+  left: 30px;
+  object-fit: scale-down;
 }
 
 .sausage {
@@ -188,24 +193,63 @@
     transform: translateX(-50%);
   }
 
+  .pepper-1 {
+    right: -180px;
+    top: 30px;
+    height: 786px;
+    object-fit: scale-down;
+  }
+
+  .pepper-2 {
+    width: 753px;
+    left: unset;
+    right: 126px;
+    bottom: -15px;
+    transform: rotate(10deg);
+  }
+
   .greens-1 {
-    max-width: 1000px;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%) rotate(-20deg);
+    width: 1006px;
+    top: -2px;
+    right: 127px;
+    transform: rotate(1deg);
   }
 
   .greens-2 {
-    max-width: 1500px;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%) rotate(-10deg);
+    width: 1400px;
+    transform: rotate(0);
+    bottom: -70px;
+    right: 190px;
+    left: unset;
   }
 
   .greens-3 {
-    max-width: 856px;
-    top: 0;
-    left: 70%;
-    transform: translateX(-50%) rotate(-10deg);
+    width: 856px;
+    top: -20px;
+    right: -30px;
+    transform: rotate(1deg);
+    z-index: 2;
+  }
+}
+
+@media(min-height: 940px) {
+  .greens-2 {
+    bottom: 0;
+  }
+}
+
+@media(min-width: 1600px) {
+  .greens-1 {
+    width: 1300px;
+    right: 10%;
+    top: -5%;
+  }
+
+  .greens-2 {
+    right: 400px;
+  }
+
+  .greens-3 {
+    right: 9%;
   }
 }
