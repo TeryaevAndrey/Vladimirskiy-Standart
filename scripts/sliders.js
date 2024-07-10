@@ -32,3 +32,27 @@ new Swiper(".product-slider-3", {
   },
   spaceBetween: 16,
 });
+
+new Swiper(".swiper.sausages-slider", {
+  loop: true,
+  autoplay: {
+    delay: 2000,
+  },
+  slidesPerView: 1,
+});
+
+new Swiper(".swiper.dumplings-slider", {
+  loop: true,
+  autoplay: {
+    delay: 2000,
+  },
+  slidesPerView: 1,
+});
+
+new Swiper(".swiper.ogogon-slider", {
+  loop: true,
+  autoplay: {
+    delay: 2000,
+  },
+  slidesPerView: 1,
+});

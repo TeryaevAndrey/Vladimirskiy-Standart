@@ -94,3 +94,11 @@ button {
     font-size: 22px;
   }
 }
+
+.card-slider .swiper {
+  display: block !important;
+}
+
+.card-slider .swiper-slide {
+  width: 100% !important;
+}

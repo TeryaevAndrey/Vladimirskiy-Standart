@@ -99,7 +99,8 @@
                     <img class="about__img-logo" src="./images/logo-2.png" alt="About logo" />
 
                     <div class="about__inner">
-                        <h2 class="about__title">Все лучшее <span class="mob-inline-none">–</span> <br class="desktop-none" /> <span class="ml">в Стандарте!</span></h2>
+                        <h2 class="about__title">Все лучшее <span class="mob-inline-none">–</span> <br
+                                class="desktop-none" /> <span class="ml">в Стандарте!</span></h2>
 
                         <div class="about__content">
                             <p class="about__text left">
@@ -254,25 +255,69 @@
                 </div>
             </div>
         </div>
-        <div class="card scrollbar-none outside card-sausages" data-card="sausages"
+        <div class="card scrollbar-none outside card-sausages card-slider" data-card="sausages"
             onclick="openCardMore('sausages-more')">
             <img class="card__logo" src="./images/logo-2.png" alt="Logo" />
 
-            <img class="card__product" src="./images/product-1.png" alt="Product">
+            <div class="swiper sausages-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="card__product" src="./images/product-1.png" alt="Product">
 
-            <div class="card__info">
-                <div class="card__weight">
-                    <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
-                    <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+                        <div class="card__info">
+                            <div class="card__weight">
+                                <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
+                                <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
 
-                    <div class="card__weight-texts">
-                        <p class="card__weight-text">430 г</p>
-                        <p class="card__weight-text">800 г</p>
+                                <div class="card__weight-texts">
+                                    <p class="card__weight-text">430 г</p>
+                                    <p class="card__weight-text">800 г</p>
+                                </div>
+                            </div>
+
+                            <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
+                                лидер продаж, премия «Товар года»</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img class="card__product" src="./images/product-1.png" alt="Product">
+
+                        <div class="card__info">
+                            <div class="card__weight">
+                                <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
+                                <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+
+                                <div class="card__weight-texts">
+                                    <p class="card__weight-text">430 г</p>
+                                    <p class="card__weight-text">800 г</p>
+                                </div>
+                            </div>
+
+                            <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
+                                лидер продаж, премия «Товар года»</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img class="card__product" src="./images/product-1.png" alt="Product">
+
+                        <div class="card__info">
+                            <div class="card__weight">
+                                <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
+                                <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+
+                                <div class="card__weight-texts">
+                                    <p class="card__weight-text">430 г</p>
+                                    <p class="card__weight-text">800 г</p>
+                                </div>
+                            </div>
+
+                            <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
+                                лидер продаж, премия «Товар года»</p>
+                        </div>
                     </div>
                 </div>
-
-                <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
-                    лидер продаж, премия «Товар года»</p>
             </div>
 
             <div class="card__close link" onclick="closeCard('sausages')">Закрыть</div>
@@ -301,24 +346,75 @@
                     </div>
                 </div>
 
-                <div class="card scrollbar-none outside" data-card="dumplings" onclick="openCardMore('dumplings-more')">
+                <div class="card scrollbar-none outside card-slider" data-card="dumplings"
+                    onclick="openCardMore('dumplings-more')">
                     <img class="card__logo" src="./images/vladbeef.png" alt="Vladbeef" />
 
-                    <img class="card__product" src="./images/product-2.png" alt="Product">
+                    <div class="swiper dumplings-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="card__product" src="./images/product-2.png" alt="Product">
 
-                    <div class="card__info">
-                        <div class="card__weight">
-                            <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
-                            <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+                                <div class="card__info">
+                                    <div class="card__weight">
+                                        <img class="card__weight-img desktop-none" src="./images/weight.svg"
+                                            alt="Weight">
+                                        <img class="card__weight-img mob-none" src="./images/weight-desktop.svg"
+                                            alt="Weight">
 
-                            <div class="card__weight-texts">
-                                <p class="card__weight-text">430 г</p>
-                                <p class="card__weight-text">800 г</p>
+                                        <div class="card__weight-texts">
+                                            <p class="card__weight-text">430 г</p>
+                                            <p class="card__weight-text">800 г</p>
+                                        </div>
+                                    </div>
+
+                                    <p class="card__info-text"><span>Сосиски «Баварские» </span>
+                                        лидер продаж, премия «Товар года»</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img class="card__product" src="./images/product-2.png" alt="Product">
+
+                                <div class="card__info">
+                                    <div class="card__weight">
+                                        <img class="card__weight-img desktop-none" src="./images/weight.svg"
+                                            alt="Weight">
+                                        <img class="card__weight-img mob-none" src="./images/weight-desktop.svg"
+                                            alt="Weight">
+
+                                        <div class="card__weight-texts">
+                                            <p class="card__weight-text">430 г</p>
+                                            <p class="card__weight-text">800 г</p>
+                                        </div>
+                                    </div>
+
+                                    <p class="card__info-text"><span>Сосиски «Баварские» </span>
+                                        лидер продаж, премия «Товар года»</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img class="card__product" src="./images/product-2.png" alt="Product">
+
+                                <div class="card__info">
+                                    <div class="card__weight">
+                                        <img class="card__weight-img desktop-none" src="./images/weight.svg"
+                                            alt="Weight">
+                                        <img class="card__weight-img mob-none" src="./images/weight-desktop.svg"
+                                            alt="Weight">
+
+                                        <div class="card__weight-texts">
+                                            <p class="card__weight-text">430 г</p>
+                                            <p class="card__weight-text">800 г</p>
+                                        </div>
+                                    </div>
+
+                                    <p class="card__info-text"><span>Сосиски «Баварские» </span>
+                                        лидер продаж, премия «Товар года»</p>
+                                </div>
                             </div>
                         </div>
-
-                        <p class="card__info-text"><span>Сосиски «Баварские» </span>
-                            лидер продаж, премия «Товар года»</p>
                     </div>
 
                     <div class="card__close link" onclick="closeCard('sausages')">Закрыть</div>
@@ -365,24 +461,68 @@
             </div>
         </div>
 
-        <div class="card scrollbar-none outside" data-card="ogogon" onclick="openCardMore('ogogon-more')">
+        <div class="card scrollbar-none outside card-slider" data-card="ogogon" onclick="openCardMore('ogogon-more')">
             <img class="card__logo" src="./images/ogogon/ogogon-logo.png" alt="Logo" />
 
-            <img class="card__product" src="./images/product-3.png" alt="Product">
+            <div class="swiper ogogon-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="card__product" src="./images/product-3.png" alt="Product">
 
-            <div class="card__info">
-                <div class="card__weight">
-                    <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
-                    <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+                        <div class="card__info">
+                            <div class="card__weight">
+                                <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
+                                <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
 
-                    <div class="card__weight-texts">
-                        <p class="card__weight-text">430 г</p>
-                        <p class="card__weight-text">800 г</p>
+                                <div class="card__weight-texts">
+                                    <p class="card__weight-text">430 г</p>
+                                    <p class="card__weight-text">800 г</p>
+                                </div>
+                            </div>
+
+                            <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
+                                лидер продаж, премия «Товар года»</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img class="card__product" src="./images/product-3.png" alt="Product">
+
+                        <div class="card__info">
+                            <div class="card__weight">
+                                <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
+                                <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+
+                                <div class="card__weight-texts">
+                                    <p class="card__weight-text">430 г</p>
+                                    <p class="card__weight-text">800 г</p>
+                                </div>
+                            </div>
+
+                            <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
+                                лидер продаж, премия «Товар года»</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img class="card__product" src="./images/product-3.png" alt="Product">
+
+                        <div class="card__info">
+                            <div class="card__weight">
+                                <img class="card__weight-img desktop-none" src="./images/weight.svg" alt="Weight">
+                                <img class="card__weight-img mob-none" src="./images/weight-desktop.svg" alt="Weight">
+
+                                <div class="card__weight-texts">
+                                    <p class="card__weight-text">430 г</p>
+                                    <p class="card__weight-text">800 г</p>
+                                </div>
+                            </div>
+
+                            <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
+                                лидер продаж, премия «Товар года»</p>
+                        </div>
                     </div>
                 </div>
-
-                <p class="card__info-text"><span>Сосиски «Баварские»</span> <br />
-                    лидер продаж, премия «Товар года»</p>
             </div>
 
             <div class="card__close link" onclick="closeCard('sausages')">Закрыть</div>
