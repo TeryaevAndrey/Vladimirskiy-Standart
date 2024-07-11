@@ -88,7 +88,7 @@
     .about__text {
         max-width: 500px;
         width: 100%;
-        font-size: 26px;
+        font-size: 18px;
     }
 
     .about__content {
@@ -113,6 +113,14 @@
         left: 50%;
         transform: translateX(-50%);
         display: block;
+    }
+}
+
+@media(min-width: 1360px) {
+    .about__text {
+        max-width: 500px;
+        width: 100%;
+        font-size: 26px;
     }
 }
 
