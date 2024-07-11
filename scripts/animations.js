@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".about",
         start: "top 0",
-        end: "bottom 10%",
+        end: "bottom 20%",
         scrub: window.innerWidth >= 1024,
       },
     });

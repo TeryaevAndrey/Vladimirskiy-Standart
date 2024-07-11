@@ -140,6 +140,10 @@
     .card__product {
         margin-top: 30px;
         max-height: 330px;
+        max-width: 445px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .card__weight {
@@ -201,4 +205,10 @@
         margin-top: 0;
     }
 
+}
+
+.card-slider .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
