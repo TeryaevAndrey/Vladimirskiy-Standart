@@ -138,8 +138,8 @@
 
     .contacts-slider-wrapper {
         display: block;
-        width: 300px;
-        min-width: 300px;
+        width: 280px;
+        min-width: 280px;
         background-image: url("../images/contacts/phone.png");
         background-repeat: no-repeat;
         background-size: contain;
@@ -150,7 +150,7 @@
 
     .contacts-slider {
         height: 100% !important;
-        width: 100%;
+        width: 101%;
         position: absolute !important;
         top: 1%;
         left: -1%;
@@ -177,8 +177,9 @@
     }
 
     .contacts-slider .swiper-slide {
-        width: 102%;
+        width: 98%;
         height: 97%;
+        left: -4.5%;
     }
 }
 
@@ -198,7 +199,7 @@
 
 @media(min-width: 1500px) {
     .contacts-slider .swiper-slide {
-        left: -15px;
+        left: -17px;
     }
 }
 
@@ -234,7 +235,7 @@
 
     .contacts-slider .swiper-slide {
         top: -53px;
-        left: -16px;
+        left: -19px;
         height: 95%;
     }
 
