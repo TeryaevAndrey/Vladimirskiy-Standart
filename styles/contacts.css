@@ -366,4 +366,12 @@
         font-size: 12px;
         font-weight: 500;
     }
+
+    .contacts__item:hover::after {
+        display: none;
+    }
+
+    .contacts__item:hover::before {
+        display: none;
+    }
 }
