@@ -30,10 +30,6 @@ button {
   cursor: pointer;
 }
 
-section {
-  overflow-x: hidden;
-}
-
 .container {
   max-width: calc(1820px + 28px);
   padding: 0 14px;
@@ -106,4 +102,3 @@ section {
 .card-slider .swiper-slide {
   width: 100% !important;
 }
-
