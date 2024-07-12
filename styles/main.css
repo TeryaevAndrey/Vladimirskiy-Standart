@@ -102,3 +102,9 @@ button {
 .card-slider .swiper-slide {
   width: 100% !important;
 }
+
+@media(max-width: 1024px) {
+  section {
+    overflow-x: hidden;
+  }
+}

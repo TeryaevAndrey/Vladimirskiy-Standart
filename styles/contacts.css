@@ -52,8 +52,9 @@
     display: block;
     position: absolute;
     z-index: 10;
-    width: 14px;
-    height: 20px;
+    width: 27px;
+    height: 25px;
+    transform: translateY(-1px);
     opacity: 0;
     background-repeat: no-repeat;
 }
@@ -64,18 +65,18 @@
 
 .contacts__item.left::before {
     background-image: url("../images/contacts/right-arr.svg");
-    right: -14px;
+    right: -26px;
 }
 
 .contacts__item.right::before {
     background-image: url("../images/contacts/left-arr.svg");
-    left: -14px;
+    left: -26px;
 }
 
 .contacts__item::after {
     content: "";
     position: absolute;
-    height: 20px;
+    height: 24px;
     width: 2px;
     background-color: #F3EFEC;
     opacity: 0.98;
@@ -329,27 +330,6 @@
 
     .contacts__inner {
         margin: 0 10px;
-    }
-
-    .contacts__item::after {
-        height: 20px;
-    }
-
-    .contacts__item::before {
-        width: 14px;
-        height: 20px;
-    }
-
-    .contacts__item.left::before {
-        right: -14px;
-    }
-
-    .contacts__item.right::before {
-        left: -27px;
-    }
-
-    .contacts__item::after {
-        height: 27px;
     }
 
     .contacts__item-title {
