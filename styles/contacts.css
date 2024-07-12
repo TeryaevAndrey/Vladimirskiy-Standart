@@ -41,12 +41,65 @@
     width: 100%;
     border: 1px solid transparent;
     border-radius: 20px;
-    transition: all 0.2s ease;
 }
 
 .contacts__item:hover {
     border: 1px solid #d7a461;
 }
+
+.contacts__item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 10;
+    width: 14px;
+    height: 20px;
+    opacity: 0;
+    background-repeat: no-repeat;
+}
+
+.contacts__item:hover::before {
+    opacity: 1;
+}
+
+.contacts__item.left::before {
+    background-image: url("../images/contacts/right-arr.svg");
+    right: -14px;
+}
+
+.contacts__item.right::before {
+    background-image: url("../images/contacts/left-arr.svg");
+    left: -14px;
+}
+
+.contacts__item::after {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 2px;
+    background-color: #F3EFEC;
+    opacity: 0.98;
+    z-index: 10;
+    backdrop-filter: blur(17px);
+    box-shadow: 0 0 10px #F3EFEC;
+    display: none;
+    transition: all 0.2s ease;
+}
+
+.contacts__item:hover::after {
+    display: block;
+}
+
+.contacts__item.left::after {
+    right: 0;
+    transform: translateX(1px);
+}
+
+.contacts__item.right::after {
+    left: 0;
+    transform: translateX(-1px);
+}
+
 
 
 .contacts__item-img {
@@ -260,5 +313,57 @@
 
     .contacts__item-img {
         max-width: 108px;
+    }
+
+    .contacts__item-img {
+        width: 106px;
+        min-width: 106px;
+        height: auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__item:hover {
+        border: 0.5px solid #d7a461;
+    }
+
+    .contacts__inner {
+        margin: 0 10px;
+    }
+
+    .contacts__item::after {
+        height: 20px;
+    }
+
+    .contacts__item::before {
+        width: 14px;
+        height: 20px;
+    }
+
+    .contacts__item.left::before {
+        right: -14px;
+    }
+
+    .contacts__item.right::before {
+        left: -27px;
+    }
+
+    .contacts__item::after {
+        height: 27px;
+    }
+
+    .contacts__item-title {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .contacts__item-link {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .contacts__item-text {
+        font-size: 12px;
+        font-weight: 500;
     }
 }
