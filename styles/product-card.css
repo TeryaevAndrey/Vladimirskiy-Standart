@@ -40,6 +40,14 @@
     object-fit: contain;
     width: 100%;
     height: 100%;
+    max-width: 400px;
+    margin: 0 auto
+}
+
+@media(max-width: 1024px) {
+    .product-card__img {
+        max-height: 400px;
+    }
 }
 
 .product-card__content {
