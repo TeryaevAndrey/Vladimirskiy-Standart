@@ -7,12 +7,15 @@
   padding: 30px 0;
   position: relative;
   overflow: hidden;
-  cursor: pointer
+  cursor: pointer;
+  z-index: 0;
 }
 
 @media (min-width: 1024px) {
   .sausages {
+    min-height: calc(100vh + 8px);
     padding-top: 134px;
+    margin-top: -8px;
   }
 }
 

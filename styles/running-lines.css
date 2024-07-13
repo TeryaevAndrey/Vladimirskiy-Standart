@@ -3,6 +3,7 @@
     flex-direction: column;
     overflow: hidden;
     position: relative;
+    z-index: 10;
 }
 
 .running-line {
@@ -51,7 +52,7 @@
     .running-line {
         min-height: 97px;
         font-size: 71px;
-        font-weight: 900;
+        font-weight: 500;
     }
 
     .running-line:nth-child(2) {
