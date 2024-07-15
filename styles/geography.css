@@ -48,7 +48,7 @@
     position: relative;
 }
 
-.geography__map-wrapper::after {
+/* .geography__map-wrapper::after {
     content: '';
     position: absolute;
     top: 0;
@@ -69,7 +69,7 @@
             rgba(255, 255, 255, 0.01) 100%);
     animation: gradient-run 5s linear infinite;
     transform: rotate(60deg);
-}
+} */
 
 @keyframes gradient-run {
     0% {
@@ -195,3 +195,35 @@
         font-weight: 500;
     }
 }
+
+@keyframes changeColors {
+    0% {
+      stop-color: #E00428;
+    }
+    50% {
+      stopcolor: #FF3838;
+    }
+    100% {
+      stop-color: #E00428;
+    }
+  }
+  
+  .stop1, .stop2, .stop3, .stop4 {
+    animation: changeColors 5s infinite;}
+
+    .geography__map-rus {
+        transform: translateY(10.8%);
+    }
+
+    @keyframes moveGradient {
+        0% {
+          background-position: 0% 100%;
+        }
+        100% {
+          background-position: 100% 0%;
+        }
+      }
+      
+      #yourElement {
+        animation: moveGradient 5s linear infinite; /* настройте длительность и тип анимации по вашему выбору */
+      }
