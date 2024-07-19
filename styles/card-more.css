@@ -299,3 +299,11 @@
         transform: translateY(60px)
     }
 }
+
+.card-more-dumplings .card-more__logo {
+    top: 9px;
+}
+
+.card-more-ogogon .card-more__logo {
+    top: 23px;
+}

@@ -19,12 +19,14 @@
 
 .ogogon__info {
     margin-top: 40%;
-    max-width: 40%;
+    max-width: 166px;
     width: 100%;
     z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    z-index: 10;
+    position: relative;
 }
 
 .ogogon__info-text {
@@ -82,7 +84,7 @@
 
 .ogogon__image.one {
     top: 5%;
-    min-width: 212px;
+    min-width: 155px;
 }
 
 .ogogon__image.two {
@@ -97,20 +99,56 @@
 }
 
 .ogogon__image.four {
-    bottom: -7%;
-    right: -5%;
-    min-width: 157px;
+    bottom: -10%;
+    right: -15%;
+    min-width: 225px;
 }
 
 .ogogon__image.five {
-    bottom: -10%;
+    bottom: -12%;
     left: -20%;
     min-width: 300px;
 }
 
 .ogogon__image.six {
-    top: 47%;
-    min-width: 240px;
+    top: 45%;
+    right: -27%;
+    min-width: 280px;
+    transform: rotate(-20deg);
+}
+
+@media(min-width: 375px) {
+    .ogogon__image {
+        width: 60%;
+        max-width: 100%;
+        min-width: auto;
+    }
+
+    .ogogon__image.five {
+        max-width: 100%;
+        min-width: auto;
+        left: -11%;
+        bottom: -7%;
+        width: 70%;
+    }
+
+    .ogogon__image.six {
+
+        width: 100%;
+        right: -31%;
+
+    }
+
+    .ogogon__image.four {
+        min-width: auto;
+        width: 70%
+    }
+
+    .ogogon__image.three {
+        bottom: 16%;
+        left: -3%;
+    }
+
 }
 
 @media(min-width: 1024px) {
@@ -127,7 +165,7 @@
         height: 100vh;
     }
 
-    
+
     .ogogon__image {
         width: 25%;
     }
@@ -313,7 +351,7 @@
     .ogogon__image.four {
         bottom: -5%;
         top: unset;
-        right: -7%;
+        right: 0;
         left: unset;
         width: 30%;
         transform: rotate(30deg);
