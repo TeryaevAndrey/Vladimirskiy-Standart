@@ -43,6 +43,7 @@
     position: relative;
     overflow: hidden;
     height: auto;
+    z-index: -1;
 }
 
 .geography__map-wrapper {
@@ -176,7 +177,7 @@
     }
 
     .geography__item:nth-child(2) {
-        transform: translateY(-90%);
+        transform: translateY(-80%);
     }
 
     .geography__item:nth-child(3) {
@@ -188,7 +189,7 @@
     }
 
     .geography__item-count {
-        font-size: 96px;
+        font-size: 50px;
     }
 
     .geography__item-text {
@@ -197,6 +198,22 @@
     }
 }
 
+@media(min-width: 1440px) {
+    .geography__item-count {
+        font-size: 96px;
+    }
+
+    .geography__item:nth-child(2) {
+        transform: translateY(-110%);
+    }
+}
+
 .geography__map-rus {
     transform: translateY(10.8%);
+}
+
+@media(min-width: 1024px) and (max-height: 700px) {
+    .geography__map {
+        margin-top: 56px;
+    }
 }

@@ -260,3 +260,17 @@
 .sausages-slider {
   width: 100% !important;
 }
+
+@media(min-width: 1024px) and (max-height: 700px) {
+  .sausages-best-img {
+    max-width: 300px;
+  }
+
+  .sausages {
+    padding-top: 50px;
+  }
+
+  .sausages__images .relative {
+    right: -34%;
+  }
+}
