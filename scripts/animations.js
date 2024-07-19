@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Observer.create({
     onChangeY(self) {
-      let factor = 2.5;
+      let factor = window.innerWidth < 1024 ? 1.5 : 2.5;
       if (self.deltaY < 0) {
         factor *= -1;
       }
