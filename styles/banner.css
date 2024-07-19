@@ -67,6 +67,10 @@
     background-color: transparent;
 }
 
+.play-btn.close {
+    display: none !important;
+}
+
 .banner__footer-img {
     height: auto;
     width: 238px;

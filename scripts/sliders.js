@@ -51,8 +51,8 @@ new Swiper(".swiper.dumplings-slider", {
 
 new Swiper(".swiper.ogogon-slider", {
   loop: true,
-  autoplay: {
-    delay: 2000,
-  },
+  // autoplay: {
+  //   delay: 2000,
+  // },
   slidesPerView: 1,
 });

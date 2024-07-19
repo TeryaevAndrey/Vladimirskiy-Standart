@@ -88,6 +88,16 @@
 .geography__list {
     display: flex;
     flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+@media(min-width: 400px) {
+    .geography__list {
+        max-width: 330px;
+    }
 }
 
 .geography__item {
@@ -166,6 +176,7 @@
         margin-left: 0;
         margin-right: 0;
         max-width: 100%;
+        gap: 0;
     }
 
     .geography__item:nth-child(even) {
