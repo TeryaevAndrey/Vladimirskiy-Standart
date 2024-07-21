@@ -208,10 +208,10 @@
 
     .contacts-slider {
         height: 100% !important;
-        width: 101%;
+        width: 100%;
         position: absolute !important;
         top: 1%;
-        left: -4%;
+        left: -4.3%;
     }
 
     .contacts-slider .swiper-slide {
@@ -292,9 +292,11 @@
     }
 
     .contacts-slider .swiper-slide {
-        top: -53px;
+        top: -57px;
         left: -19px;
-        height: 95%;
+        height: 96%;
+        width: 106%;
+        scale: 1.01;
     }
 
     .contacts-slider img {
@@ -324,6 +326,11 @@
         width: 106px;
         min-width: 106px;
         height: auto;
+    }
+
+    .contacts-slider {
+        left: -1.8%;
+        width: 101%;
     }
 }
 
@@ -365,5 +372,5 @@
 }
 
 .contacts-slider .swiper-slide-next {
-   opacity: 0;
+    opacity: 0;
 }

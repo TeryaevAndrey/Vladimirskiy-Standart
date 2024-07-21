@@ -10,6 +10,7 @@ const swiper = new Swiper(".swiper.contacts-slider", {
   cardsEffect: {
     perSlideRotate: 1,
   },
+  allowSlidePrev: false
 });
 
 new Swiper(".product-slider-1", {
