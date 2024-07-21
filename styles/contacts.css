@@ -211,7 +211,7 @@
         width: 101%;
         position: absolute !important;
         top: 1%;
-        left: -1%;
+        left: -4%;
     }
 
     .contacts-slider .swiper-slide {
@@ -235,7 +235,7 @@
     }
 
     .contacts-slider .swiper-slide {
-        width: 98%;
+        width: 98% !important;
         height: 97%;
         left: -4.5%;
     }
@@ -358,4 +358,12 @@
     .contacts__item:hover::before {
         display: none;
     }
+}
+
+.contacts-slider .swiper-slide-shadow {
+    display: none;
+}
+
+.contacts-slider .swiper-slide-next {
+   opacity: 0;
 }
