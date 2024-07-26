@@ -13,18 +13,19 @@
   background-image: url("../images/dumplings-mob-2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   transition: background-image 1s ease-in-out, background-size 0.5s, filter 0.5s;
   position: relative;
   padding: 64px 0;
   overflow: hidden;
   transition: all 1s ease;
   min-height: 576px;
+  background-position: bottom;
 }
 
 @media(min-width: 1024px) {
   .dumplings {
     min-height: 100vh;
+    background-position: center;
   }
 }
 

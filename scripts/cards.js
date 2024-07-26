@@ -3,6 +3,11 @@ const openCard = (cardName) => {
   card.classList.toggle("active");
 
   if (window.innerWidth > 1024) {
+    const block = document.querySelector(`#${cardName}`);
+    const blockHeight = block.clientHeight;
+
+    card.style.height = blockHeight + "px";
+
     return;
   }
 

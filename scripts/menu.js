@@ -14,6 +14,7 @@ const openMenu = () => {
 
   playBtns.forEach((btn) => {
     btn.style.display = "none";
+    btn.classList.add("close");
   });
 };
 
@@ -33,6 +34,7 @@ const closeMenu = () => {
 
   playBtns.forEach((btn) => {
     btn.style.display = "block";
+    btn.classList.remove("close");
   });
 };
 

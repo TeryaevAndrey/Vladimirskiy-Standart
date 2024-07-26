@@ -4,6 +4,13 @@ const swiper = new Swiper(".swiper.contacts-slider", {
     delay: 1000,
   },
   slidesPerView: 1,
+  effect: "cards",
+  grabCursor: true,
+
+  cardsEffect: {
+    perSlideRotate: 1,
+  },
+  allowSlidePrev: false
 });
 
 new Swiper(".product-slider-1", {
