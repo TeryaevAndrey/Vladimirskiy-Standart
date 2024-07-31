@@ -50,6 +50,7 @@
   gap: 16px;
   width: 100%;
   max-width: 222px;
+  transition: all 0.2s ease;
 }
 
 .dumplings__info-text {

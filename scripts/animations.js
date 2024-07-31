@@ -326,8 +326,8 @@ document.addEventListener("DOMContentLoaded", function () {
         markers: false,
         scrub: true,
       },
-      duration: 1,
-      y: -300, // начальная позиция блока по оси Y (выдвижение сверху)
+      duration: 2,
+      y: -100, // начальная позиция блока по оси Y (выдвижение сверху)
       opacity: 0,
     });
   });
