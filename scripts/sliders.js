@@ -10,7 +10,8 @@ const swiper = new Swiper(".swiper.contacts-slider", {
   cardsEffect: {
     perSlideRotate: 1,
   },
-  allowSlidePrev: false
+  allowSlidePrev: false,
+  speed: 600
 });
 
 new Swiper(".product-slider-1", {
@@ -20,6 +21,13 @@ new Swiper(".product-slider-1", {
     delay: 1000,
   },
   spaceBetween: 16,
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 5, 
+      spaceBetween: 35
+    }
+  }
 });
 
 new Swiper(".product-slider-2", {
@@ -29,6 +37,13 @@ new Swiper(".product-slider-2", {
     delay: 1000,
   },
   spaceBetween: 16,
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 5, 
+      spaceBetween: 35
+    }
+  }
 });
 
 new Swiper(".product-slider-3", {
@@ -38,6 +53,13 @@ new Swiper(".product-slider-3", {
     delay: 1000,
   },
   spaceBetween: 16,
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 5, 
+      spaceBetween: 35
+    }
+  }
 });
 
 new Swiper(".swiper.sausages-slider", {

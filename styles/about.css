@@ -55,6 +55,7 @@
     width: 100%;
     max-width: 65%;
     transform: rotate(-120deg);
+    transition: all 0.2s ease;
 }
 
 .about__img-logo {

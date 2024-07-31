@@ -137,6 +137,7 @@
     left: 0;
     right: 0;
     min-height: 52px;
+    max-height: 102px;
     filter: brightness(0) invert(1);
 }
 
@@ -195,9 +196,9 @@
 
     .card-more__left .swiper {
         width: 100%;
-        margin-top: 16px;
+        margin-top: auto;
         height: 100%;
-        min-height: 200px;
+        height: 165px;
     }
 
     .card-more__left .swiper img {
@@ -272,12 +273,14 @@
     .card-more__weight {
         max-width: 216px;
         min-height: 102px;
+        max-height: 102px;
     }
 
     .card-more__weight-text {
         font-size: 25px;
         margin-left: 80px;
         transform: translateY(45px);
+        text-wrap: nowrap;
     }
 
     .card-more__text {
@@ -296,7 +299,7 @@
 @media(min-width: 1130px) {
     .card-more__weight-text {
         margin-left: 100px;
-        transform: translateY(60px)
+        transform: translateY(34px)
     }
 }
 
@@ -306,4 +309,10 @@
 
 .card-more-ogogon .card-more__logo {
     top: 23px;
+}
+
+@media(min-width: 1280px) {
+    .card-more__weight-text {
+        font-size: 40px;
+    }
 }
