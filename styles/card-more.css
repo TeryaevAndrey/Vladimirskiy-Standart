@@ -141,6 +141,10 @@
     filter: brightness(0) invert(1);
 }
 
+.card-more__weight-img.dark {
+    filter: none;
+}
+
 .card-more__right.yellow .card-more__weight-img path {
     stroke: #231F20;
 }
@@ -208,7 +212,7 @@
     }
 
     .card-more__left-top {
-        margin: 0 auto;
+        margin: auto;
     }
 
     .card-more__right {
