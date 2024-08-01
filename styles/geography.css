@@ -135,6 +135,21 @@
 @media(min-width: 1024px) {
     .geography {
         padding: 45px 0;
+        height: 101vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .geography .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .geography__inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .geography__title {
@@ -168,15 +183,17 @@
         margin-left: auto;
         margin-right: auto;
         display: block;
+        height: 70vh;
     }
 
     .geography__list {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         margin-left: 0;
         margin-right: 0;
         max-width: 100%;
-        gap: 0;
+        gap: 110px;
+        margin-top: auto;
     }
 
     .geography__item:nth-child(even) {
