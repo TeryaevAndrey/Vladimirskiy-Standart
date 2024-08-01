@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+  // gsap.from(".about-bg", {
+  //   height: '300vh',
+  //   stagger: 0.3,
+  //   scrollTrigger: {
+  //     trigger: ".about",
+  //     start: "top 80%",
+  //     end: "bottom top",
+  //     scrub: window.innerWidth >= 1024,
+  //   },
+  // });
+
   gsap.from(".about__text.left", {
     x: -300,
     opacity: 0,
@@ -414,15 +425,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const greens = document.querySelectorAll(".greens");
 
-window.addEventListener('mousemove', (event) => {
+window.addEventListener("mousemove", (event) => {
   const offsetX = (event.clientX - window.innerWidth / 2) * 0.05;
   const offsetY = (event.clientY - window.innerHeight / 2) * 0.05;
-  greens.forEach(green => {
+  greens.forEach((green) => {
     gsap.to(green, {
       x: offsetX,
       y: offsetY,
       duration: 0.3,
-      ease: 'power2.out',
+      ease: "power2.out",
     });
   });
 });

@@ -17,6 +17,23 @@
     padding: 25px 0;
     transition: background-image 1s ease-in-out, background-size 0.5s, filter 0.5s;
     position: relative;
+overflow: hidden;
+}
+/* 
+.about-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    height: 100vh;
+} */
+
+.about__inner {
+    position: relative;
 }
 
 .about.change-bg {
@@ -102,6 +119,7 @@
 
     .about__content .about__text:first-child {
         transform: translateY(-100px);
+        text-align: right;
     }
 
     .about__content .about__text:last-child {
@@ -119,7 +137,7 @@
 
 @media(min-width: 1360px) {
     .about__text {
-        max-width: 500px;
+        max-width: 490px;
         width: 100%;
         font-size: 26px;
     }
