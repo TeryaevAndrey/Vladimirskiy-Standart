@@ -262,46 +262,27 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .from(".sausage.desktop", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".sausage.mob", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
+    .from([".sausages__info-img", ".sausages-best-img"], {
+      duration: 0.8,
+      x: -100,
+      opacity: 0,
+    })
+    .from(".sausages__info-text", { duration: 0.8, y: 200, opacity: 0 })
     .from(".greens-1", { duration: 0.8, y: 200, opacity: 0 })
     .from(".greens-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".greens-3", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".pepper-1", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
     .from(".pepper-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5");
 
-  const tl4 = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".sausages__info",
-      start: "top 90%",
-      end: "bottom 10%",
-      toggleActions: "play none none none",
-      markers: false,
-    },
-  });
-
-  tl4
-    .from(".sausages__info-img", {
-      duration: 1,
-      x: -200,
-      opacity: 0,
-    })
-    .from(
-      ".sausages-best-img",
-      {
-        duration: 1,
-        x: -200,
-        opacity: 0,
-      },
-      ">"
-    )
-    .from(
-      ".sausages__info-text",
-      {
-        duration: 1,
-        x: -200,
-        opacity: 0,
-      },
-      ">"
-    );
+  // const tl4 = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: ".sausages__info",
+  //     start: "top 90%",
+  //     end: "bottom 10%",
+  //     toggleActions: "play none none none",
+  //     markers: false,
+  //   },
+  // });
 
   ScrollTrigger.create({
     trigger: ".dumplings",
@@ -429,4 +410,19 @@ document.addEventListener("DOMContentLoaded", function () {
   //     pinSpacing: false,
   //   });
   // });
+});
+
+const greens = document.querySelectorAll(".greens");
+
+window.addEventListener('mousemove', (event) => {
+  const offsetX = (event.clientX - window.innerWidth / 2) * 0.05;
+  const offsetY = (event.clientY - window.innerHeight / 2) * 0.05;
+  greens.forEach(green => {
+    gsap.to(green, {
+      x: offsetX,
+      y: offsetY,
+      duration: 0.3,
+      ease: 'power2.out',
+    });
+  });
 });
