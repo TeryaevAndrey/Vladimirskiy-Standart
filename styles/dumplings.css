@@ -82,3 +82,9 @@
 .dumplings-slider {
   width: 100% !important;
 }
+
+@media(max-width: 1024px) {
+  .dumplings__info .link {
+    display: none;
+  }
+}

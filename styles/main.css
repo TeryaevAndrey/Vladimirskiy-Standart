@@ -53,6 +53,18 @@ button {
   text-decoration: underline;
   width: max-content;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.link svg {
+  transform: translateY(3px);
+  transition: all 0.2s ease;
+}
+
+.link:hover svg {
+  transform: translateX(10px) translateY(3px);
 }
 
 .mob-none {
