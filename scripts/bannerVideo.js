@@ -10,7 +10,10 @@ const bannerVideoHandler = () => {
       if (bannerVideo.paused) {
         // Проверяем, находится ли видео на паузе
         bannerVideo.play();
+        bannerVideo.setAttribute("controls", true);
         playBtn.textContent = "Поставить на паузу";
+        playBtn.remove();
+        bannerVideo.style.zIndex = 10;
 
         bannerImages.forEach((img) => {
           img.style.display = "none";
