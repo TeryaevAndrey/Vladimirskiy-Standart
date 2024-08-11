@@ -18,7 +18,6 @@
     align-items: center;
 }
 
-
 .card.active {
     right: 0;
 }
@@ -131,6 +130,7 @@
         width: 100%;
         left: unset;
         padding: 50px 36px;
+        right: -100%;
     }
 
     .card.active {

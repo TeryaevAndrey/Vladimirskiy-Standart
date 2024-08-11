@@ -15,6 +15,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -115,8 +119,3 @@ button {
   width: 100% !important;
 }
 
-@media(max-width: 1024px) {
-  section {
-    overflow-x: hidden;
-  }
-}

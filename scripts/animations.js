@@ -271,19 +271,19 @@ document.addEventListener("DOMContentLoaded", function () {
         markers: false, // установить в true для отладки
       },
     })
-    .from(".sausage.desktop", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".sausage.mob", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
+    .from(".sausage.desktop", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from(".sausage.mob", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
     .from([".sausages__info-img", ".sausages-best-img"], {
-      duration: 0.8,
+      duration: 1,
       x: -100,
       opacity: 0,
     })
-    .from(".sausages__info-text", { duration: 0.8, y: 200, opacity: 0 })
-    .from(".greens-1", { duration: 0.8, y: 200, opacity: 0 })
-    .from(".greens-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".greens-3", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".pepper-1", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".pepper-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5");
+    .from(".sausages__info-text", { duration: 1, y: 200, opacity: 0 })
+    .from(".greens-1", { duration: 1, y: 200, opacity: 0 })
+    .from(".greens-2", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from(".greens-3", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from(".pepper-1", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from(".pepper-2", { duration: 1, y: 200, opacity: 0 }, "-=0.5");
 
   // const tl4 = gsap.timeline({
   //   scrollTrigger: {
@@ -297,13 +297,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ScrollTrigger.create({
     trigger: ".dumplings",
-    start: "top 0",
+    start: "top 10%",
     end: "bottom 10%",
     scrub: window.innerWidth >= 1024,
-    onEnter: () =>
-      document.querySelector(".dumplings").classList.add("change-bg"),
-    onLeaveBack: () =>
-      document.querySelector(".dumplings").classList.remove("change-bg"),
+    onUpdate: () => {
+      document.querySelector(".dumplings-bg").style.opacity = 1;
+    },
   });
 
   let mm = gsap.matchMedia();
@@ -313,14 +312,14 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.from(".dumplings__info", {
       scrollTrigger: {
         trigger: ".dumplings",
-        start: "top 90%",
+        start: "top 10%",
         end: "bottom 10%",
         markers: false,
-        scrub: true,
       },
       duration: 2,
       y: -100, // начальная позиция блока по оси Y (выдвижение сверху)
       opacity: 0,
+      delay: 1,
     });
   });
 

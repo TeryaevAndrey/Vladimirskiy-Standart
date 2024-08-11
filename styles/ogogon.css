@@ -1,12 +1,15 @@
+.ogogon-section {
+    overflow: hidden;
+}
+
 .ogogon {
     background-image: url("../images/ogogon/ogogon-logo-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-color: #FFDE15;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
-    overflow: hidden;
 }
 
 .ogogon-logo {
