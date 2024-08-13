@@ -1,6 +1,11 @@
 .geography {
     padding: 40px 0;
-    height: 100vh;
+}
+
+@media(min-width: 1024px) {
+    .geography {
+        height: 100vh;
+    }
 }
 
 .geography__title {

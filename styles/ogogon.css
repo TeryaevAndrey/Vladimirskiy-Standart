@@ -8,8 +8,14 @@
     background-size: cover;
     background-position: center;
     background-color: #FFDE15;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
+}
+
+@media(min-width: 1024px) {
+    .ogogon {
+        height: 100vh;
+    }
 }
 
 .ogogon-logo {
@@ -21,7 +27,7 @@
 }
 
 .ogogon__info {
-    margin-top: 40%;
+    padding-top: 40%;
     max-width: 166px;
     width: 100%;
     z-index: 10;
@@ -30,6 +36,13 @@
     gap: 16px;
     z-index: 10;
     position: relative;
+}
+
+@media(min-width: 1024px) {
+    .ogogon__info {
+        margin-top: 40%;
+        padding-top: 0;
+    }
 }
 
 .ogogon__info-text {
