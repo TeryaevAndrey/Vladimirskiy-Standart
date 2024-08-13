@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (window.innerWidth >= 1024) {
     gsap.to(".about__content-img", {
-      scale: 0.7,
+      scale: 1,
       scrollTrigger: {
         trigger: ".about",
         start: "top 0",

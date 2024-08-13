@@ -11,7 +11,7 @@ const swiper = new Swiper(".swiper.contacts-slider", {
     perSlideRotate: 1,
   },
   allowSlidePrev: false,
-  speed: 600,
+  speed: 100,
 });
 
 new Swiper(".product-slider-1", {
