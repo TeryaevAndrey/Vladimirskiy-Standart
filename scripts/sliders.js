@@ -1,19 +1,3 @@
-const swiper = new Swiper(".swiper.contacts-slider", {
-  loop: true,
-  autoplay: {
-    delay: 1000,
-  },
-  slidesPerView: 1,
-  effect: "cards",
-  grabCursor: true,
-
-  cardsEffect: {
-    perSlideRotate: 1,
-  },
-  allowSlidePrev: false,
-  speed: 100,
-});
-
 new Swiper(".product-slider-1", {
   loop: true,
   slidesPerView: 3,
@@ -94,3 +78,18 @@ new Swiper(".swiper.ogogon-slider", {
   slidesPerView: 1,
   speed: 600,
 });
+
+const contactsImagesArr = [
+  "./images/contacts/slider-3.png",
+  "./images/contacts/slider-2.png",
+];
+const contactsImage = document.querySelector("#contactsImage");
+let currentIndex = 0;
+
+function changeImage() {
+  contactsImage.src = contactsImagesArr[currentIndex];
+
+  currentIndex = (currentIndex + 1) % contactsImagesArr.length;
+}
+
+setInterval(changeImage, 5000);
