@@ -53,9 +53,19 @@ document.addEventListener("DOMContentLoaded", function () {
     start: "top 80%",
     end: "bottom top",
     scrub: true,
-    onEnter: () => document.querySelector(".about").classList.add("change-bg"),
-    onLeaveBack: () =>
-      document.querySelector(".about").classList.remove("change-bg"),
+    onUpdate: (self) => {
+      // Если прокрутка вниз
+      if (self.direction === 1) {
+        document.querySelector(".about-bg").style.opacity = 1;
+      } 
+      // Если прокрутка вверх
+      else if (self.direction === -1) {
+        document.querySelector(".about-bg").style.opacity = 0;
+      }
+    },
+    onLeaveBack: () => {
+      document.querySelector(".about-bg").style.opacity = 0;
+    },
   });
 
   gsap.from(".geography__item", {

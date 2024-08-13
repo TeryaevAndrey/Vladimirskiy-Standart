@@ -89,7 +89,7 @@
 .card-more__text {
     font-size: 12px;
     line-height: 121%;
-    margin-top: 6px;
+    margin-top: 14px;
 }
 
 .card-more__text span {
@@ -321,5 +321,20 @@
 @media(min-width: 1280px) {
     .card-more__weight-text {
         font-size: 40px;
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1280px) {
+    .card-more__text {
+        font-size: 20px;
+    }
+
+    .card-more__title {
+        font-size: 32px;
+    }
+
+    .card-more__subtitle {
+        font-size: 24px;
+        ;
     }
 }
