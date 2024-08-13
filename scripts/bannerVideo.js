@@ -8,9 +8,11 @@ const bannerVideoHandler = () => {
   playsBtns.forEach((playBtn) => {
     playBtn.addEventListener("click", () => {
       if (bannerVideo.paused) {
-        // Проверяем, находится ли видео на паузе
         bannerVideo.play();
+        bannerVideo.setAttribute("controls", true);
         playBtn.textContent = "Поставить на паузу";
+        playBtn.style.opacity = 0;
+        bannerVideo.style.zIndex = 10;
 
         bannerImages.forEach((img) => {
           img.style.display = "none";
@@ -18,9 +20,8 @@ const bannerVideoHandler = () => {
 
         header.style.display = "none";
       } else {
-        // Если видео воспроизводится
         bannerVideo.pause();
-        playBtn.textContent = "Проиграть ролик"; // Меняем текст кнопки на "Запустить"
+        playBtn.textContent = "Проиграть ролик";
 
         bannerImages.forEach((img) => {
           img.style.display = "flex";
@@ -29,6 +30,22 @@ const bannerVideoHandler = () => {
         header.style.display = "block";
       }
     });
+  });
+
+  bannerVideo.addEventListener("ended", () => {
+    bannerVideo.removeAttribute("controls");
+    bannerVideo.src = "./videos/video.mp4";
+    bannerVideo.style.zIndex = "unset";
+    playsBtns.forEach((playBtn) => {
+      playBtn.textContent = "Проиграть ролик";
+      playBtn.style.opacity = 1;
+    });
+
+    bannerImages.forEach((img) => {
+      img.style.display = "flex";
+    });
+
+    header.style.display = "block";
   });
 };
 

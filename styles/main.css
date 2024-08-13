@@ -15,6 +15,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -53,6 +57,18 @@ button {
   text-decoration: underline;
   width: max-content;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.link svg {
+  transform: translateY(3px);
+  transition: all 0.2s ease;
+}
+
+.link:hover svg {
+  transform: translateX(10px) translateY(3px);
 }
 
 .mob-none {
@@ -103,8 +119,3 @@ button {
   width: 100% !important;
 }
 
-@media(max-width: 1024px) {
-  section {
-    overflow-x: hidden;
-  }
-}

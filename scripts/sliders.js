@@ -1,18 +1,3 @@
-const swiper = new Swiper(".swiper.contacts-slider", {
-  loop: true,
-  autoplay: {
-    delay: 1000,
-  },
-  slidesPerView: 1,
-  effect: "cards",
-  grabCursor: true,
-
-  cardsEffect: {
-    perSlideRotate: 1,
-  },
-  allowSlidePrev: false
-});
-
 new Swiper(".product-slider-1", {
   loop: true,
   slidesPerView: 3,
@@ -20,6 +5,15 @@ new Swiper(".product-slider-1", {
     delay: 1000,
   },
   spaceBetween: 16,
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 35,
+    },
+  },
+
+  speed: 600,
 });
 
 new Swiper(".product-slider-2", {
@@ -29,6 +23,15 @@ new Swiper(".product-slider-2", {
     delay: 1000,
   },
   spaceBetween: 16,
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 35,
+    },
+  },
+
+  speed: 600,
 });
 
 new Swiper(".product-slider-3", {
@@ -38,6 +41,15 @@ new Swiper(".product-slider-3", {
     delay: 1000,
   },
   spaceBetween: 16,
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 35,
+    },
+  },
+
+  speed: 600,
 });
 
 new Swiper(".swiper.sausages-slider", {
@@ -46,6 +58,7 @@ new Swiper(".swiper.sausages-slider", {
     delay: 2000,
   },
   slidesPerView: 1,
+  speed: 600,
 });
 
 new Swiper(".swiper.dumplings-slider", {
@@ -54,6 +67,7 @@ new Swiper(".swiper.dumplings-slider", {
     delay: 2000,
   },
   slidesPerView: 1,
+  speed: 600,
 });
 
 new Swiper(".swiper.ogogon-slider", {
@@ -62,4 +76,20 @@ new Swiper(".swiper.ogogon-slider", {
     delay: 2000,
   },
   slidesPerView: 1,
+  speed: 600,
 });
+
+const contactsImagesArr = [
+  "./images/contacts/slider-3.png",
+  "./images/contacts/slider-2.png",
+];
+const contactsImage = document.querySelector("#contactsImage");
+let currentIndex = 0;
+
+function changeImage() {
+  contactsImage.src = contactsImagesArr[currentIndex];
+
+  currentIndex = (currentIndex + 1) % contactsImagesArr.length;
+}
+
+setInterval(changeImage, 5000);

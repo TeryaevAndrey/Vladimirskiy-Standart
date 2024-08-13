@@ -89,7 +89,7 @@
 .card-more__text {
     font-size: 12px;
     line-height: 121%;
-    margin-top: 6px;
+    margin-top: 14px;
 }
 
 .card-more__text span {
@@ -137,7 +137,12 @@
     left: 0;
     right: 0;
     min-height: 52px;
+    max-height: 102px;
     filter: brightness(0) invert(1);
+}
+
+.card-more__weight-img.dark {
+    filter: none;
 }
 
 .card-more__right.yellow .card-more__weight-img path {
@@ -165,6 +170,7 @@
     flex-direction: column;
     flex-grow: 1;
     width: 100%;
+    position: relative;
 }
 
 @media(min-width: 1024px) {
@@ -195,9 +201,9 @@
 
     .card-more__left .swiper {
         width: 100%;
-        margin-top: 16px;
+        margin-top: auto;
         height: 100%;
-        min-height: 200px;
+        height: 165px;
     }
 
     .card-more__left .swiper img {
@@ -207,7 +213,7 @@
     }
 
     .card-more__left-top {
-        margin: 0 auto;
+        margin: auto;
     }
 
     .card-more__right {
@@ -270,14 +276,16 @@
     }
 
     .card-more__weight {
-        max-width: 216px;
+        max-width: 206px;
         min-height: 102px;
+        max-height: 102px;
     }
 
     .card-more__weight-text {
-        font-size: 25px;
-        margin-left: 80px;
-        transform: translateY(45px);
+        font-size: 40px;
+        margin-left: 88px;
+        transform: translateY(34px);
+        text-wrap: nowrap;
     }
 
     .card-more__text {
@@ -285,20 +293,22 @@
         line-height: 121%;
     }
 
+    .card-more__text:last-child {
+        max-width: 70%;
+    }
+
 
     .card-more-small-img.float-right {
         width: 110px;
         height: auto;
         object-fit: contain;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
     }
 }
 
-@media(min-width: 1130px) {
-    .card-more__weight-text {
-        margin-left: 100px;
-        transform: translateY(60px)
-    }
-}
 
 .card-more-dumplings .card-more__logo {
     top: 9px;
@@ -306,4 +316,25 @@
 
 .card-more-ogogon .card-more__logo {
     top: 23px;
+}
+
+@media(min-width: 1280px) {
+    .card-more__weight-text {
+        font-size: 40px;
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1280px) {
+    .card-more__text {
+        font-size: 20px;
+    }
+
+    .card-more__title {
+        font-size: 32px;
+    }
+
+    .card-more__subtitle {
+        font-size: 24px;
+        ;
+    }
 }

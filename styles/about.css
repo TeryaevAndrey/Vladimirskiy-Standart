@@ -17,6 +17,24 @@
     padding: 25px 0;
     transition: background-image 1s ease-in-out, background-size 0.5s, filter 0.5s;
     position: relative;
+    overflow: hidden;
+}
+
+/* 
+.about-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    height: 100vh;
+} */
+
+.about__inner {
+    position: relative;
 }
 
 .about.change-bg {
@@ -55,10 +73,26 @@
     width: 100%;
     max-width: 65%;
     transform: rotate(-120deg);
+    transition: all 0.2s ease;
 }
 
 .about__img-logo {
     display: none;
+}
+
+.about-bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/about-bg-2.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: all 1s ease-in-out;
 }
 
 @media(min-width: 1024px) {
@@ -71,7 +105,7 @@
         font-size: 60px;
         max-width: 100%;
         text-align: center;
-        margin-top: 270px;
+        margin-top: 230px;
     }
 
     .about__title .ml {
@@ -101,10 +135,11 @@
 
     .about__content .about__text:first-child {
         transform: translateY(-100px);
+        text-align: right;
     }
 
     .about__content .about__text:last-child {
-        transform: translateY(-250px);
+        transform: translateY(-200px);
     }
 
     .about__img-logo {
@@ -116,9 +151,15 @@
     }
 }
 
+@media(min-width: 1280px) {
+    .about__content-img {
+        margin-top: -65px;
+    }
+}
+
 @media(min-width: 1360px) {
     .about__text {
-        max-width: 500px;
+        max-width: 490px;
         width: 100%;
         font-size: 26px;
     }
@@ -131,8 +172,18 @@
     }
 }
 
+@media(min-width: 1024px) and (max-height: 900px) {
+    .about__title {
+        margin-top: 200px;
+    }
 
-@media (min-width: 1024px) and (max-height: 700px) {
+    .about__content-img {
+        margin-top: -55px;
+    }
+}
+
+
+@media (min-width: 1024px) and (max-height: 750px) {
     .about__title {
         margin-top: 150px;
     }
@@ -147,5 +198,11 @@
 
     .about__content .about__text:last-child {
         transform: translateY(-120px);
+    }
+}
+
+@media(min-width: 1600px) {
+    .about__content .about__text:last-child {
+        transform: translateY(-250px);
     }
 }

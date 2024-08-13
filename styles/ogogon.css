@@ -1,12 +1,15 @@
+.ogogon-section {
+    overflow: hidden;
+}
+
 .ogogon {
     background-image: url("../images/ogogon/ogogon-logo-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-color: #FFDE15;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
-    overflow: hidden;
 }
 
 .ogogon-logo {
@@ -68,6 +71,7 @@
     width: 100%;
     position: relative;
     height: 100%;
+    z-index: 1;
 }
 
 .ogogon__image {
@@ -255,8 +259,8 @@
     .ogogon__image.three {
         bottom: unset;
         left: unset;
-        right: 40%;
-        top: -15%;
+        right: 34%;
+        top: -20%;
         z-index: 1;
         transform: translateX(50%) rotate(-50deg);
     }
@@ -282,6 +286,7 @@
         right: 34%;
         transform: translateX(50%) translateY(-50%);
         width: 40%;
+        z-index: 0;
     }
 }
 
@@ -422,5 +427,11 @@
         right: 34%;
         transform: translateX(50%) translateY(-50%);
         width: 40%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .ogogon__info .link {
+        display: none;
     }
 }

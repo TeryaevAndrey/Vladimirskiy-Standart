@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+  // gsap.from(".about-bg", {
+  //   height: '300vh',
+  //   stagger: 0.3,
+  //   scrollTrigger: {
+  //     trigger: ".about",
+  //     start: "top 80%",
+  //     end: "bottom top",
+  //     scrub: window.innerWidth >= 1024,
+  //   },
+  // });
+
   gsap.from(".about__text.left", {
     x: -300,
     opacity: 0,
@@ -27,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (window.innerWidth >= 1024) {
     gsap.to(".about__content-img", {
-      scale: 0.7,
+      scale: 1,
       scrollTrigger: {
         trigger: ".about",
         start: "top 0",
@@ -42,9 +53,19 @@ document.addEventListener("DOMContentLoaded", function () {
     start: "top 80%",
     end: "bottom top",
     scrub: true,
-    onEnter: () => document.querySelector(".about").classList.add("change-bg"),
-    onLeaveBack: () =>
-      document.querySelector(".about").classList.remove("change-bg"),
+    onUpdate: (self) => {
+      // Если прокрутка вниз
+      if (self.direction === 1) {
+        document.querySelector(".about-bg").style.opacity = 1;
+      } 
+      // Если прокрутка вверх
+      else if (self.direction === -1) {
+        document.querySelector(".about-bg").style.opacity = 0;
+      }
+    },
+    onLeaveBack: () => {
+      document.querySelector(".about-bg").style.opacity = 0;
+    },
   });
 
   gsap.from(".geography__item", {
@@ -260,58 +281,38 @@ document.addEventListener("DOMContentLoaded", function () {
         markers: false, // установить в true для отладки
       },
     })
-    .from(".sausage.desktop", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".sausage.mob", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".greens-1", { duration: 0.8, y: 200, opacity: 0 })
-    .from(".greens-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".greens-3", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".pepper-1", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5")
-    .from(".pepper-2", { duration: 0.8, y: 200, opacity: 0 }, "-=0.5");
-
-  const tl4 = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".sausages__info",
-      start: "top 90%",
-      end: "bottom 10%",
-      toggleActions: "play none none none",
-      markers: false,
-    },
-  });
-
-  tl4
-    .from(".sausages__info-img", {
+    .from(".sausage.desktop", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from(".sausage.mob", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from([".sausages__info-img", ".sausages-best-img"], {
       duration: 1,
-      x: -200,
+      x: -100,
       opacity: 0,
     })
-    .from(
-      ".sausages-best-img",
-      {
-        duration: 1,
-        x: -200,
-        opacity: 0,
-      },
-      ">"
-    )
-    .from(
-      ".sausages__info-text",
-      {
-        duration: 1,
-        x: -200,
-        opacity: 0,
-      },
-      ">"
-    );
+    .from(".sausages__info-text", { duration: 1, y: 200, opacity: 0 })
+    .from(".greens-1", { duration: 1, y: 200, opacity: 0 })
+    .from(".greens-2", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from(".greens-3", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from(".pepper-1", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from(".pepper-2", { duration: 1, y: 200, opacity: 0 }, "-=0.5");
+
+  // const tl4 = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: ".sausages__info",
+  //     start: "top 90%",
+  //     end: "bottom 10%",
+  //     toggleActions: "play none none none",
+  //     markers: false,
+  //   },
+  // });
 
   ScrollTrigger.create({
     trigger: ".dumplings",
-    start: "top 0",
+    start: "top 50%",
     end: "bottom 10%",
     scrub: window.innerWidth >= 1024,
-    onEnter: () =>
-      document.querySelector(".dumplings").classList.add("change-bg"),
-    onLeaveBack: () =>
-      document.querySelector(".dumplings").classList.remove("change-bg"),
+    onUpdate: () => {
+      document.querySelector(".dumplings-bg").style.opacity = 1;
+    },
   });
 
   let mm = gsap.matchMedia();
@@ -321,14 +322,14 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.from(".dumplings__info", {
       scrollTrigger: {
         trigger: ".dumplings",
-        start: "top 90%",
+        start: "top 10%",
         end: "bottom 10%",
         markers: false,
-        scrub: true,
       },
-      duration: 1,
-      y: -300, // начальная позиция блока по оси Y (выдвижение сверху)
+      duration: 2,
+      y: -100, // начальная позиция блока по оси Y (выдвижение сверху)
       opacity: 0,
+      delay: 0.5,
     });
   });
 
@@ -429,4 +430,19 @@ document.addEventListener("DOMContentLoaded", function () {
   //     pinSpacing: false,
   //   });
   // });
+});
+
+const greens = document.querySelectorAll(".greens");
+
+window.addEventListener("mousemove", (event) => {
+  const offsetX = (event.clientX - window.innerWidth / 2) * 0.05;
+  const offsetY = (event.clientY - window.innerHeight / 2) * 0.05;
+  greens.forEach((green) => {
+    gsap.to(green, {
+      x: offsetX,
+      y: offsetY,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  });
 });

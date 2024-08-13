@@ -1,3 +1,7 @@
+.sausages-relative {
+  overflow: hidden;
+}
+
 .sausages {
   background-image: url("../images/sausage-bg.png");
   background-repeat: no-repeat;
@@ -13,9 +17,8 @@
 
 @media (min-width: 1024px) {
   .sausages {
-    min-height: calc(100vh + 8px);
-    padding-top: 134px;
-    margin-top: -8px;
+    height: 100vh;
+    padding: 50px 0;
   }
 }
 
@@ -82,9 +85,9 @@
     position: absolute;
     bottom: 60px;
     right: 80px;
-    max-width: 610px;
     width: 100%;
     display: block;
+    width: auto;
   }
 }
 
@@ -266,11 +269,18 @@
     max-width: 300px;
   }
 
-  .sausages {
-    padding-top: 50px;
-  }
-
   .sausages__images .relative {
     right: -34%;
+  }
+
+  .sausages__info-text {
+    font-size: 18px;
+  }
+}
+
+@media(min-width: 1600px) {
+  .sausages-best-img {
+    max-width: 610px;
+    width: 100%;
   }
 }

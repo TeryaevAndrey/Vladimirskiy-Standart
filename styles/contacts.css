@@ -374,3 +374,39 @@
 .contacts-slider .swiper-slide-next {
     opacity: 0;
 }
+
+.contacts__images {
+    position: absolute;
+    width: 112%;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -11px;
+}
+
+.contacts-slider-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media(min-width: 1280px) {
+    .contacts__images {
+        width: 113%;
+        left: -4.5%;
+    }
+}
+
+@media(min-width: 1320px) {
+    .contacts__images {
+        width: 350px;
+        left: 50%;
+        transform: translateY(-50%) translateX(-48%);
+    }
+}
+
+@media(min-width: 1850px) {
+    .contacts__images {
+        width: 112%;
+    }
+}
