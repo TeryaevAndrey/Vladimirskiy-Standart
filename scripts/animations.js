@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ScrollTrigger.create({
     trigger: ".dumplings",
-    start: "top 10%",
+    start: "top 50%",
     end: "bottom 10%",
     scrub: window.innerWidth >= 1024,
     onUpdate: () => {
@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
       duration: 2,
       y: -100, // начальная позиция блока по оси Y (выдвижение сверху)
       opacity: 0,
-      delay: 1,
+      delay: 0.5,
     });
   });
 
