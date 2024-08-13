@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Если прокрутка вниз
       if (self.direction === 1) {
         document.querySelector(".about-bg").style.opacity = 1;
-      } 
+      }
       // Если прокрутка вверх
       else if (self.direction === -1) {
         document.querySelector(".about-bg").style.opacity = 0;
@@ -322,8 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.from(".dumplings__info", {
       scrollTrigger: {
         trigger: ".dumplings",
-        start: "top 10%",
-        end: "bottom 10%",
+        start: window.innerWidth >= 1024 ? "top 10%" : "top 50%",
         markers: false,
       },
       duration: 2,
