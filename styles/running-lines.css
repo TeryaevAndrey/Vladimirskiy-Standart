@@ -73,3 +73,20 @@
         gap: 70px;
     }
 }
+
+.marquee {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    overflow: hidden;
+}
+
+.marquee-item {
+    display: flex;
+}
+
+@media(min-width: 1024px) {
+    .marquee {
+        gap: 80px;
+    }
+}

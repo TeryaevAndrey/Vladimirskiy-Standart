@@ -9,7 +9,7 @@
     z-index: 100;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.2s ease;
+    transition: all 1s ease-in-out;
 }
 
 .card-more.active {
@@ -66,7 +66,7 @@
 }
 
 .card-more__right.black {
-    background-color: #231F20;
+    background-color: #012531;
 }
 
 .card-more__right.yellow {
@@ -253,7 +253,11 @@
 
     .card-more__secondary {
         margin: 54px 0;
-        align-items: center;
+        align-items: end;
+    }
+
+    .card-more__weight {
+        transform: translateY(5px);
     }
 
     .card-more__animals {
@@ -336,5 +340,22 @@
     .card-more__subtitle {
         font-size: 24px;
         ;
+    }
+}
+
+@media(min-width: 1024px) {
+    .card-more__left-top {
+        margin: auto;
+        width: auto;
+        height: 65%;
+    }
+
+    .card-more__left-top img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-more__left .swiper {
+        height: 15%;
     }
 }
