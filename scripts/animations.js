@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-  // gsap.from(".about-bg", {
   //   height: '300vh',
   //   stagger: 0.3,
   //   scrollTrigger: {
@@ -57,14 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
       // Если прокрутка вниз
       if (self.direction === 1) {
         document.querySelector(".about-bg").style.opacity = 1;
+        document.querySelector(".about-bg").style.height = "100vh";
       }
       // Если прокрутка вверх
       else if (self.direction === -1) {
         document.querySelector(".about-bg").style.opacity = 0;
+        document.querySelector(".about-bg").style.height = "120vh";
       }
     },
     onLeaveBack: () => {
       document.querySelector(".about-bg").style.opacity = 0;
+      document.querySelector(".about-bg").style.height = "110vh";
     },
   });
 
@@ -340,19 +341,19 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   });
-});
 
-const greens = document.querySelectorAll(".greens");
+  const greens = document.querySelectorAll(".greens");
 
-window.addEventListener("mousemove", (event) => {
-  const offsetX = (event.clientX - window.innerWidth / 2) * 0.05;
-  const offsetY = (event.clientY - window.innerHeight / 2) * 0.05;
-  greens.forEach((green) => {
-    gsap.to(green, {
-      x: offsetX,
-      y: offsetY,
-      duration: 0.3,
-      ease: "power2.out",
+  window.addEventListener("mousemove", (event) => {
+    const offsetX = (event.clientX - window.innerWidth / 2) * 0.05;
+    const offsetY = (event.clientY - window.innerHeight / 2) * 0.05;
+    greens.forEach((green) => {
+      gsap.to(green, {
+        x: offsetX,
+        y: offsetY,
+        duration: 0.3,
+        ease: "power2.out",
+      });
     });
   });
 });

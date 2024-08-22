@@ -83,19 +83,15 @@ const contactsImages = document.querySelectorAll(".contacts-slider-img");
 let currentIndex = 0;
 
 function changeImage() {
-  // Устанавливаем все изображения на opacity 0
   contactsImages.forEach((img, index) => {
     img.style.opacity = 0;
   });
 
-  // Устанавливаем текущее изображение на opacity 1
   contactsImages[currentIndex].style.opacity = 1;
 
-  // Переходим к следующему индексу
   currentIndex = (currentIndex + 1) % contactsImages.length;
 }
 
 changeImage();
 
-// Меняем изображение каждые 5 секунд
 setInterval(changeImage, 5000);
