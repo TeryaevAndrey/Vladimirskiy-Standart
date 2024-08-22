@@ -4,7 +4,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 93vw;
-  height: 96vh;
+  height: 96dvh;
   background-image: url("../images/mob-menu-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
