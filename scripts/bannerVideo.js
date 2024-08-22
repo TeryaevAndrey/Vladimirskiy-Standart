@@ -35,6 +35,7 @@ const bannerVideoHandler = () => {
     bannerVideo.removeAttribute("controls");
     bannerVideo.src = "./videos/video.mp4";
     bannerVideo.style.zIndex = "unset";
+    bannerVideo.poster = "./images/banner.jpg";
     playsBtns.forEach((playBtn) => {
       playBtn.textContent = "Проиграть ролик";
       playBtn.style.opacity = 1;
