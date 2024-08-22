@@ -110,26 +110,82 @@ document.addEventListener("DOMContentLoaded", function () {
 
   gsap.registerPlugin(Observer);
 
-  horizontalLoop(".running-line:first-child .rail h4", {
-    repeat: -1,
-    paddingRight: 0,
-    speed: 1,
-    reversed: true,
-  });
+  let baseSpeed = 1; // исходная скорость
+  let maxSpeed = 5;  // максимальная скорость при прокрутке
+  let scrollTimeout; // таймер для отслеживания паузы в прокрутке
+  let lastScrollY = window.scrollY; // последняя позиция скролла
+  let currentSpeed = baseSpeed; // текущая скорость
+  
+  // Функция обновления скорости и направления анимации
+  function updateSpeed() {
+    let scrollPosition = window.scrollY; // текущая позиция скролла
+    let windowHeight = window.innerHeight; // высота видимой области
+    let documentHeight = document.body.scrollHeight; // высота всего документа
+  
+    // Определяем процент прокрутки страницы
+    let scrollPercentage = scrollPosition / (documentHeight - windowHeight);
+    let newSpeed = baseSpeed + (maxSpeed - baseSpeed) * scrollPercentage;
+  
+    // Определяем направление прокрутки
+    let direction = scrollPosition > lastScrollY ? 1 : -1;
+  
+    // Обновляем скорость и направление анимации для первых двух полос
+    runningLines.slice(0, 2).forEach(tl => {
+      let targetSpeed = newSpeed * direction;
+      gsap.to(tl, { timeScale: targetSpeed, duration: 0.5, ease: "power2.out" });
+    });
+  
+    // Для последней полосы направление противоположное
+    let oppositeDirectionSpeed = newSpeed * -direction;
+    gsap.to(runningLines[2], { timeScale: oppositeDirectionSpeed, duration: 0.5, ease: "power2.out" });
+  
+    // Обновляем последнюю позицию скролла
+    lastScrollY = scrollPosition;
+  
+    // Сбрасываем таймер и устанавливаем его заново
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      resetSpeed();
+    }, 200); // Скорость вернется к исходной через 200ms после прекращения скролла
+  }
+  
+  // Функция плавного сброса скорости до базовой
+  function resetSpeed() {
+    // Сбрасываем скорость для первых двух полос
+    runningLines.slice(0, 2).forEach(tl => {
+      gsap.to(tl, { timeScale: baseSpeed, duration: 1, ease: "power2.out" });
+    });
+  
+    // Сбрасываем скорость для последней полосы (в противоположном направлении)
+    gsap.to(runningLines[2], { timeScale: -baseSpeed, duration: 1, ease: "power2.out" });
+  }
+  
+  // Создаем анимации для каждого marquee
+  let runningLines = [
+    horizontalLoop(".running-line:first-child .rail h4", {
+      repeat: -1,
+      paddingRight: 0,
+      speed: baseSpeed,
+      reversed: true,
+    }),
+    horizontalLoop(".running-line:nth-child(2) .rail h4", {
+      repeat: -1,
+      paddingRight: 0,
+      speed: baseSpeed,
+      reversed: true,
+    }),
+    horizontalLoop(".running-line:last-child .rail h4", {
+      repeat: -1,
+      paddingRight: 0,
+      speed: baseSpeed,
+      reversed: false,
+    })
+  ];
+  
+  // Добавляем слушатель события scroll
+  window.addEventListener('scroll', updateSpeed);
+  
 
-  horizontalLoop(".running-line:nth-child(2) .rail h4", {
-    repeat: -1,
-    paddingRight: 0,
-    speed: 1,
-    reversed: true,
-  });
-
-  horizontalLoop(".running-line:last-child .rail h4", {
-    repeat: -1,
-    paddingRight: 0,
-    speed: 1,
-    reversed: false,
-  });
 
   function horizontalLoop(items, config) {
     items = gsap.utils.toArray(items);
