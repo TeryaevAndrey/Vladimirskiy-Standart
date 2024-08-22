@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-  // gsap.from(".about-bg", {
   //   height: '300vh',
   //   stagger: 0.3,
   //   scrollTrigger: {
@@ -57,14 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
       // Если прокрутка вниз
       if (self.direction === 1) {
         document.querySelector(".about-bg").style.opacity = 1;
+        document.querySelector(".about-bg").style.height = "100vh";
       }
       // Если прокрутка вверх
       else if (self.direction === -1) {
         document.querySelector(".about-bg").style.opacity = 0;
+        document.querySelector(".about-bg").style.height = "120vh";
       }
     },
     onLeaveBack: () => {
       document.querySelector(".about-bg").style.opacity = 0;
+      document.querySelector(".about-bg").style.height = "110vh";
     },
   });
 
@@ -107,66 +108,84 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
 
-  let lastScrollPosition = 0;
   gsap.registerPlugin(Observer);
 
-  const scrollingText1 = gsap.utils.toArray(
-    ".running-line:first-child .rail h4"
-  );
-  const scrollingText2 = gsap.utils.toArray(
-    ".running-line:nth-child(2) .rail h4"
-  );
-  const scrollingText3 = gsap.utils.toArray(
-    ".running-line:last-child .rail h4"
-  );
+  let baseSpeed = 1; // исходная скорость
+  let maxSpeed = 5;  // максимальная скорость при прокрутке
+  let scrollTimeout; // таймер для отслеживания паузы в прокрутке
+  let lastScrollY = window.scrollY; // последняя позиция скролла
+  let currentSpeed = baseSpeed; // текущая скорость
+  
+  // Функция обновления скорости и направления анимации
+  function updateSpeed() {
+    let scrollPosition = window.scrollY; // текущая позиция скролла
+    let windowHeight = window.innerHeight; // высота видимой области
+    let documentHeight = document.body.scrollHeight; // высота всего документа
+  
+    // Определяем процент прокрутки страницы
+    let scrollPercentage = scrollPosition / (documentHeight - windowHeight);
+    let newSpeed = baseSpeed + (maxSpeed - baseSpeed) * scrollPercentage;
+  
+    // Определяем направление прокрутки
+    let direction = scrollPosition > lastScrollY ? 1 : -1;
+  
+    // Обновляем скорость и направление анимации для первых двух полос
+    runningLines.slice(0, 2).forEach(tl => {
+      let targetSpeed = newSpeed * direction;
+      gsap.to(tl, { timeScale: targetSpeed, duration: 0.5, ease: "power2.out" });
+    });
+  
+    // Для последней полосы направление противоположное
+    let oppositeDirectionSpeed = newSpeed * -direction;
+    gsap.to(runningLines[2], { timeScale: oppositeDirectionSpeed, duration: 0.5, ease: "power2.out" });
+  
+    // Обновляем последнюю позицию скролла
+    lastScrollY = scrollPosition;
+  
+    // Сбрасываем таймер и устанавливаем его заново
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      resetSpeed();
+    }, 200); // Скорость вернется к исходной через 200ms после прекращения скролла
+  }
+  
+  // Функция плавного сброса скорости до базовой
+  function resetSpeed() {
+    // Сбрасываем скорость для первых двух полос
+    runningLines.slice(0, 2).forEach(tl => {
+      gsap.to(tl, { timeScale: baseSpeed, duration: 1, ease: "power2.out" });
+    });
+  
+    // Сбрасываем скорость для последней полосы (в противоположном направлении)
+    gsap.to(runningLines[2], { timeScale: -baseSpeed, duration: 1, ease: "power2.out" });
+  }
+  
+  // Создаем анимации для каждого marquee
+  let runningLines = [
+    horizontalLoop(".running-line:first-child .rail h4", {
+      repeat: -1,
+      paddingRight: 0,
+      speed: baseSpeed,
+      reversed: true,
+    }),
+    horizontalLoop(".running-line:nth-child(2) .rail h4", {
+      repeat: -1,
+      paddingRight: 0,
+      speed: baseSpeed,
+      reversed: true,
+    }),
+    horizontalLoop(".running-line:last-child .rail h4", {
+      repeat: -1,
+      paddingRight: 0,
+      speed: baseSpeed,
+      reversed: false,
+    })
+  ];
+  
+  // Добавляем слушатель события scroll
+  window.addEventListener('scroll', updateSpeed);
+  
 
-  const tl1 = horizontalLoop(scrollingText1, {
-    repeat: -1,
-  });
-
-  const tl2 = horizontalLoop(scrollingText3, {
-    repeat: -1,
-    reversed: true,
-  });
-
-  const tl3 = horizontalLoop(scrollingText2, {
-    repeat: -1,
-  });
-
-  Observer.create({
-    onChangeY(self) {
-      let factor = window.innerWidth < 1024 ? 1.5 : 2.5;
-      if (self.deltaY < 0) {
-        factor *= -1;
-      }
-      gsap
-        .timeline({
-          defaults: {
-            ease: "none",
-          },
-        })
-        .to(tl1, { timeScale: factor * 2.5, duration: 0.2 })
-        .to(tl1, { timeScale: factor / 2.5, duration: 1 }, "+=0.3");
-
-      gsap
-        .timeline({
-          defaults: {
-            ease: "none",
-          },
-        })
-        .to(tl2, { timeScale: factor * -2.5, duration: 0.2 })
-        .to(tl2, { timeScale: factor / -2.5, duration: 1 }, "+=0.3");
-
-      gsap
-        .timeline({
-          defaults: {
-            ease: "none",
-          },
-        })
-        .to(tl3, { timeScale: factor * 2.5, duration: 0.2 })
-        .to(tl3, { timeScale: factor / 2.5, duration: 1 }, "+=0.3");
-    },
-  });
 
   function horizontalLoop(items, config) {
     items = gsap.utils.toArray(items);
@@ -295,16 +314,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .from(".pepper-1", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
     .from(".pepper-2", { duration: 1, y: 200, opacity: 0 }, "-=0.5");
 
-  // const tl4 = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".sausages__info",
-  //     start: "top 90%",
-  //     end: "bottom 10%",
-  //     toggleActions: "play none none none",
-  //     markers: false,
-  //   },
-  // });
-
   ScrollTrigger.create({
     trigger: ".dumplings",
     start: "top 50%",
@@ -383,65 +392,24 @@ document.addEventListener("DOMContentLoaded", function () {
       ease: "power2.out",
       scrollTrigger: {
         trigger: image,
-        start: "top 80%", // Start the animation when the image is 80% from the top of the viewport
+        start: "top 80%",
         toggleActions: "play none none none",
       },
     });
   });
 
-  // const sects = document.querySelectorAll(".sect");
-  // let currentIndex = 0;
+  const greens = document.querySelectorAll(".greens");
 
-  // function scrollToSection(index) {
-  //   gsap.to(window, {
-  //     scrollTo: sects[index],
-  //     duration: 1,
-  //     onComplete: () => (currentIndex = index),
-  //   });
-  // }
-
-  // document.addEventListener(
-  //   "wheel",
-  //   (event) => {
-  //     if (event.deltaY > 0 && currentIndex < sects.length - 1) {
-  //       scrollToSection(currentIndex + 1);
-  //     } else if (event.deltaY < 0 && currentIndex > 0) {
-  //       scrollToSection(currentIndex - 1);
-  //     }
-  //     event.preventDefault();
-  //   },
-  //   { passive: false }
-  // );
-
-  // document.addEventListener("keydown", (event) => {
-  //   if (event.key === "ArrowDown" && currentIndex < sects.length - 1) {
-  //     scrollToSection(currentIndex + 1);
-  //   } else if (event.key === "ArrowUp" && currentIndex > 0) {
-  //     scrollToSection(currentIndex - 1);
-  //   }
-  // });
-
-  // gsap.utils.toArray(".with-sticky").forEach((section) => {
-  //   ScrollTrigger.create({
-  //     trigger: section,
-  //     start: "top top",
-  //     end: "bottom top",
-  //     pinSpacing: false,
-  //   });
-  // });
-});
-
-const greens = document.querySelectorAll(".greens");
-
-window.addEventListener("mousemove", (event) => {
-  const offsetX = (event.clientX - window.innerWidth / 2) * 0.05;
-  const offsetY = (event.clientY - window.innerHeight / 2) * 0.05;
-  greens.forEach((green) => {
-    gsap.to(green, {
-      x: offsetX,
-      y: offsetY,
-      duration: 0.3,
-      ease: "power2.out",
+  window.addEventListener("mousemove", (event) => {
+    const offsetX = (event.clientX - window.innerWidth / 2) * 0.05;
+    const offsetY = (event.clientY - window.innerHeight / 2) * 0.05;
+    greens.forEach((green) => {
+      gsap.to(green, {
+        x: offsetX,
+        y: offsetY,
+        duration: 0.3,
+        ease: "power2.out",
+      });
     });
   });
 });

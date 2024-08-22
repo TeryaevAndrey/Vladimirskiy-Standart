@@ -4,6 +4,7 @@ const playsBtns = document.querySelectorAll(".play-btn");
 const bannerVideoHandler = () => {
   const bannerImages = document.querySelectorAll(".banner-img");
   const header = document.querySelector(".header");
+  const closeBtn = document.querySelector("#closeVideoBtn");
 
   playsBtns.forEach((playBtn) => {
     playBtn.addEventListener("click", () => {
@@ -18,7 +19,7 @@ const bannerVideoHandler = () => {
           img.style.display = "none";
         });
 
-        header.style.display = "none";
+        closeBtn.classList.add("show");
       } else {
         bannerVideo.pause();
         playBtn.textContent = "Проиграть ролик";
@@ -26,13 +27,11 @@ const bannerVideoHandler = () => {
         bannerImages.forEach((img) => {
           img.style.display = "flex";
         });
-
-        header.style.display = "block";
       }
     });
   });
 
-  bannerVideo.addEventListener("ended", () => {
+  const closeVideo = () => {
     bannerVideo.removeAttribute("controls");
     bannerVideo.src = "./videos/video.mp4";
     bannerVideo.style.zIndex = "unset";
@@ -46,7 +45,11 @@ const bannerVideoHandler = () => {
     });
 
     header.style.display = "block";
-  });
+    closeBtn.classList.remove("show");
+  };
+
+  closeBtn?.addEventListener("click", closeVideo);
+  bannerVideo.addEventListener("ended", closeVideo);
 };
 
 bannerVideoHandler();

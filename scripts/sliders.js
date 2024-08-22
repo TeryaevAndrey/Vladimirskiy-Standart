@@ -79,17 +79,19 @@ new Swiper(".swiper.ogogon-slider", {
   speed: 600,
 });
 
-const contactsImagesArr = [
-  "./images/contacts/slider-3.png",
-  "./images/contacts/slider-2.png",
-];
-const contactsImage = document.querySelector("#contactsImage");
+const contactsImages = document.querySelectorAll(".contacts-slider-img");
 let currentIndex = 0;
 
 function changeImage() {
-  contactsImage.src = contactsImagesArr[currentIndex];
+  contactsImages.forEach((img, index) => {
+    img.style.opacity = 0;
+  });
 
-  currentIndex = (currentIndex + 1) % contactsImagesArr.length;
+  contactsImages[currentIndex].style.opacity = 1;
+
+  currentIndex = (currentIndex + 1) % contactsImages.length;
 }
+
+changeImage();
 
 setInterval(changeImage, 5000);

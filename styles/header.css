@@ -2,7 +2,6 @@
     padding-top: 30px;
     font-family: var(--secondary-family);
     position: relative;
-    z-index: 1;
 }
 
 .header__inner {
@@ -82,6 +81,19 @@
     bottom: 0;
 }
 
+.close-video {
+    display: none;
+    z-index: 20;
+    background-color: transparent;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+}
+
+.close-video.show {
+    display: block;
+}
+
 
 @media(min-width: 1024px) {
     .header {
@@ -90,5 +102,12 @@
 
     .menu {
         display: block;
+    }
+}
+
+@media(max-width: 1024px) {
+    .close-video {
+        right: 16px;
+        top: 16px;
     }
 }
