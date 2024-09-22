@@ -5,7 +5,8 @@
   font-family: "Craftwork Grotesk", sans-serif;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -21,25 +22,8 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  scroll-snap-points-y: repeat(100px);
 }
 
-@media(max-width: 1024px) {
-  body {
-    scroll-snap-type: none;
-  }
-}
-
-section {
-  scroll-snap-align: start;
-}
-
-
-section {
-  scroll-snap-align: start;
-}
 
 main {
   overflow-x: hidden;

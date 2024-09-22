@@ -14,10 +14,10 @@
 }
 
 @media(min-width: 1024px) {
-    .contacts {
-        height: 100vh;
-        min-height: 100vh;
-    }
+  .contacts {
+    height: 100vh;
+    min-height: 100vh;
+  }
 }
 
 .contacts .container {

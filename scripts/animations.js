@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         innerText: targetCount,
         duration: 3,
-        ease: "power1.in",
+        ease: "power1.inOut",
         scrollTrigger: {
           trigger: counter,
           start: "top 80%",
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.to(tl, {
           timeScale: targetSpeed,
           duration: 0.5,
-          ease: "power2.out",
+          ease: "power1.inOut",
         });
       });
     } else {
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.to(tl, {
           timeScale: targetSpeed,
           duration: 0.5,
-          ease: "power2.out",
+          ease: "power1.inOut",
         });
       });
 
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
       gsap.to(runningLines[2], {
         timeScale: oppositeDirectionSpeed,
         duration: 0.5,
-        ease: "power2.out",
+        ease: "power1.inOut",
       });
     }
 
@@ -180,19 +180,23 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.to(tl, {
           timeScale: targetSpeed,
           duration: 1,
-          ease: "power2.out",
+          ease: "power1.inOut",
         });
       });
     } else {
       // На больших экранах
       runningLines.slice(0, 2).forEach((tl) => {
-        gsap.to(tl, { timeScale: baseSpeed, duration: 1, ease: "power2.out" });
+        gsap.to(tl, {
+          timeScale: baseSpeed,
+          duration: 1,
+          ease: "power1.inOut",
+        });
       });
 
       gsap.to(runningLines[2], {
         timeScale: -baseSpeed,
         duration: 1,
-        ease: "power2.out",
+        ease: "power1.inOut",
       });
     }
   }
@@ -228,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let tl = gsap.timeline({
         repeat: config.repeat,
         paused: config.paused,
-        defaults: { ease: "none" },
+        defaults: { ease: "power1.inOut" },
         onReverseComplete: () =>
           tl.totalTime(tl.rawTime() + tl.duration() * 100),
       }),
@@ -375,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dumplingsAnimation = gsap.from(".dumplings__info", {
       scrollTrigger: {
         trigger: ".dumplings",
-        start: window.innerWidth >= 1024 ? "top 10%" : "top 50%",
+        start: window.innerWidth >= 1024 ? "top 100%" : "top 50%",
         markers: false,
       },
       duration: 2,
@@ -438,12 +442,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const ogogonAnimation = gsap.from(image, {
       ...direction,
-      duration: 1.5,
-      ease: "power2.out",
+      duration: 2,
+      ease: "power1.inOut",
       scrollTrigger: {
-        trigger: image,
-        start: "top 80%",
-        toggleActions: "play none none none",
+        trigger: ".ogogon",
+        start: "top 100%",
+        end: "bottom 0%",
+
+        markers: false,
       },
     });
 
@@ -464,7 +470,7 @@ document.addEventListener("DOMContentLoaded", function () {
         x: offsetX,
         y: offsetY,
         duration: 0.3,
-        ease: "power2.out",
+        ease: "power1.inOut",
       });
     });
   });
