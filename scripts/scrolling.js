@@ -23,8 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "scroll",
     function () {
       const blockRect = $(".about")[0].getBoundingClientRect();
+      const geographyRect = $(".geography-wrapper")[0].getBoundingClientRect();
 
       if (blockRect.bottom <= 0 && this.window.location.hash === "#2") {
+        $.scrollify.next();
+      }
+
+      if (geographyRect.bottom <= 0 && this.window.location.hash === "#3") {
         $.scrollify.next();
       }
     },
