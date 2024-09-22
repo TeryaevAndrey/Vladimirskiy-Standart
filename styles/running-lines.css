@@ -4,11 +4,13 @@
     overflow: hidden;
     position: relative;
     z-index: 10;
+    min-height: 195px;
 }
 
 @media(min-width: 1024px) {
     .running-lines {
         margin-bottom: -10px;
+        min-height: 326px;
     }
 }
 

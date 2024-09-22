@@ -2,6 +2,7 @@
   .dumplings-wrapper {
     overflow-x: hidden;
     height: 100vh;
+    min-height: 100vh;
   }
 
   .dumplings-sticky {

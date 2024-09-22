@@ -1,5 +1,7 @@
 .sausages-relative {
   overflow: hidden;
+  min-height: 100vh;
+  height: 100vh;
 }
 
 .sausages {
@@ -7,17 +9,21 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
   padding: 30px 0;
   position: relative;
   overflow: hidden;
   cursor: pointer;
   z-index: 0;
+  height: 100vh;
 }
 
 @media (min-width: 1024px) {
+  .sausages-relative {
+    min-height: 100vh;
+  }
   .sausages {
     height: 100vh;
+    min-height: 100vh;
     padding: 50px 0;
   }
 }
@@ -238,13 +244,13 @@
   }
 }
 
-@media(min-height: 940px) {
+@media (min-height: 940px) {
   .greens-2 {
     bottom: 0;
   }
 }
 
-@media(min-width: 1600px) {
+@media (min-width: 1600px) {
   .greens-1 {
     width: 1300px;
     right: 10%;
@@ -264,7 +270,7 @@
   width: 100% !important;
 }
 
-@media(min-width: 1024px) and (max-height: 700px) {
+@media (min-width: 1024px) and (max-height: 700px) {
   .sausages-best-img {
     max-width: 300px;
   }
@@ -278,7 +284,7 @@
   }
 }
 
-@media(min-width: 1600px) {
+@media (min-width: 1600px) {
   .sausages-best-img {
     max-width: 610px;
     width: 100%;

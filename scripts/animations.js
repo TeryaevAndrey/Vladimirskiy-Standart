@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (window.innerWidth >= 1024) {
     gsap.to(".about__content-img", {
-      scale: 1,
+      scale: 0.9,
       scrollTrigger: {
         trigger: ".about",
         start: "top 0",
@@ -121,35 +121,48 @@ document.addEventListener("DOMContentLoaded", function () {
     let scrollPosition = window.scrollY; // текущая позиция скролла
     let windowHeight = window.innerHeight; // высота видимой области
     let documentHeight = document.body.scrollHeight; // высота всего документа
-  
+
     // Определяем процент прокрутки страницы
     let scrollPercentage = scrollPosition / (documentHeight - windowHeight);
     let newSpeed = baseSpeed + (maxSpeed - baseSpeed) * scrollPercentage;
-  
+
     // Определяем направление прокрутки
     let direction = scrollPosition > lastScrollY ? 1 : -1;
-  
+
     // Проверяем ширину окна
     if (window.innerWidth < 1024) {
       // На мобильных устройствах (вторая полоса идет в противоположном направлении)
       runningLines.forEach((tl, index) => {
-        let targetSpeed = (index === 1) ? newSpeed * -direction : newSpeed * direction;
-        gsap.to(tl, { timeScale: targetSpeed, duration: 0.5, ease: "power2.out" });
+        let targetSpeed =
+          index === 1 ? newSpeed * -direction : newSpeed * direction;
+        gsap.to(tl, {
+          timeScale: targetSpeed,
+          duration: 0.5,
+          ease: "power2.out",
+        });
       });
     } else {
       // На больших экранах (последняя полоса идет в противоположном направлении)
-      runningLines.slice(0, 2).forEach(tl => {
+      runningLines.slice(0, 2).forEach((tl) => {
         let targetSpeed = newSpeed * direction;
-        gsap.to(tl, { timeScale: targetSpeed, duration: 0.5, ease: "power2.out" });
+        gsap.to(tl, {
+          timeScale: targetSpeed,
+          duration: 0.5,
+          ease: "power2.out",
+        });
       });
-  
+
       let oppositeDirectionSpeed = newSpeed * -direction;
-      gsap.to(runningLines[2], { timeScale: oppositeDirectionSpeed, duration: 0.5, ease: "power2.out" });
+      gsap.to(runningLines[2], {
+        timeScale: oppositeDirectionSpeed,
+        duration: 0.5,
+        ease: "power2.out",
+      });
     }
-  
+
     // Обновляем последнюю позицию скролла
     lastScrollY = scrollPosition;
-  
+
     // Сбрасываем таймер и устанавливаем его заново
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
@@ -163,16 +176,24 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth < 1024) {
       // На мобильных устройствах
       runningLines.forEach((tl, index) => {
-        let targetSpeed = (index === 1) ? -baseSpeed : baseSpeed;
-        gsap.to(tl, { timeScale: targetSpeed, duration: 1, ease: "power2.out" });
+        let targetSpeed = index === 1 ? -baseSpeed : baseSpeed;
+        gsap.to(tl, {
+          timeScale: targetSpeed,
+          duration: 1,
+          ease: "power2.out",
+        });
       });
     } else {
       // На больших экранах
-      runningLines.slice(0, 2).forEach(tl => {
+      runningLines.slice(0, 2).forEach((tl) => {
         gsap.to(tl, { timeScale: baseSpeed, duration: 1, ease: "power2.out" });
       });
-  
-      gsap.to(runningLines[2], { timeScale: -baseSpeed, duration: 1, ease: "power2.out" });
+
+      gsap.to(runningLines[2], {
+        timeScale: -baseSpeed,
+        duration: 1,
+        ease: "power2.out",
+      });
     }
   }
 
@@ -305,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return tl;
   }
 
-  gsap
+  const sausagesAnimations = gsap
     .timeline({
       scrollTrigger: {
         trigger: ".sausages__images",
@@ -321,12 +342,21 @@ document.addEventListener("DOMContentLoaded", function () {
       x: -100,
       opacity: 0,
     })
-    .from(".sausages__info-text", { duration: 1, y: 200, opacity: 0 })
-    .from(".greens-1", { duration: 1, y: 200, opacity: 0 })
-    .from(".greens-2", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
-    .from(".greens-3", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
+    .from([".sausages__info-text", ".greens-1", ".greens-2", ".greens-3"], {
+      duration: 1,
+      y: 200,
+      opacity: 0,
+    })
     .from(".pepper-1", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
     .from(".pepper-2", { duration: 1, y: 200, opacity: 0 }, "-=0.5");
+
+  sausagesAnimations.eventCallback("onComplete", () => {
+    if (window.innerWidth < 1024) return;
+
+    document
+      .querySelector(`.card[data-card="sausages"]`)
+      .classList.add("active");
+  });
 
   ScrollTrigger.create({
     trigger: ".dumplings",
@@ -342,7 +372,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   mm.add("(min-width: 1024px)", () => {
     // Анимация для экранов шире 1024px (выдвижение сверху)
-    gsap.from(".dumplings__info", {
+    const dumplingsAnimation = gsap.from(".dumplings__info", {
       scrollTrigger: {
         trigger: ".dumplings",
         start: window.innerWidth >= 1024 ? "top 10%" : "top 50%",
@@ -353,9 +383,15 @@ document.addEventListener("DOMContentLoaded", function () {
       opacity: 0,
       delay: 0.5,
     });
+
+    dumplingsAnimation.eventCallback("onComplete", () => {
+      document
+        .querySelector(`.card[data-card="dumplings"]`)
+        .classList.add("active");
+    });
   });
 
-  mm.add("(max-width: 1023px)", () => {
+  const dumplingsAnimation = mm.add("(max-width: 1023px)", () => {
     // Анимация для экранов уже 1024px (выдвижение слева)
     gsap.from(".dumplings__info", {
       scrollTrigger: {
@@ -400,7 +436,7 @@ document.addEventListener("DOMContentLoaded", function () {
         direction = { opacity: 0 };
     }
 
-    gsap.from(image, {
+    const ogogonAnimation = gsap.from(image, {
       ...direction,
       duration: 1.5,
       ease: "power2.out",
@@ -409,6 +445,12 @@ document.addEventListener("DOMContentLoaded", function () {
         start: "top 80%",
         toggleActions: "play none none none",
       },
+    });
+
+    ogogonAnimation.eventCallback("onComplete", () => {
+      document
+        .querySelector(`.card[data-card="ogogon"]`)
+        .classList.add("active");
     });
   });
 

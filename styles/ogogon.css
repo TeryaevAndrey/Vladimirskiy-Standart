@@ -1,450 +1,450 @@
 .ogogon-section {
-    overflow: hidden;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 .ogogon {
-    background-image: url("../images/ogogon/ogogon-logo-bg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: #FFDE15;
-    min-height: 100vh;
-    position: relative;
+  background-image: url("../images/ogogon/ogogon-logo-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #ffde15;
+  min-height: 100vh;
+  position: relative;
+  height: 100vh;
 }
 
-@media(min-width: 1024px) {
-    .ogogon {
-        height: 100vh;
-    }
+@media (min-width: 1024px) {
+  .ogogon {
+    height: 100vh;
+  }
+
+  .ogogon-section {
+    min-height: 100vh;
+  }
 }
 
 .ogogon-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 .ogogon__info {
-    padding-top: 40%;
-    max-width: 166px;
-    width: 100%;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    z-index: 10;
-    position: relative;
+  padding-top: 40%;
+  max-width: 166px;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+  position: relative;
 }
 
-@media(min-width: 1024px) {
-    .ogogon__info {
-        margin-top: 40%;
-        padding-top: 0;
-    }
+@media (min-width: 1024px) {
+  .ogogon__info {
+    margin-top: 40%;
+    padding-top: 0;
+  }
 }
 
 .ogogon__info-text {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 157%;
-    color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 157%;
+  color: #000;
 }
 
-@media(min-width: 600px) {
-    .ogogon__info-text {
-        font-size: 16px;
-    }
+@media (min-width: 600px) {
+  .ogogon__info-text {
+    font-size: 16px;
+  }
 }
 
-@media(min-width: 1024px) {
-    .ogogon__info {
-        position: absolute;
-        top: 80px;
-        left: 33%;
-        margin-top: 0;
-        max-width: 450px;
-    }
+@media (min-width: 1024px) {
+  .ogogon__info {
+    position: absolute;
+    top: 80px;
+    left: 33%;
+    margin-top: 0;
+    max-width: 450px;
+  }
 
-    .ogogon__info-text {
-        font-size: 22px;
-    }
+  .ogogon__info-text {
+    font-size: 22px;
+  }
 }
 
 .ogogon__images-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
 }
 
 .ogogon__images {
-    width: 100%;
-    position: relative;
-    height: 100%;
-    z-index: 1;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  z-index: 1;
 }
 
 .ogogon__image {
-    position: absolute;
-    width: 50%;
-    right: 0;
+  position: absolute;
+  width: 50%;
+  right: 0;
 }
 
-@media(min-width: 550px) {
-    .ogogon__image {
-        width: 30%;
-    }
+@media (min-width: 550px) {
+  .ogogon__image {
+    width: 30%;
+  }
 }
 
 .ogogon__image.one {
-    top: 5%;
-    min-width: 155px;
+  top: 5%;
+  min-width: 155px;
 }
 
 .ogogon__image.two {
-    top: 28%;
-    min-width: 160px;
+  top: 28%;
+  min-width: 160px;
 }
 
 .ogogon__image.three {
-    bottom: 15%;
-    left: 0;
-    z-index: 1;
+  bottom: 15%;
+  left: 0;
+  z-index: 1;
 }
 
 .ogogon__image.four {
-    bottom: -10%;
-    right: -15%;
-    min-width: 225px;
+  bottom: -10%;
+  right: -15%;
+  min-width: 225px;
 }
 
 .ogogon__image.five {
-    bottom: -12%;
-    left: -20%;
-    min-width: 300px;
+  bottom: -12%;
+  left: -20%;
+  min-width: 300px;
 }
 
 .ogogon__image.six {
-    top: 45%;
-    right: -27%;
-    min-width: 280px;
+  top: 45%;
+  right: -27%;
+  min-width: 280px;
+  transform: rotate(-20deg);
+}
+
+@media (min-width: 375px) {
+  .ogogon__image {
+    width: 60%;
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .ogogon__image.five {
+    max-width: 100%;
+    min-width: auto;
+    left: -11%;
+    bottom: -7%;
+    width: 70%;
+  }
+
+  .ogogon__image.six {
+    width: 100%;
+    right: -31%;
+  }
+
+  .ogogon__image.four {
+    min-width: auto;
+    width: 70%;
+  }
+
+  .ogogon__image.three {
+    bottom: 16%;
+    left: -3%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ogogon__images-wrapper {
+    right: -15%;
+  }
+
+  .ogogon-logo {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: unset;
+    width: auto;
+    height: 100vh;
+  }
+
+  .ogogon__image {
+    width: 25%;
+  }
+
+  .ogogon__image.one {
+    top: 5%;
+    right: 0;
+    height: auto;
+  }
+
+  .ogogon__image.two {
+    top: unset;
+    bottom: 20%;
+    right: unset;
+    left: 35%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 30%;
+  }
+
+  .ogogon__image.three {
+    bottom: unset;
+    left: unset;
+    right: 40%;
+    top: -15%;
+    z-index: 1;
+    transform: translateX(50%) rotate(-50deg);
+  }
+
+  .ogogon__image.four {
+    bottom: -5%;
+    top: unset;
+    right: 10%;
+    left: unset;
+    width: 40%;
+    transform: rotate(30deg);
+  }
+
+  .ogogon__image.five {
+    bottom: 0;
+    left: 15%;
+    width: 40%;
     transform: rotate(-20deg);
-}
+  }
 
-@media(min-width: 375px) {
-    .ogogon__image {
-        width: 60%;
-        max-width: 100%;
-        min-width: auto;
-    }
-
-    .ogogon__image.five {
-        max-width: 100%;
-        min-width: auto;
-        left: -11%;
-        bottom: -7%;
-        width: 70%;
-    }
-
-    .ogogon__image.six {
-
-        width: 100%;
-        right: -31%;
-
-    }
-
-    .ogogon__image.four {
-        min-width: auto;
-        width: 70%
-    }
-
-    .ogogon__image.three {
-        bottom: 16%;
-        left: -3%;
-    }
-
-}
-
-@media(min-width: 1024px) {
-    .ogogon__images-wrapper {
-        right: -15%;
-    }
-
-    .ogogon-logo {
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: unset;
-        width: auto;
-        height: 100vh;
-    }
-
-
-    .ogogon__image {
-        width: 25%;
-    }
-
-    .ogogon__image.one {
-        top: 5%;
-        right: 0;
-        height: auto;
-    }
-
-    .ogogon__image.two {
-        top: unset;
-        bottom: 20%;
-        right: unset;
-        left: 35%;
-        transform: translateX(-50%) rotate(45deg);
-        width: 30%;
-    }
-
-    .ogogon__image.three {
-        bottom: unset;
-        left: unset;
-        right: 40%;
-        top: -15%;
-        z-index: 1;
-        transform: translateX(50%) rotate(-50deg);
-    }
-
-    .ogogon__image.four {
-        bottom: -5%;
-        top: unset;
-        right: 10%;
-        left: unset;
-        width: 40%;
-        transform: rotate(30deg);
-    }
-
-    .ogogon__image.five {
-        bottom: 0;
-        left: 15%;
-        width: 40%;
-        transform: rotate(-20deg);
-    }
-
-    .ogogon__image.six {
-        top: 55%;
-        right: 30%;
-        transform: translateX(50%) translateY(-50%);
-        width: 55%;
-    }
+  .ogogon__image.six {
+    top: 55%;
+    right: 30%;
+    transform: translateX(50%) translateY(-50%);
+    width: 55%;
+  }
 }
 
 .ogogon .link {
-    color: #000;
+  color: #000;
 }
 
-@media(min-width: 1280px) {
-    .ogogon__info {
-        left: 25%;
-    }
+@media (min-width: 1280px) {
+  .ogogon__info {
+    left: 25%;
+  }
 
-    .ogogon__images-wrapper {
-        right: 0;
-    }
+  .ogogon__images-wrapper {
+    right: 0;
+  }
 }
 
-@media(min-width: 1440px) {
+@media (min-width: 1440px) {
+  .ogogon__image {
+    width: 25%;
+  }
 
-    .ogogon__image {
-        width: 25%;
-    }
+  .ogogon__image.one {
+    top: -10%;
+    height: auto;
+  }
 
-    .ogogon__image.one {
-        top: -10%;
-        height: auto;
-    }
+  .ogogon__image.two {
+    top: unset;
+    bottom: -15%;
+    right: unset;
+    left: 60%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 30%;
+  }
 
-    .ogogon__image.two {
-        top: unset;
-        bottom: -15%;
-        right: unset;
-        left: 60%;
-        transform: translateX(-50%) rotate(45deg);
-        width: 30%;
-    }
+  .ogogon__image.three {
+    bottom: unset;
+    left: unset;
+    right: 34%;
+    top: -20%;
+    z-index: 1;
+    transform: translateX(50%) rotate(-50deg);
+  }
 
-    .ogogon__image.three {
-        bottom: unset;
-        left: unset;
-        right: 34%;
-        top: -20%;
-        z-index: 1;
-        transform: translateX(50%) rotate(-50deg);
-    }
+  .ogogon__image.four {
+    bottom: -5%;
+    top: unset;
+    right: -7%;
+    left: unset;
+    width: 30%;
+    transform: rotate(30deg);
+  }
 
-    .ogogon__image.four {
-        bottom: -5%;
-        top: unset;
-        right: -7%;
-        left: unset;
-        width: 30%;
-        transform: rotate(30deg);
-    }
+  .ogogon__image.five {
+    bottom: 0;
+    left: 15%;
+    width: 40%;
+    transform: rotate(-20deg);
+  }
 
-    .ogogon__image.five {
-        bottom: 0;
-        left: 15%;
-        width: 40%;
-        transform: rotate(-20deg);
-    }
-
-    .ogogon__image.six {
-        top: 45%;
-        right: 34%;
-        transform: translateX(50%) translateY(-50%);
-        width: 40%;
-        z-index: 0;
-    }
+  .ogogon__image.six {
+    top: 45%;
+    right: 34%;
+    transform: translateX(50%) translateY(-50%);
+    width: 40%;
+    z-index: 0;
+  }
 }
 
 .ogogon__image {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .ogogon__image:hover {
-    scale: 1.05 !important;
+  scale: 1.05 !important;
 }
 
-@media(min-width: 1800px) {
-    .ogogon__info {
-        left: 20%;
-        top: 50px;
-    }
+@media (min-width: 1800px) {
+  .ogogon__info {
+    left: 20%;
+    top: 50px;
+  }
 }
 
 .ogogon-slider {
-    width: 100% !important;
+  width: 100% !important;
 }
 
-@media(min-width: 1024px) and (max-height: 700px) {
-    .ogogon__info {
-        left: 250px;
-        top: 50px;
-    }
+@media (min-width: 1024px) and (max-height: 700px) {
+  .ogogon__info {
+    left: 250px;
+    top: 50px;
+  }
 
-    .ogogon__images {
-        z-index: 0;
-    }
+  .ogogon__images {
+    z-index: 0;
+  }
 
-    .ogogon__info-text,
-    .ogogon .link {
-        font-size: 16px;
-    }
+  .ogogon__info-text,
+  .ogogon .link {
+    font-size: 16px;
+  }
 
-    .ogogon__image {
-        width: 25%;
-    }
+  .ogogon__image {
+    width: 25%;
+  }
 
-    .ogogon__image.one {
-        top: -10%;
-        height: auto;
-    }
+  .ogogon__image.one {
+    top: -10%;
+    height: auto;
+  }
 
-    .ogogon__image.two {
-        top: unset;
-        bottom: -15%;
-        right: unset;
-        left: 60%;
-        transform: translateX(-50%) rotate(45deg);
-        width: 30%;
-    }
+  .ogogon__image.two {
+    top: unset;
+    bottom: -15%;
+    right: unset;
+    left: 60%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 30%;
+  }
 
-    .ogogon__image.three {
-        bottom: unset;
-        left: unset;
-        right: 40%;
-        top: -15%;
-        z-index: 1;
-        transform: translateX(50%) rotate(-50deg);
-    }
+  .ogogon__image.three {
+    bottom: unset;
+    left: unset;
+    right: 40%;
+    top: -15%;
+    z-index: 1;
+    transform: translateX(50%) rotate(-50deg);
+  }
 
-    .ogogon__image.four {
-        bottom: -5%;
-        top: unset;
-        right: 0;
-        left: unset;
-        width: 30%;
-        transform: rotate(30deg);
-    }
+  .ogogon__image.four {
+    bottom: -5%;
+    top: unset;
+    right: 0;
+    left: unset;
+    width: 30%;
+    transform: rotate(30deg);
+  }
 
-    .ogogon__image.five {
-        bottom: -25px;
-        left: 15%;
-        width: 35%;
-        transform: rotate(-20deg);
-    }
+  .ogogon__image.five {
+    bottom: -25px;
+    left: 15%;
+    width: 35%;
+    transform: rotate(-20deg);
+  }
 
-    .ogogon__image.six {
-        top: 45%;
-        right: 34%;
-        transform: translateX(50%) translateY(-50%);
-        width: 40%;
-    }
+  .ogogon__image.six {
+    top: 45%;
+    right: 34%;
+    transform: translateX(50%) translateY(-50%);
+    width: 40%;
+  }
 }
 
-@media(min-width: 1280px) and (max-height: 700px) {
-    .ogogon__image {
-        width: 20%;
-    }
+@media (min-width: 1280px) and (max-height: 700px) {
+  .ogogon__image {
+    width: 20%;
+  }
 
-    .ogogon__image.one {
-        top: -10%;
-        right: 0;
-        height: auto;
-    }
+  .ogogon__image.one {
+    top: -10%;
+    right: 0;
+    height: auto;
+  }
 
-    .ogogon__image.two {
-        top: unset;
-        bottom: -15%;
-        right: unset;
-        left: 60%;
-        transform: translateX(-50%) rotate(45deg);
-        width: 30%;
-    }
+  .ogogon__image.two {
+    top: unset;
+    bottom: -15%;
+    right: unset;
+    left: 60%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 30%;
+  }
 
-    .ogogon__image.three {
-        bottom: unset;
-        left: unset;
-        right: 40%;
-        top: -15%;
-        z-index: 1;
-        transform: translateX(50%) rotate(-50deg);
-    }
+  .ogogon__image.three {
+    bottom: unset;
+    left: unset;
+    right: 40%;
+    top: -15%;
+    z-index: 1;
+    transform: translateX(50%) rotate(-50deg);
+  }
 
-    .ogogon__image.four {
-        bottom: -5%;
-        top: unset;
-        right: -7%;
-        left: unset;
-        width: 30%;
-        transform: rotate(30deg);
-    }
+  .ogogon__image.four {
+    bottom: -5%;
+    top: unset;
+    right: -7%;
+    left: unset;
+    width: 30%;
+    transform: rotate(30deg);
+  }
 
-    .ogogon__image.five {
-        bottom: -5%;
-        left: 15%;
-        width: 35%;
-        transform: rotate(-20deg);
-    }
+  .ogogon__image.five {
+    bottom: -5%;
+    left: 15%;
+    width: 35%;
+    transform: rotate(-20deg);
+  }
 
-    .ogogon__image.six {
-        top: 45%;
-        right: 34%;
-        transform: translateX(50%) translateY(-50%);
-        width: 40%;
-    }
+  .ogogon__image.six {
+    top: 45%;
+    right: 34%;
+    transform: translateX(50%) translateY(-50%);
+    width: 40%;
+  }
 }
 
-@media(max-width: 1024px) {
-    .ogogon__info .link {
-        display: none;
-    }
+@media (max-width: 1024px) {
+  .ogogon__info .link {
+    display: none;
+  }
 }
