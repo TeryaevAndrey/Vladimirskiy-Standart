@@ -111,97 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(Observer);
 
   let baseSpeed = 1; // исходная скорость
-  let maxSpeed = 5; // максимальная скорость при прокрутке
-  let scrollTimeout; // таймер для отслеживания паузы в прокрутке
-  let lastScrollY = window.scrollY; // последняя позиция скролла
-  let currentSpeed = baseSpeed; // текущая скорость
 
-  // Функция обновления скорости и направления анимации
-  function updateSpeed() {
-    let scrollPosition = window.scrollY; // текущая позиция скролла
-    let windowHeight = window.innerHeight; // высота видимой области
-    let documentHeight = document.body.scrollHeight; // высота всего документа
-
-    // Определяем процент прокрутки страницы
-    let scrollPercentage = scrollPosition / (documentHeight - windowHeight);
-    let newSpeed = baseSpeed + (maxSpeed - baseSpeed) * scrollPercentage;
-
-    // Определяем направление прокрутки
-    let direction = scrollPosition > lastScrollY ? 1 : -1;
-
-    // Проверяем ширину окна
-    if (window.innerWidth < 1024) {
-      // На мобильных устройствах (вторая полоса идет в противоположном направлении)
-      runningLines.forEach((tl, index) => {
-        let targetSpeed =
-          index === 1 ? newSpeed * -direction : newSpeed * direction;
-        gsap.to(tl, {
-          timeScale: targetSpeed,
-          duration: 0.5,
-          ease: "power1.inOut",
-        });
-      });
-    } else {
-      // На больших экранах (последняя полоса идет в противоположном направлении)
-      runningLines.slice(0, 2).forEach((tl) => {
-        let targetSpeed = newSpeed * direction;
-        gsap.to(tl, {
-          timeScale: targetSpeed,
-          duration: 0.5,
-          ease: "power1.inOut",
-        });
-      });
-
-      let oppositeDirectionSpeed = newSpeed * -direction;
-      gsap.to(runningLines[2], {
-        timeScale: oppositeDirectionSpeed,
-        duration: 0.5,
-        ease: "power1.inOut",
-      });
-    }
-
-    // Обновляем последнюю позицию скролла
-    lastScrollY = scrollPosition;
-
-    // Сбрасываем таймер и устанавливаем его заново
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      resetSpeed();
-    }, 200); // Скорость вернется к исходной через 200ms после прекращения скролла
-  }
-
-  // Функция плавного сброса скорости до базовой
-  function resetSpeed() {
-    // Проверяем ширину окна
-    if (window.innerWidth < 1024) {
-      // На мобильных устройствах
-      runningLines.forEach((tl, index) => {
-        let targetSpeed = index === 1 ? -baseSpeed : baseSpeed;
-        gsap.to(tl, {
-          timeScale: targetSpeed,
-          duration: 1,
-          ease: "power1.inOut",
-        });
-      });
-    } else {
-      // На больших экранах
-      runningLines.slice(0, 2).forEach((tl) => {
-        gsap.to(tl, {
-          timeScale: baseSpeed,
-          duration: 1,
-          ease: "power1.inOut",
-        });
-      });
-
-      gsap.to(runningLines[2], {
-        timeScale: -baseSpeed,
-        duration: 1,
-        ease: "power1.inOut",
-      });
-    }
-  }
-
-  // Создаем анимации для каждого marquee
   let runningLines = [
     horizontalLoop(".running-line:first-child .rail h4", {
       repeat: -1,
@@ -223,18 +133,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }),
   ];
 
-  // Добавляем слушатель события scroll
-  window.addEventListener("scroll", updateSpeed);
-
   function horizontalLoop(items, config) {
     items = gsap.utils.toArray(items);
     config = config || {};
     let tl = gsap.timeline({
         repeat: config.repeat,
         paused: config.paused,
-        defaults: { ease: "power1.inOut" },
-        onReverseComplete: () =>
-          tl.totalTime(tl.rawTime() + tl.duration() * 100),
+        defaults: { ease: "none" },
+        onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
       }),
       length = items.length,
       startX = items[0].offsetLeft,
@@ -243,8 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
       xPercents = [],
       curIndex = 0,
       pixelsPerSecond = (config.speed || 1) * 100,
-      snap =
-        config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+      snap = config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
       totalWidth,
       curX,
       distanceToStart,
@@ -260,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
             gsap.getProperty(el, "xPercent")
         );
         return xPercents[i];
-      },
+      }
     });
     gsap.set(items, { x: 0 });
     totalWidth =
@@ -280,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
         item,
         {
           xPercent: snap(((curX - distanceToLoop) / widths[i]) * 100),
-          duration: distanceToLoop / pixelsPerSecond,
+          duration: distanceToLoop / pixelsPerSecond
         },
         0
       )
@@ -289,13 +194,13 @@ document.addEventListener("DOMContentLoaded", function () {
           {
             xPercent: snap(
               ((curX - distanceToLoop + totalWidth) / widths[i]) * 100
-            ),
+            )
           },
           {
             xPercent: xPercents[i],
             duration:
               (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
-            immediateRender: false,
+            immediateRender: false
           },
           distanceToLoop / pixelsPerSecond
         )
@@ -379,7 +284,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const dumplingsAnimation = gsap.from(".dumplings__info", {
       scrollTrigger: {
         trigger: ".dumplings",
-        start: window.innerWidth >= 1024 ? "top 100%" : "top 50%",
+        start: "top 100%",
+        end: "bottom 10%",
         markers: false,
       },
       duration: 2,

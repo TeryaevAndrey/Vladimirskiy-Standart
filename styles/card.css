@@ -4,7 +4,7 @@
     bottom: 0;
     left: unset;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: #fff;
     z-index: 20;
     padding: 0 20px;
@@ -126,7 +126,7 @@
         position: absolute;
         max-width: 573px;
         top: 0;
-        height: 100vh;
+        height: 100dvh;
         width: 100%;
         left: unset;
         padding: 50px 36px;

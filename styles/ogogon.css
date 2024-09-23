@@ -1,6 +1,6 @@
 .ogogon-section {
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .ogogon {
@@ -9,18 +9,18 @@
   background-size: cover;
   background-position: center;
   background-color: #ffde15;
-  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
-  height: 100vh;
+  height: 100dvh;
 }
 
 @media (min-width: 1024px) {
   .ogogon {
-    height: 100vh;
+    height: 100dvh;
   }
 
   .ogogon-section {
-    min-height: 100vh;
+    min-height: 100dvh;
   }
 }
 
@@ -182,7 +182,7 @@
     bottom: 0;
     right: unset;
     width: auto;
-    height: 100vh;
+    height: 100dvh;
   }
 
   .ogogon__image {

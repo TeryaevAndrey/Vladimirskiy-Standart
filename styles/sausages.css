@@ -1,7 +1,7 @@
 .sausages-relative {
   overflow: hidden;
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 100dvh;
+  height: 100dvh;
 }
 
 .sausages {
@@ -14,16 +14,16 @@
   overflow: hidden;
   cursor: pointer;
   z-index: 0;
-  height: 100vh;
+  height: 100dvh;
 }
 
 @media (min-width: 1024px) {
   .sausages-relative {
-    min-height: 100vh;
+    min-height: 100dvh;
   }
   .sausages {
-    height: 100vh;
-    min-height: 100vh;
+    height: 100dvh;
+    min-height: 100dvh;
     padding: 50px 0;
   }
 }

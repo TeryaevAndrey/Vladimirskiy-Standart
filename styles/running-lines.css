@@ -35,6 +35,10 @@
     gap: 50px;
 }
 
+.rail h4 {
+    will-change: transform;
+}
+
 .running-line:first-child {
     background-color: #E00428;
     color: #D7A461;
@@ -132,4 +136,22 @@
         margin-top: 40px;
         padding: 0;
     }
+}
+
+.running-lines {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.running-line {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.running-line__content {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
 }

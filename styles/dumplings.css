@@ -1,8 +1,8 @@
 @media(min-width: 1024px) {
   .dumplings-wrapper {
     overflow-x: hidden;
-    height: 100vh;
-    min-height: 100vh;
+    height: 100dvh;
+    min-height: 100dvh;
   }
 
   .dumplings-sticky {
@@ -27,7 +27,7 @@
 
 @media(min-width: 1024px) {
   .dumplings {
-    min-height: 100vh;
+    min-height: 100dvh;
     background-position: center;
   }
 }
