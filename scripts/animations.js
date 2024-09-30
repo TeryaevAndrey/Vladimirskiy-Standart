@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  window.location.hash = '';
+  window.location.hash = "";
 
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
   //   height: '300vh',
@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       start: "top 0%",
       end: "bottom 20%",
       scrub: window.innerWidth >= 1024,
+      onLeave: () => $.scrollify.next(),
     },
   });
 
