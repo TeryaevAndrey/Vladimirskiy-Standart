@@ -22,7 +22,6 @@
     align-items: center;
     overflow: hidden;
     position: relative;
-    transition: all 0.6s ease;
 }
 
 .running-line__content {
@@ -136,22 +135,4 @@
         margin-top: 40px;
         padding: 0;
     }
-}
-
-.running-lines {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-.running-line {
-    display: flex;
-    justify-content: space-between;
-    white-space: nowrap;
-}
-
-.running-line__content {
-    display: flex;
-    white-space: nowrap;
-    will-change: transform;
 }
