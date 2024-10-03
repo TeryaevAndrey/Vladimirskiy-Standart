@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
       standardScrollElements : ".no-scroll",
       easing: "easeOutExpo",
       scrollSpeed: 1500,
-      offset: 0,
+      offset: 5,
       scrollbars: true,
       setHeights: true,
       overflowScroll: true,

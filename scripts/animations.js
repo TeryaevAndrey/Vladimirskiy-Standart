@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ScrollTrigger.create({
     trigger: ".about",
-    start: "top 80%",
-    end: "bottom top",
+    start: "top 0%%",
+    end: "bottom 90%",
     scrub: true,
     onUpdate: (self) => {
       // Если прокрутка вниз
