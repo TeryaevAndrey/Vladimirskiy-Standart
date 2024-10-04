@@ -12,12 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
       overflowScroll: true,
       updateHash: true,
       touchScroll: true,
-      before: function (i, sections) {
-        console.log("before", i);
-      },
-      after: function (i, sections) {
-        console.log("after", i);
-      },
+      before: function (i, sections) {},
+      after: function (i, sections) {},
       afterResize: function () {},
       afterRender: function () {},
       overflowScroll: true,
