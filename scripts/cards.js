@@ -26,6 +26,12 @@ const closeCard = (cardName) => {
 };
 
 const openCardMore = (cardName) => {
+  const cards = document.querySelectorAll(".card-more");
+
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].classList.remove("active");
+  }
+  
   const card = document.querySelector(`.card-more[data-card="${cardName}"]`);
   card.classList.toggle("active");
 

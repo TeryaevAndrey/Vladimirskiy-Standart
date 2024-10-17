@@ -21,6 +21,7 @@
   .sausages-relative {
     min-height: 100dvh;
   }
+
   .sausages {
     height: 100dvh;
     min-height: 100dvh;
@@ -89,8 +90,8 @@
 @media (min-width: 1024px) {
   .sausages-best-img {
     position: absolute;
-    bottom: 60px;
-    right: 80px;
+    bottom: 0;
+    right: 0;
     width: 100%;
     display: block;
     width: auto;
@@ -119,6 +120,7 @@
   top: 205px;
   right: -125px;
   transform: rotate(23deg);
+  transition: none;
 }
 
 .greens-2 {
@@ -129,6 +131,7 @@
   bottom: 60px;
   left: 10px;
   object-fit: scale-down;
+  transition: none;
 }
 
 .greens-3 {
@@ -139,6 +142,7 @@
   right: -60px;
   top: 100px;
   object-fit: scale-down;
+  transition: none;
 }
 
 .pepper-1 {
@@ -284,9 +288,15 @@
   }
 }
 
+@media(min-width: 1024px) {
+  .sausages-best-img {
+    max-width: 500px;
+  }
+}
+
 @media (min-width: 1600px) {
   .sausages-best-img {
-    max-width: 610px;
+    max-width: 750px;
     width: 100%;
   }
 }

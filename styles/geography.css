@@ -189,18 +189,6 @@
         margin-right: 0;
     }
 
-    .geography__item:nth-child(2) {
-        transform: translateY(-80%);
-    }
-
-    .geography__item:nth-child(3) {
-        transform: translateY(-15%);
-    }
-
-    .geography__item:nth-child(5) {
-        transform: translateY(-15%);
-    }
-
     .geography__item-count {
         font-size: 50px;
     }
@@ -208,6 +196,14 @@
     .geography__item-text {
         font-size: 20px;
         font-weight: 500;
+    }
+
+    .geography__item.transition-enabled {
+        transition: transform 0.2s ease; /* Применяем transition только к transform */
+    }
+
+    .geography__item.transition-enabled:hover {
+        transform: translateY(-10px) !important;
     }
 }
 
@@ -231,10 +227,6 @@
         font-size: 34px;
     }
 
-    .geography__item:nth-child(2) {
-        transform: translateY(-50%);
-    }
-
     .geography__item-text {
         font-size: 18px;
     }
@@ -248,11 +240,6 @@
     .geography__item-count {
         font-size: 76px;
     }
-
-    .geography__item:nth-child(2) {
-        transform: translateY(-110%);
-    }
-
 }
 
 @media(min-width: 1600px) and (min-height: 1200px) {

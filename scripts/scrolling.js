@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       interstitialSection: ".no-scroll",
       standardScrollElements : ".no-scroll",
       easing: "easeOutExpo",
-      scrollSpeed: 1500,
+      scrollSpeed: 2000,
       offset: 0,
       scrollbars: true,
       setHeights: true,

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: ".about",
       start: "top 0%",
-      end: "bottom 20%",
+      end: "bottom 10%",
       scrub: window.innerWidth >= 1024,
       onLeave: () => $.scrollify.next(),
     },
@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".about-bg").style.height = "110vh";
     },
   });
-
   gsap.from(".geography__item", {
     y: -100,
     opacity: 0,
@@ -82,6 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
       trigger: ".geography",
       start: "top 80%",
     },
+    onComplete: () => {
+      document.querySelectorAll('.geography__item').forEach(item => {
+        item.classList.add('transition-enabled');
+      });
+    }
   });
 
   // Counter animation for geography__item-count
@@ -154,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
       curIndex = 0,
       pixelsPerSecond = (config.speed || 1) * 100,
       snap =
-        config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+        config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1),
       totalWidth,
       curX,
       distanceToStart,
@@ -162,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
       item,
       i;
     gsap.set(items, {
-      // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
       xPercent: (i, el) => {
         let w = (widths[i] = parseFloat(gsap.getProperty(el, "width", "px")));
         xPercents[i] = snap(
@@ -256,13 +259,21 @@ document.addEventListener("DOMContentLoaded", function () {
       x: -100,
       opacity: 0,
     })
-    .from([".sausages__info-text", ".greens-1", ".greens-2", ".greens-3"], {
-      duration: 1,
-      y: 200,
-      opacity: 0,
-    })
-    .from(".pepper-1", { duration: 1, y: 200, opacity: 0 }, "-=0.5")
-    .from(".pepper-2", { duration: 1, y: 200, opacity: 0 }, "-=0.5");
+    .from(
+      [
+        ".sausages__info-text",
+        ".greens-1",
+        ".greens-2",
+        ".greens-3",
+        ".pepper-1",
+        ".pepper-2",
+      ],
+      {
+        duration: 1,
+        y: 200,
+        opacity: 0,
+      }
+    );
 
   sausagesAnimations.eventCallback("onComplete", () => {
     if (window.innerWidth < 1024) return;
@@ -294,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
         markers: false,
       },
       duration: 2,
-      y: -100, // начальная позиция блока по оси Y (выдвижение сверху)
+      y: -40, // начальная позиция блока по оси Y (выдвижение сверху)
       opacity: 0,
       delay: 0.5,
     });
@@ -383,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
         x: offsetX,
         y: offsetY,
         duration: 0.3,
-        ease: "power1.inOut",
+
       });
     });
   });

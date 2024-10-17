@@ -1,7 +1,7 @@
 @media(min-width: 1024px) {
     .about-wrapper {
-        height: 200vh;
-        min-height: 200vh;
+        height: 450vh;
+        min-height: 450vh;
     }
 
     .about-sticky {

@@ -232,9 +232,10 @@
 
   .ogogon__image.six {
     top: 55%;
-    right: 30%;
+    right: 4%;
     transform: translateX(50%) translateY(-50%);
     width: 55%;
+    z-index: 0;
   }
 }
 
