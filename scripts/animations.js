@@ -51,24 +51,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ScrollTrigger.create({
     trigger: ".about",
-    start: "top 0%%",
+    start: "top 0%",
     end: "bottom 90%",
     scrub: true,
     onUpdate: (self) => {
+      const aboutBg = document.querySelector(".about-bg");
       // Если прокрутка вниз
       if (self.direction === 1) {
-        document.querySelector(".about-bg").style.opacity = 1;
-        document.querySelector(".about-bg").style.height = "100vh";
+        aboutBg.style.filter = "blur(10px)";
+        aboutBg.style.transform = "scale(1.2)";
       }
       // Если прокрутка вверх
       else if (self.direction === -1) {
-        document.querySelector(".about-bg").style.opacity = 0;
-        document.querySelector(".about-bg").style.height = "120vh";
+        aboutBg.style.filter = "blur(0px)";
+        aboutBg.style.transform = "scale(1)";
       }
     },
     onLeaveBack: () => {
-      document.querySelector(".about-bg").style.opacity = 0;
-      document.querySelector(".about-bg").style.height = "110vh";
+      const aboutBg = document.querySelector(".about-bg");
+      aboutBg.style.filter = "blur(0px)";
+      aboutBg.style.transform = "scale(1)";
     },
   });
   gsap.from(".geography__item", {
@@ -82,10 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
       start: "top 80%",
     },
     onComplete: () => {
-      document.querySelectorAll('.geography__item').forEach(item => {
-        item.classList.add('transition-enabled');
+      document.querySelectorAll(".geography__item").forEach((item) => {
+        item.classList.add("transition-enabled");
       });
-    }
+    },
   });
 
   // Counter animation for geography__item-count
@@ -394,7 +396,6 @@ document.addEventListener("DOMContentLoaded", function () {
         x: offsetX,
         y: offsetY,
         duration: 0.3,
-
       });
     });
   });
