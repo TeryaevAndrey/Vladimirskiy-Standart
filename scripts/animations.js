@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     scrollTrigger: {
       trigger: ".about",
-      start: "top 0%",
+      start: "top 20%",
       end: "bottom 10%",
       scrub: window.innerWidth >= 1024,
-      onLeave: () => $.scrollify.next(),
     },
   });
 
